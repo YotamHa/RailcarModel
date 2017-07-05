@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:LSC="http:///schemas/LSC/_e_c5sKTjEeaOYMl950eW-Q/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmlns:visual="http:///schemas/visual/_fBb2sKTjEeaOYMl950eW-Q/0" xsi:schemaLocation="http:///schemas/LSC/_e_c5sKTjEeaOYMl950eW-Q/0 platform:/playgoResource/resources/profiles/LSC.profile.uml#_UXHg8ktjEeOIUs0KoNYPKA http:///schemas/visual/_fBb2sKTjEeaOYMl950eW-Q/0 platform:/playgoResource/resources/profiles/visual.profile.uml#_UYHmgktjEeOIUs0KoNYPKA">
+  <uml:Model xmi:id="_7O9OkFy9Eeemnsz-PvFuDQ" name="Railcar4">
+    <packagedElement xmi:type="uml:Collaboration" xmi:id="_7PYFUFy9Eeemnsz-PvFuDQ" name="carAlerts">
+      <ownedAttribute xmi:id="_oyNlcVzIEeemnsz-PvFuDQ" name="Car" type="_oyNlcFzIEeemnsz-PvFuDQ"/>
+      <ownedAttribute xmi:id="_u76VUVzNEeemnsz-PvFuDQ" name="Cruiser" type="_u76VUFzNEeemnsz-PvFuDQ"/>
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_mMKJMFzIEeemnsz-PvFuDQ" name="LSC1">
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8xC5I1zNEeemnsz-PvFuDQ" name="moveCar-InvocationStart" covered="_oyFpoFzIEeemnsz-PvFuDQ" message="_8xC5IFzNEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8xC5JVzNEeemnsz-PvFuDQ" name="moveCar-ExecutionStart" covered="_oyFpoFzIEeemnsz-PvFuDQ" message="_8xC5IFzNEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_8xC5J1zNEeemnsz-PvFuDQ" name="moveCar-invocationBody" covered="_oyFpoFzIEeemnsz-PvFuDQ" finish="_8xC5K1zNEeemnsz-PvFuDQ" start="_8xC5I1zNEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_8xC5KFzNEeemnsz-PvFuDQ" name="moveCar-executionBody" covered="_oyFpoFzIEeemnsz-PvFuDQ" finish="_8xC5KVzNEeemnsz-PvFuDQ" start="_8xC5JVzNEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8xC5KVzNEeemnsz-PvFuDQ" name="moveCar-ExecutionFinish" covered="_oyFpoFzIEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8xC5K1zNEeemnsz-PvFuDQ" name="moveCar-InvocationFinish" covered="_oyFpoFzIEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:StateInvariant" xmi:id="_PyXAMFzJEeemnsz-PvFuDQ" name=" (car.direction == otherCar.direction) &amp;&amp; (car.location >= otherCar.location - 80) &amp;&amp; (car.location &lt;= otherCar.location) &amp;&amp; (car.direction == right) &amp;&amp; (otherCar.inTerminal == false) " covered="_oyFpoFzIEeemnsz-PvFuDQ _q6-BsFzIEeemnsz-PvFuDQ">
+          <invariant xmi:id="_PyXnQVzJEeemnsz-PvFuDQ" name="car.getDirection().equals(otherCar.getDirection())&amp;&amp;car.getLocation()>=otherCar.getLocation() - 80&amp;&amp;car.getLocation()&lt;=otherCar.getLocation()&amp;&amp;car.getDirection().equals(&quot;right&quot;)&amp;&amp;otherCar.getInTerminal()==false">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_PyXnQlzJEeemnsz-PvFuDQ" body=""/>
+          </invariant>
+        </fragment>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_z1t841zNEeemnsz-PvFuDQ" name="setEngineEngaged-InvocationStart" covered="_oyFpoFzIEeemnsz-PvFuDQ" message="_z1t84FzNEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_z1t85VzNEeemnsz-PvFuDQ" name="setEngineEngaged-ExecutionStart" covered="_u7wkUFzNEeemnsz-PvFuDQ" message="_z1t84FzNEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_z1t851zNEeemnsz-PvFuDQ" name="setEngineEngaged-invocationBody" covered="_oyFpoFzIEeemnsz-PvFuDQ" finish="_z1t861zNEeemnsz-PvFuDQ" start="_z1t841zNEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_z1t86FzNEeemnsz-PvFuDQ" name="setEngineEngaged-executionBody" covered="_u7wkUFzNEeemnsz-PvFuDQ" finish="_z1t86VzNEeemnsz-PvFuDQ" start="_z1t85VzNEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_z1t86VzNEeemnsz-PvFuDQ" name="setEngineEngaged-ExecutionFinish" covered="_u7wkUFzNEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_z1t861zNEeemnsz-PvFuDQ" name="setEngineEngaged-InvocationFinish" covered="_oyFpoFzIEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:StateInvariant" xmi:id="_ClMpEFzOEeemnsz-PvFuDQ" name="wait: otherCar.getLocation()>car.getLocation() + 80" covered="_oyFpoFzIEeemnsz-PvFuDQ _q6-BsFzIEeemnsz-PvFuDQ _u7wkUFzNEeemnsz-PvFuDQ">
+          <invariant xmi:id="_ClMpE1zOEeemnsz-PvFuDQ" name="wait: otherCar.getLocation()>car.getLocation() + 80">
+            <specification xmi:type="uml:OpaqueExpression" xmi:id="_ClMpFFzOEeemnsz-PvFuDQ"/>
+          </invariant>
+        </fragment>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EEVgk1zOEeemnsz-PvFuDQ" name="setEngineEngaged-InvocationStart" covered="_oyFpoFzIEeemnsz-PvFuDQ" message="_EEVgkFzOEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EEVglVzOEeemnsz-PvFuDQ" name="setEngineEngaged-ExecutionStart" covered="_u7wkUFzNEeemnsz-PvFuDQ" message="_EEVgkFzOEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_EEVgl1zOEeemnsz-PvFuDQ" name="setEngineEngaged-invocationBody" covered="_oyFpoFzIEeemnsz-PvFuDQ" finish="_EEVgm1zOEeemnsz-PvFuDQ" start="_EEVgk1zOEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_EEVgmFzOEeemnsz-PvFuDQ" name="setEngineEngaged-executionBody" covered="_u7wkUFzNEeemnsz-PvFuDQ" finish="_EEVgmVzOEeemnsz-PvFuDQ" start="_EEVglVzOEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EEVgmVzOEeemnsz-PvFuDQ" name="setEngineEngaged-ExecutionFinish" covered="_u7wkUFzNEeemnsz-PvFuDQ"/>
+        <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EEVgm1zOEeemnsz-PvFuDQ" name="setEngineEngaged-InvocationFinish" covered="_oyFpoFzIEeemnsz-PvFuDQ"/>
+        <lifeline xmi:id="_oyFpoFzIEeemnsz-PvFuDQ" name="car" represents="_oyNlcVzIEeemnsz-PvFuDQ" coveredBy="_8xC5I1zNEeemnsz-PvFuDQ _8xC5K1zNEeemnsz-PvFuDQ _8xC5J1zNEeemnsz-PvFuDQ _8xC5JVzNEeemnsz-PvFuDQ _8xC5KVzNEeemnsz-PvFuDQ _8xC5KFzNEeemnsz-PvFuDQ _PyXAMFzJEeemnsz-PvFuDQ _z1t841zNEeemnsz-PvFuDQ _z1t861zNEeemnsz-PvFuDQ _z1t851zNEeemnsz-PvFuDQ _ClMpEFzOEeemnsz-PvFuDQ _EEVgk1zOEeemnsz-PvFuDQ _EEVgm1zOEeemnsz-PvFuDQ _EEVgl1zOEeemnsz-PvFuDQ"/>
+        <lifeline xmi:id="_q6-BsFzIEeemnsz-PvFuDQ" name="otherCar" represents="_oyNlcVzIEeemnsz-PvFuDQ" coveredBy="_PyXAMFzJEeemnsz-PvFuDQ _ClMpEFzOEeemnsz-PvFuDQ"/>
+        <lifeline xmi:id="_u7wkUFzNEeemnsz-PvFuDQ" name="cruiser" represents="_u76VUVzNEeemnsz-PvFuDQ" coveredBy="_z1t85VzNEeemnsz-PvFuDQ _z1t86VzNEeemnsz-PvFuDQ _z1t86FzNEeemnsz-PvFuDQ _ClMpEFzOEeemnsz-PvFuDQ _EEVglVzOEeemnsz-PvFuDQ _EEVgmVzOEeemnsz-PvFuDQ _EEVgmFzOEeemnsz-PvFuDQ"/>
+        <message xmi:id="_z1t84FzNEeemnsz-PvFuDQ" name="setEngineEngaged" receiveEvent="_z1t85VzNEeemnsz-PvFuDQ" sendEvent="_z1t841zNEeemnsz-PvFuDQ" signature="_z1t88FzNEeemnsz-PvFuDQ">
+          <argument xmi:type="uml:LiteralBoolean" xmi:id="_z1t87lzNEeemnsz-PvFuDQ" name="arg0" type="_z1t87VzNEeemnsz-PvFuDQ"/>
+        </message>
+        <message xmi:id="_8xC5IFzNEeemnsz-PvFuDQ" name="moveCar" receiveEvent="_8xC5JVzNEeemnsz-PvFuDQ" sendEvent="_8xC5I1zNEeemnsz-PvFuDQ" signature="_8xC5MFzNEeemnsz-PvFuDQ">
+          <argument xmi:type="uml:InstanceValue" xmi:id="_8xC5LlzNEeemnsz-PvFuDQ" name="distance" type="_8xC5LVzNEeemnsz-PvFuDQ"/>
+        </message>
+        <message xmi:id="_EEVgkFzOEeemnsz-PvFuDQ" name="setEngineEngaged" receiveEvent="_EEVglVzOEeemnsz-PvFuDQ" sendEvent="_EEVgk1zOEeemnsz-PvFuDQ" signature="_z1t88FzNEeemnsz-PvFuDQ">
+          <argument xmi:type="uml:LiteralBoolean" xmi:id="_EEVgnVzOEeemnsz-PvFuDQ" name="arg0" type="_z1t87VzNEeemnsz-PvFuDQ" value="true"/>
+        </message>
+      </ownedBehavior>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oyNlcFzIEeemnsz-PvFuDQ" name="Car">
+      <ownedAttribute xmi:id="_vkr-0FzIEeemnsz-PvFuDQ" name="location">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_vkr-0lzIEeemnsz-PvFuDQ" value="0"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_HV0RsFzJEeemnsz-PvFuDQ" name="direction">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_HV0RslzJEeemnsz-PvFuDQ" value=""/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_sgpz0FzNEeemnsz-PvFuDQ" name="inTerminal">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sh2HFlzNEeemnsz-PvFuDQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sh2HGFzNEeemnsz-PvFuDQ" value="1"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_sh2HGVzNEeemnsz-PvFuDQ" value="true"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_xPfhhFzNEeemnsz-PvFuDQ" name="CarID">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_xPfhhlzNEeemnsz-PvFuDQ" value="0"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_8xC5MFzNEeemnsz-PvFuDQ" name="moveCar">
+        <ownedParameter xmi:id="_8xC5MlzNEeemnsz-PvFuDQ" type="_8xC5LVzNEeemnsz-PvFuDQ"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_u76VUFzNEeemnsz-PvFuDQ" name="Cruiser">
+      <ownedAttribute xmi:id="_xPfhgFzNEeemnsz-PvFuDQ" name="ID">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_xPfhglzNEeemnsz-PvFuDQ" value="0"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_z1t88FzNEeemnsz-PvFuDQ" name="setEngineEngaged">
+        <ownedParameter xmi:id="_z1t88lzNEeemnsz-PvFuDQ" type="_z1t87VzNEeemnsz-PvFuDQ"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_z1t87VzNEeemnsz-PvFuDQ" name="boolean"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8xC5LVzNEeemnsz-PvFuDQ" name="int"/>
+    <profileApplication xmi:id="_7O9OkVy9Eeemnsz-PvFuDQ">
+      <eAnnotations xmi:id="_7O9Okly9Eeemnsz-PvFuDQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/playgoResource/resources/profiles/visual.profile.uml#_UYHmgktjEeOIUs0KoNYPKA"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/playgoResource/resources/profiles/visual.profile.uml#_UYHmgEtjEeOIUs0KoNYPKA"/>
+    </profileApplication>
+    <profileApplication xmi:id="_7O9Ok1y9Eeemnsz-PvFuDQ">
+      <eAnnotations xmi:id="_7O9OlFy9Eeemnsz-PvFuDQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="platform:/playgoResource/resources/profiles/LSC.profile.uml#_UXHg8ktjEeOIUs0KoNYPKA"/>
+      </eAnnotations>
+      <appliedProfile href="platform:/playgoResource/resources/profiles/LSC.profile.uml#_UXHg8EtjEeOIUs0KoNYPKA"/>
+    </profileApplication>
+  </uml:Model>
+  <LSC:Collaboration xmi:id="_7Q-n0Fy9Eeemnsz-PvFuDQ" base_Collaboration="_7PYFUFy9Eeemnsz-PvFuDQ" LscId="1498735645389"/>
+  <visual:Interaction xmi:id="_mMKwQFzIEeemnsz-PvFuDQ" base_Interaction="_mMKJMFzIEeemnsz-PvFuDQ" X="20" Width="1469" Y="30" Height="561"/>
+  <LSC:Interaction xmi:id="_mMKwQVzIEeemnsz-PvFuDQ" base_Interaction="_mMKJMFzIEeemnsz-PvFuDQ" Mode="Universal" LscId="1498740228421" LSCCollaboration="_7PYFUFy9Eeemnsz-PvFuDQ"/>
+  <visual:Lifeline xmi:id="_oyFpoVzIEeemnsz-PvFuDQ" base_Lifeline="_oyFpoFzIEeemnsz-PvFuDQ" X="20" Width="100" Y="69" Height="400"/>
+  <LSC:Lifeline xmi:id="_oyFpolzIEeemnsz-PvFuDQ" base_Lifeline="_oyFpoFzIEeemnsz-PvFuDQ" LscId="1498740245818" PolymorphicScope="Deep" Binding="Dynamic (One)"/>
+  <LSC:Property xmi:id="_oyNlclzIEeemnsz-PvFuDQ" base_Property="_oyNlcVzIEeemnsz-PvFuDQ"/>
+  <visual:Lifeline xmi:id="_q6-BsVzIEeemnsz-PvFuDQ" base_Lifeline="_q6-BsFzIEeemnsz-PvFuDQ" X="140" Width="100" Y="69" Height="400"/>
+  <LSC:Lifeline xmi:id="_q6-BslzIEeemnsz-PvFuDQ" base_Lifeline="_q6-BsFzIEeemnsz-PvFuDQ" LscId="1498740260171" PolymorphicScope="Deep" BindingExpression="" Binding="Dynamic (All)"/>
+  <LSC:Property xmi:id="_vkr-0VzIEeemnsz-PvFuDQ" base_Property="_vkr-0FzIEeemnsz-PvFuDQ" PropertyType="int"/>
+  <LSC:LiteralString xmi:id="_vkr-01zIEeemnsz-PvFuDQ" base_LiteralString="_vkr-0lzIEeemnsz-PvFuDQ"/>
+  <LSC:Property xmi:id="_HV0RsVzJEeemnsz-PvFuDQ" base_Property="_HV0RsFzJEeemnsz-PvFuDQ" PropertyType="String"/>
+  <LSC:LiteralString xmi:id="_HV0Rs1zJEeemnsz-PvFuDQ" base_LiteralString="_HV0RslzJEeemnsz-PvFuDQ"/>
+  <visual:StateInvariant xmi:id="_PyXAMVzJEeemnsz-PvFuDQ" base_StateInvariant="_PyXAMFzJEeemnsz-PvFuDQ" X="51" Width="1414" Y="276" Height="20"/>
+  <LSC:StateInvariant xmi:id="_PyXnQFzJEeemnsz-PvFuDQ" base_StateInvariant="_PyXAMFzJEeemnsz-PvFuDQ" Label="" ConstrExpressionsStr="PropertyProperty,car,direction,==,otherCar,direction,&amp;&amp;;PropertyOpaque,car,location,>=,otherCar.getLocation() - 80,,&amp;&amp;;PropertyProperty,car,location,&lt;=,otherCar,location,&amp;&amp;;PropertyValue,car,direction,==,right,&amp;&amp;;PropertyValue,otherCar,inTerminal,==,false,&amp;&amp;;" LscId="1498740507572"/>
+  <LSC:OpaqueExpression xmi:id="_PyXnQ1zJEeemnsz-PvFuDQ" base_OpaqueExpression="_PyXnQlzJEeemnsz-PvFuDQ"/>
+  <LSC:Property xmi:id="_sh2HFVzNEeemnsz-PvFuDQ" base_Property="_sgpz0FzNEeemnsz-PvFuDQ"/>
+  <LSC:LiteralInteger xmi:id="_sh2HF1zNEeemnsz-PvFuDQ" base_LiteralInteger="_sh2HFlzNEeemnsz-PvFuDQ"/>
+  <LSC:LiteralString xmi:id="_sh2HGlzNEeemnsz-PvFuDQ" base_LiteralString="_sh2HGVzNEeemnsz-PvFuDQ"/>
+  <visual:Lifeline xmi:id="_u7wkUVzNEeemnsz-PvFuDQ" base_Lifeline="_u7wkUFzNEeemnsz-PvFuDQ" X="260" Width="100" Y="69" Height="400"/>
+  <LSC:Lifeline xmi:id="_u7wkUlzNEeemnsz-PvFuDQ" base_Lifeline="_u7wkUFzNEeemnsz-PvFuDQ" LscId="1498742434581" PolymorphicScope="Deep" BindingExpression="PropertyProperty,cruiser,ID,==,car,CarID,&amp;&amp;;" Binding="Dynamic (One)"/>
+  <LSC:Property xmi:id="_u76VUlzNEeemnsz-PvFuDQ" base_Property="_u76VUVzNEeemnsz-PvFuDQ"/>
+  <LSC:Property xmi:id="_xPfhgVzNEeemnsz-PvFuDQ" base_Property="_xPfhgFzNEeemnsz-PvFuDQ" PropertyType="int"/>
+  <LSC:LiteralString xmi:id="_xPfhg1zNEeemnsz-PvFuDQ" base_LiteralString="_xPfhglzNEeemnsz-PvFuDQ"/>
+  <LSC:Property xmi:id="_xPfhhVzNEeemnsz-PvFuDQ" base_Property="_xPfhhFzNEeemnsz-PvFuDQ" PropertyType="int"/>
+  <LSC:LiteralString xmi:id="_xPfhh1zNEeemnsz-PvFuDQ" base_LiteralString="_xPfhhlzNEeemnsz-PvFuDQ"/>
+  <LSC:Message xmi:id="_z1t84VzNEeemnsz-PvFuDQ" base_Message="_z1t84FzNEeemnsz-PvFuDQ" Operation="_z1t88FzNEeemnsz-PvFuDQ" LscId="1498742467502" Execution="Execute" Temperature="Hot"/>
+  <visual:Message xmi:id="_z1t84lzNEeemnsz-PvFuDQ" base_Message="_z1t84FzNEeemnsz-PvFuDQ"/>
+  <LSC:MessageOccurrenceSpecification xmi:id="_z1t85FzNEeemnsz-PvFuDQ" base_MessageOccurrenceSpecification="_z1t841zNEeemnsz-PvFuDQ" Temperature="Hot"/>
+  <LSC:MessageOccurrenceSpecification xmi:id="_z1t85lzNEeemnsz-PvFuDQ" base_MessageOccurrenceSpecification="_z1t85VzNEeemnsz-PvFuDQ" Temperature="Hot"/>
+  <LSC:MessageOccurrenceSpecification xmi:id="_z1t86lzNEeemnsz-PvFuDQ" base_MessageOccurrenceSpecification="_z1t86VzNEeemnsz-PvFuDQ"/>
+  <LSC:MessageOccurrenceSpecification xmi:id="_z1t87FzNEeemnsz-PvFuDQ" base_MessageOccurrenceSpecification="_z1t861zNEeemnsz-PvFuDQ"/>
+  <LSC:LiteralBoolean xmi:id="_z1t871zNEeemnsz-PvFuDQ" base_LiteralBoolean="_z1t87lzNEeemnsz-PvFuDQ" Constraint=""/>
+  <LSC:Operation xmi:id="_z1t88VzNEeemnsz-PvFuDQ" base_Operation="_z1t88FzNEeemnsz-PvFuDQ" ActionOnProperty="None"/>
+  <LSC:Message xmi:id="_8xC5IVzNEeemnsz-PvFuDQ" base_Message="_8xC5IFzNEeemnsz-PvFuDQ" Operation="_8xC5MFzNEeemnsz-PvFuDQ" LscId="1498742527410"/>
+  <visual:Message xmi:id="_8xC5IlzNEeemnsz-PvFuDQ" base_Message="_8xC5IFzNEeemnsz-PvFuDQ"/>
+  <LSC:MessageOccurrenceSpecification xmi:id="_8xC5JFzNEeemnsz-PvFuDQ" base_MessageOccurrenceSpecification="_8xC5I1zNEeemnsz-PvFuDQ"/>
+  <LSC:MessageOccurrenceSpecification xmi:id="_8xC5JlzNEeemnsz-PvFuDQ" base_MessageOccurrenceSpecification="_8xC5JVzNEeemnsz-PvFuDQ"/>
+  <LSC:MessageOccurrenceSpecification xmi:id="_8xC5KlzNEeemnsz-PvFuDQ" base_MessageOccurrenceSpecification="_8xC5KVzNEeemnsz-PvFuDQ"/>
+  <LSC:MessageOccurrenceSpecification xmi:id="_8xC5LFzNEeemnsz-PvFuDQ" base_MessageOccurrenceSpecification="_8xC5K1zNEeemnsz-PvFuDQ"/>
+  <LSC:InstanceValue xmi:id="_8xC5L1zNEeemnsz-PvFuDQ" base_InstanceValue="_8xC5LlzNEeemnsz-PvFuDQ"/>
+  <LSC:Operation xmi:id="_8xC5MVzNEeemnsz-PvFuDQ" base_Operation="_8xC5MFzNEeemnsz-PvFuDQ" ActionOnProperty="None"/>
+  <LSC:StateInvariant xmi:id="_ClMpEVzOEeemnsz-PvFuDQ" base_StateInvariant="_ClMpEFzOEeemnsz-PvFuDQ" Label="" ConstrExpressionsStr="PropertyOpaque,otherCar,location,>,car.getLocation() + 80,,&amp;&amp;;" LscId="1498742566433" IsWait="true"/>
+  <visual:StateInvariant xmi:id="_ClMpElzOEeemnsz-PvFuDQ" base_StateInvariant="_ClMpEFzOEeemnsz-PvFuDQ" X="51" Width="320" Y="376" Height="20"/>
+  <LSC:OpaqueExpression xmi:id="_ClMpFVzOEeemnsz-PvFuDQ" base_OpaqueExpression="_ClMpFFzOEeemnsz-PvFuDQ"/>
+  <LSC:Message xmi:id="_EEVgkVzOEeemnsz-PvFuDQ" base_Message="_EEVgkFzOEeemnsz-PvFuDQ" Operation="_z1t88FzNEeemnsz-PvFuDQ" LscId="1498742576409" Execution="Execute" Temperature="Hot"/>
+  <visual:Message xmi:id="_EEVgklzOEeemnsz-PvFuDQ" base_Message="_EEVgkFzOEeemnsz-PvFuDQ"/>
+  <LSC:MessageOccurrenceSpecification xmi:id="_EEVglFzOEeemnsz-PvFuDQ" base_MessageOccurrenceSpecification="_EEVgk1zOEeemnsz-PvFuDQ" Temperature="Hot"/>
+  <LSC:MessageOccurrenceSpecification xmi:id="_EEVgllzOEeemnsz-PvFuDQ" base_MessageOccurrenceSpecification="_EEVglVzOEeemnsz-PvFuDQ" Temperature="Hot"/>
+  <LSC:MessageOccurrenceSpecification xmi:id="_EEVgmlzOEeemnsz-PvFuDQ" base_MessageOccurrenceSpecification="_EEVgmVzOEeemnsz-PvFuDQ"/>
+  <LSC:MessageOccurrenceSpecification xmi:id="_EEVgnFzOEeemnsz-PvFuDQ" base_MessageOccurrenceSpecification="_EEVgm1zOEeemnsz-PvFuDQ"/>
+  <LSC:LiteralBoolean xmi:id="_EEVgnlzOEeemnsz-PvFuDQ" base_LiteralBoolean="_EEVgnVzOEeemnsz-PvFuDQ" Constraint=""/>
+</xmi:XMI>
