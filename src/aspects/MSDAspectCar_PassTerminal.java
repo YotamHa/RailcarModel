@@ -18,8 +18,9 @@ public class MSDAspectCar_PassTerminal extends MSDAspect implements MSDSubscribe
 	static final int Car_INST_car = 0;
 	static final int Terminal_INST_terminal = 1;
 
+	static final int String_arg_String_exact_String_arg00 = 0;
 
-	static final int int_var_symbolic_minimalDistance = 0;
+	static final int int_var_symbolic_minimalDistance = 1;
 
 	private final String niceName = "Car_PassTerminal";
 
@@ -37,6 +38,9 @@ public class MSDAspectCar_PassTerminal extends MSDAspect implements MSDSubscribe
 		addAspectEvent(MSDMethods.Car_Car_passTerminal);
 		PlaygoCoordinator.getInstance().subscribe(this, 
 			"Car", "Car", "passTerminal");
+		addAspectEvent(MSDMethods.Car_Car_setMode);
+		PlaygoCoordinator.getInstance().subscribe(this, 
+			"Car", "Car", "setMode");
 		addAspectEvent(MSDMethods.Car_Terminal_departReq);
 		PlaygoCoordinator.getInstance().subscribe(this, 
 			"Car", "Terminal", "departReq");
@@ -48,14 +52,15 @@ public class MSDAspectCar_PassTerminal extends MSDAspect implements MSDSubscribe
 			"Car", "Car", "endArrival");
 
 		addMinimalEvent(MSDMethods.Car_Car_passTerminal);
+		setHotCut(2,0);
 		setHotCut(1,0);
-		setHotCut(3,2);
-		setLastCut(4,2);
+		setHotCut(4,2);
+		setLastCut(5,2);
 		numberOfLifeLines = 2;
 		numberOfInstances = 2;
-		numberOfVariables = 1;
+		numberOfVariables = 2;
 		numberOfTimeTags = 0;
-		interactionId = "1499083609554";
+		interactionId = "1499586852350";
 		setCutsExpressions();
 	}
 
@@ -104,14 +109,30 @@ public class MSDAspectCar_PassTerminal extends MSDAspect implements MSDSubscribe
 					return false;
 				break;
 
+			case MSDMethods.Car_Car_setMode:
+				if(activeMSD.instancesEquals(Car_INST_car,sourceObject)
+					&& activeMSD.instancesEquals(Car_INST_car,targetObject)
+					&& activeMSD.variableEquals(String_arg_String_exact_String_arg00,args.get(0)))
+				{
+					unification=true;
+					if(activeMSD.isInCut(1,0))
+					{
+						cutChanged=true; activeMSD.setCut(2,0);
+						return cutChanged;
+					}
+				}
+				if(!unification)//No unification...
+					return false;
+				break;
+
 			case MSDMethods.Car_Terminal_departReq:
 				if(activeMSD.instancesEquals(Car_INST_car,sourceObject)
 					&& activeMSD.instancesEquals(Terminal_INST_terminal,targetObject))
 				{
 					unification=true;
-					if(activeMSD.isInCut(1,0))
+					if(activeMSD.isInCut(2,0))
 					{
-						cutChanged=true; activeMSD.setCut(2,1);
+						cutChanged=true; activeMSD.setCut(3,1);
 						return cutChanged;
 					}
 				}
@@ -124,9 +145,9 @@ public class MSDAspectCar_PassTerminal extends MSDAspect implements MSDSubscribe
 					&& activeMSD.instancesEquals(Car_INST_car,targetObject))
 				{
 					unification=true;
-					if(activeMSD.isInCut(2,1))
+					if(activeMSD.isInCut(3,1))
 					{
-						cutChanged=true; activeMSD.setCut(3,2);
+						cutChanged=true; activeMSD.setCut(4,2);
 						return cutChanged;
 					}
 				}
@@ -139,9 +160,9 @@ public class MSDAspectCar_PassTerminal extends MSDAspect implements MSDSubscribe
 					&& activeMSD.instancesEquals(Car_INST_car,targetObject))
 				{
 					unification=true;
-					if(activeMSD.isInCut(3,2))
+					if(activeMSD.isInCut(4,2))
 					{
-						cutChanged=true; activeMSD.setCut(4,2);
+						cutChanged=true; activeMSD.setCut(5,2);
 						break;
 					}
 				}
@@ -164,6 +185,11 @@ public class MSDAspectCar_PassTerminal extends MSDAspect implements MSDSubscribe
 		Car car = (Car)bindObjectByExpression(activeMSD,Car_INST_car,null, true);;
 		Terminal terminal = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal,null, true);;
 
+		String arg00 = null;
+		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg00)!=null){
+			arg00 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg00);
+		}
+
 		switch (conditionNumber)
 		{
 		}
@@ -175,6 +201,11 @@ public class MSDAspectCar_PassTerminal extends MSDAspect implements MSDSubscribe
 	{
 		Car car = (Car)bindObjectByExpression(activeMSD,Car_INST_car,null, true);;
 		Terminal terminal = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal,null, true);;
+
+		String arg00 = null;
+		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg00)!=null){
+			arg00 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg00);
+		}
 
 	
 	}
@@ -190,11 +221,19 @@ public class MSDAspectCar_PassTerminal extends MSDAspect implements MSDSubscribe
 	{
 		Car car = (Car)bindObjectByExpression(activeMSD,Car_INST_car, null, false );
 		Terminal terminal = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal, null, false );
+
+		String arg00 = null;
+		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg00)!=null){
+			arg00 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg00);
+		}
 		int minimalDistance = 0;
 		if(activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance)!=null){
 			minimalDistance = (Integer) activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance);
 		} 
 
+		try{
+			activeMSD.setPrivateVariable(String_arg_String_exact_String_arg00, (String)"pass");
+		}catch(Exception e){}
 	}
 
 	//Pointcuts and advices:
@@ -278,6 +317,12 @@ public class MSDAspectCar_PassTerminal extends MSDAspect implements MSDSubscribe
 					_car,_car,null);
 	}
 
+	private void after_Car_Car_setMode(Object _carSource ,Object _car, ArrayList<Object> args)
+	{
+		changeCutState(MSDMethods.Car_Car_setMode,
+					_car,_car,args);
+	}
+
 	private void after_Car_Terminal_departReq(Object _car ,Object _terminal)
 	{
 		changeCutState(MSDMethods.Car_Terminal_departReq,
@@ -303,6 +348,10 @@ public class MSDAspectCar_PassTerminal extends MSDAspect implements MSDSubscribe
 	{
 		if(srcClassName.equals("Car") && tgtClassName.equals("Car") && method.equals("passTerminal")){
 			after_Car_Car_passTerminal(source, target);
+			return;
+		}
+		if(srcClassName.equals("Car") && tgtClassName.equals("Car") && method.equals("setMode")){
+			after_Car_Car_setMode(source, target, argValues);
 			return;
 		}
 		if(srcClassName.equals("Car") && tgtClassName.equals("Terminal") && method.equals("departReq")){
@@ -349,41 +398,57 @@ public class MSDAspectCar_PassTerminal extends MSDAspect implements MSDSubscribe
 		Car car = (Car)bindObjectByExpression(activeMSD,Car_INST_car,null, true);;
 		Terminal terminal = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal,null, true);;
 
-		MSDMethod MSDm128 = new MSDMethod(car,car,
+		String VAR_String_exact_String_arg00 = null;
+		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg00)!=null){
+			VAR_String_exact_String_arg00 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg00);
+		}
+
+		MSDMethod MSDm134 = new MSDMethod(car,car,
 			MSDMethods.Car_Car_passTerminal,null,"Car:Car:passTerminal",niceName,activeMSD.getGlobalId());// passTerminal() Monitored
-		MSDMethod MSDm129 = new MSDMethod(car,terminal,
+		ArrayList<Object>  args135 = getArgsList(VAR_String_exact_String_arg00);
+		MSDMethod MSDm135 = new MSDMethod(car,car,
+			MSDMethods.Car_Car_setMode,args135,"Car:Car:setMode",niceName,activeMSD.getGlobalId());// setMode() Execute
+		MSDMethod MSDm136 = new MSDMethod(car,terminal,
 			MSDMethods.Car_Terminal_departReq,null,"Car:Terminal:departReq",niceName,activeMSD.getGlobalId());// departReq() Execute
-		MSDMethod MSDm130 = new MSDMethod(terminal,car,
+		MSDMethod MSDm137 = new MSDMethod(terminal,car,
 			MSDMethods.Terminal_Car_departAck,null,"Terminal:Car:departAck",niceName,activeMSD.getGlobalId());// departAck() Monitored
-		MSDMethod MSDm131 = new MSDMethod(car,car,
+		MSDMethod MSDm138 = new MSDMethod(car,car,
 			MSDMethods.Car_Car_endArrival,null,"Car:Car:endArrival",niceName,activeMSD.getGlobalId());// endArrival() Execute
 
 		 if(activeMSD.isInCut(0,0))
 		{
-				ME.add(MSDm128);
-				CV.add(MSDm129,MSDm130,MSDm131);
+				ME.add(MSDm134);
+				CV.add(MSDm137,MSDm136,MSDm138,MSDm135);
 				return;
 		}
 		 if(activeMSD.isInCut(1,0))
 		{
-				if(MSDm129.sourceInstance!=null && MSDm129.targetInstance!=null){
-					EE.add(MSDm129);
+				if(MSDm135.sourceInstance!=null && MSDm135.targetInstance!=null){
+					EE.add(MSDm135);
 				}
-				HV.add(MSDm130,MSDm131,MSDm128);
+				HV.add(MSDm137,MSDm136,MSDm138,MSDm134);
 				return;
 		}
-		 if(activeMSD.isInCut(2,1))
+		 if(activeMSD.isInCut(2,0))
 		{
-				ME.add(MSDm130);
-				CV.add(MSDm129,MSDm131,MSDm128);
+				if(MSDm136.sourceInstance!=null && MSDm136.targetInstance!=null){
+					EE.add(MSDm136);
+				}
+				HV.add(MSDm137,MSDm138,MSDm134,MSDm135);
 				return;
 		}
-		 if(activeMSD.isInCut(3,2))
+		 if(activeMSD.isInCut(3,1))
 		{
-				if(MSDm131.sourceInstance!=null && MSDm131.targetInstance!=null){
-					EE.add(MSDm131);
+				ME.add(MSDm137);
+				CV.add(MSDm136,MSDm138,MSDm134,MSDm135);
+				return;
+		}
+		 if(activeMSD.isInCut(4,2))
+		{
+				if(MSDm138.sourceInstance!=null && MSDm138.targetInstance!=null){
+					EE.add(MSDm138);
 				}
-				HV.add(MSDm129,MSDm130,MSDm128);
+				HV.add(MSDm137,MSDm136,MSDm134,MSDm135);
 				return;
 		}
 	}
@@ -402,6 +467,13 @@ public class MSDAspectCar_PassTerminal extends MSDAspect implements MSDSubscribe
 		Car car = (Car) activeMSD.getLineInstance(Car_INST_car);
 		Terminal terminal = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal);
 	
+
+		String arg00 = null;
+		boolean arg00Bound=false;
+		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg00)!=null){
+			arg00 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg00);
+			arg00Bound=true;
+		}
 	
 		ArrayList<Object> instances = AppObjects.getObjects("Car");
 		ArrayList<Object> result = new ArrayList<Object>();
@@ -438,6 +510,13 @@ public class MSDAspectCar_PassTerminal extends MSDAspect implements MSDSubscribe
 		Car car = (Car) activeMSD.getLineInstance(Car_INST_car);
 		Terminal terminal = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal);
 	
+
+		String arg00 = null;
+		boolean arg00Bound=false;
+		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg00)!=null){
+			arg00 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg00);
+			arg00Bound=true;
+		}
 		if(car==null){
 			return null;				//not enabled
 		}
@@ -473,6 +552,11 @@ public class MSDAspectCar_PassTerminal extends MSDAspect implements MSDSubscribe
 	@SuppressWarnings("unused")
 	public Object bindObjectByExpression (ActiveMSDAspect activeMSD,int lifelineIndex, 
 			Object obj, boolean retrieveOnly){
+
+		String arg00 = null;
+		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg00)!=null){
+			arg00 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg00);
+		}
 
 		Object result = null;
 		// in case the object is already bounded returning the bounded object

@@ -245,7 +245,7 @@
   </uml:Model>
   <LSC:Collaboration xmi:id="_73b34F__Eee9vtmKfZ3p8w" base_Collaboration="_714YyF__Eee9vtmKfZ3p8w" LscId="1499093849694"/>
   <LSC:Interaction xmi:id="_BZcu8WAAEee9vtmKfZ3p8w" base_Interaction="_BZcu8GAAEee9vtmKfZ3p8w" Mode="Universal" LscId="1499093886815" LSCCollaboration="_714YyF__Eee9vtmKfZ3p8w"/>
-  <visual:Interaction xmi:id="_BZcu8mAAEee9vtmKfZ3p8w" base_Interaction="_BZcu8GAAEee9vtmKfZ3p8w" X="20" Width="501" Y="30" Height="1036"/>
+  <visual:Interaction xmi:id="_BZcu8mAAEee9vtmKfZ3p8w" base_Interaction="_BZcu8GAAEee9vtmKfZ3p8w" X="20" Width="621" Y="30" Height="1036"/>
   <visual:Lifeline xmi:id="_DD7TwWAAEee9vtmKfZ3p8w" base_Lifeline="_DD7TwGAAEee9vtmKfZ3p8w" X="20" Width="100" Y="69" Height="927"/>
   <LSC:Lifeline xmi:id="_DD7TwmAAEee9vtmKfZ3p8w" base_Lifeline="_DD7TwGAAEee9vtmKfZ3p8w" LscId="1499093897980" PolymorphicScope="Deep" Binding="Dynamic (One)"/>
   <LSC:Property xmi:id="_DD7TxWAAEee9vtmKfZ3p8w" base_Property="_DD7TxGAAEee9vtmKfZ3p8w"/>
@@ -358,7 +358,7 @@
   <LSC:MessageOccurrenceSpecification xmi:id="_IaXXiWABEee9vtmKfZ3p8w" base_MessageOccurrenceSpecification="_IaXXiGABEee9vtmKfZ3p8w"/>
   <LSC:Operation xmi:id="_IaX-kGABEee9vtmKfZ3p8w" base_Operation="_IaXXimABEee9vtmKfZ3p8w" ActionOnProperty="None"/>
   <LSC:Interaction xmi:id="_GlUE8GACEee9vtmKfZ3p8w" base_Interaction="_GlTd4GACEee9vtmKfZ3p8w" Mode="Universal" LscId="1499094780607" LSCCollaboration="_714YyF__Eee9vtmKfZ3p8w"/>
-  <visual:Interaction xmi:id="_GlUE8WACEee9vtmKfZ3p8w" base_Interaction="_GlTd4GACEee9vtmKfZ3p8w" X="541" Width="501" Y="30" Height="561"/>
+  <visual:Interaction xmi:id="_GlUE8WACEee9vtmKfZ3p8w" base_Interaction="_GlTd4GACEee9vtmKfZ3p8w" X="661" Width="501" Y="30" Height="561"/>
   <visual:Lifeline xmi:id="_V8seoWACEee9vtmKfZ3p8w" base_Lifeline="_V8seoGACEee9vtmKfZ3p8w" X="20" Width="100" Y="69" Height="402"/>
   <LSC:Lifeline xmi:id="_V8seomACEee9vtmKfZ3p8w" base_Lifeline="_V8seoGACEee9vtmKfZ3p8w" LscId="1499094883722" PolymorphicScope="Deep" Binding="Dynamic (One)"/>
   <visual:Lifeline xmi:id="_XXoLkWACEee9vtmKfZ3p8w" base_Lifeline="_XXoLkGACEee9vtmKfZ3p8w" X="140" Width="100" Y="69" Height="402"/>

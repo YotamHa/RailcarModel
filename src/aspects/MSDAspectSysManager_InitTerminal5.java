@@ -16,28 +16,37 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 
 	//Constants for instances, locations and variables
 	static final int SysManager_INST_sysManager = 0;
-	static final int Terminal_INST_terminal1 = 1;
-	static final int PlatformManager_INST_platformManager1 = 2;
-	static final int Entrance_INST_entrance1r = 3;
-	static final int Entrance_INST_entrance1l = 4;
-	static final int ExitsManager_INST_existsManager1 = 5;
-	static final int Exit_INST_exit1r = 6;
-	static final int Exit_INST_exit1l = 7;
+	static final int Terminal_INST_terminal5 = 1;
+	static final int PlatformManager_INST_platformManager5 = 2;
+	static final int Entrance_INST_entrance5r = 3;
+	static final int Entrance_INST_entrance5l = 4;
+	static final int ExitsManager_INST_exitsManager5 = 5;
+	static final int Exit_INST_exit5r = 6;
+	static final int Exit_INST_exit5l = 7;
 
-	static final int int_arg_int_exact_int_arg00 = 0;
-	static final int int_arg_int_exact_int_arg01 = 1;
-	static final int int_arg_int_exact_int_arg02 = 2;
-	static final int int_arg_int_exact_int_arg03 = 3;
-	static final int int_arg_int_exact_int_arg05 = 4;
-	static final int int_arg_int_exact_int_arg07 = 5;
-	static final int int_arg_int_exact_int_arg08 = 6;
-	static final int int_arg_int_exact_int_arg010 = 7;
-	static final int String_arg_String_exact_String_arg04 = 8;
-	static final int String_arg_String_exact_String_arg09 = 9;
-	static final int String_arg_String_exact_String_arg06 = 10;
-	static final int String_arg_String_exact_String_arg011 = 11;
+	static final int int_arg_int_exact_opaque_arg00 = 0;
+	static final int int_arg_int_exact_opaque_arg00Before = 1;
+	static final int int_arg_int_symbolic_var_ID = 2;
+	static final int int_arg_int_exact_opaque_arg01 = 3;
+	static final int int_arg_int_exact_opaque_arg01Before = 4;
+	static final int int_arg_int_exact_opaque_arg02 = 5;
+	static final int int_arg_int_exact_opaque_arg02Before = 6;
+	static final int int_arg_int_exact_opaque_arg03 = 7;
+	static final int int_arg_int_exact_opaque_arg03Before = 8;
+	static final int int_arg_int_exact_opaque_arg05 = 9;
+	static final int int_arg_int_exact_opaque_arg05Before = 10;
+	static final int int_arg_int_exact_opaque_arg07 = 11;
+	static final int int_arg_int_exact_opaque_arg07Before = 12;
+	static final int int_arg_int_exact_opaque_arg08 = 13;
+	static final int int_arg_int_exact_opaque_arg08Before = 14;
+	static final int int_arg_int_exact_opaque_arg010 = 15;
+	static final int int_arg_int_exact_opaque_arg010Before = 16;
+	static final int String_arg_String_exact_String_arg04 = 17;
+	static final int String_arg_String_exact_String_arg09 = 18;
+	static final int String_arg_String_exact_String_arg06 = 19;
+	static final int String_arg_String_exact_String_arg011 = 20;
 
-	static final int int_var_symbolic_minimalDistance = 12;
+	static final int int_var_symbolic_minimalDistance = 21;
 
 	private final String niceName = "SysManager_InitTerminal5";
 
@@ -52,9 +61,9 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 
 	private MSDAspectSysManager_InitTerminal5()
 	{
-		addAspectEvent(MSDMethods.SysManager_SysManager_initTerminals);
+		addAspectEvent(MSDMethods.SysManager_Terminal_initTerminal);
 		PlaygoCoordinator.getInstance().subscribe(this, 
-			"SysManager", "SysManager", "initTerminals");
+			"SysManager", "Terminal", "initTerminal");
 		addAspectEvent(MSDMethods.SysManager_Terminal_setLocation);
 		PlaygoCoordinator.getInstance().subscribe(this, 
 			"SysManager", "Terminal", "setLocation");
@@ -80,25 +89,25 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 		PlaygoCoordinator.getInstance().subscribe(this, 
 			"SysManager", "Exit", "setDirection");
 
-		addMinimalEvent(MSDMethods.SysManager_SysManager_initTerminals);
-		setHotCut(4,2,1,0,0,0,0,0);
-		setHotCut(5,2,1,1,0,0,0,0);
-		setHotCut(8,2,1,2,2,0,0,0);
-		setHotCut(3,2,0,0,0,0,0,0);
-		setHotCut(11,2,1,2,2,1,2,0);
-		setHotCut(6,2,1,2,0,0,0,0);
-		setHotCut(12,2,1,2,2,1,2,1);
-		setHotCut(1,0,0,0,0,0,0,0);
-		setHotCut(2,1,0,0,0,0,0,0);
-		setHotCut(9,2,1,2,2,1,0,0);
-		setHotCut(10,2,1,2,2,1,1,0);
-		setHotCut(7,2,1,2,1,0,0,0);
-		setLastCut(13,2,1,2,2,1,2,2);
+		addMinimalEvent(MSDMethods.SysManager_Terminal_initTerminal);
+		setHotCut(10,3,1,2,2,1,1,0);
+		setHotCut(3,3,0,0,0,0,0,0);
+		setHotCut(6,3,1,2,0,0,0,0);
+		setHotCut(2,2,0,0,0,0,0,0);
+		setHotCut(9,3,1,2,2,1,0,0);
+		setHotCut(11,3,1,2,2,1,2,0);
+		setHotCut(4,3,1,0,0,0,0,0);
+		setHotCut(7,3,1,2,1,0,0,0);
+		setHotCut(5,3,1,1,0,0,0,0);
+		setHotCut(8,3,1,2,2,0,0,0);
+		setHotCut(12,3,1,2,2,1,2,1);
+		setHotCut(1,1,0,0,0,0,0,0);
+		setLastCut(13,3,1,2,2,1,2,2);
 		numberOfLifeLines = 8;
 		numberOfInstances = 8;
-		numberOfVariables = 13;
+		numberOfVariables = 22;
 		numberOfTimeTags = 0;
-		interactionId = "1499083609440";
+		interactionId = "1499586852219";
 		setCutsExpressions();
 	}
 
@@ -107,6 +116,11 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 	{
 		switch (MSDm)
 		{
+			case MSDMethods.SysManager_Terminal_initTerminal:
+						activeMSD.setPrivateVariable(int_arg_int_symbolic_var_ID,args.get(0));
+
+				break;
+
 		}
 	}
 
@@ -124,14 +138,16 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 		boolean cutChanged=false;
 		switch (MSDm)
 		{
-			case MSDMethods.SysManager_SysManager_initTerminals:
+			case MSDMethods.SysManager_Terminal_initTerminal:
 				if(activeMSD.instancesEquals(SysManager_INST_sysManager,sourceObject)
-					&& activeMSD.instancesEquals(SysManager_INST_sysManager,targetObject))
+					&& activeMSD.instancesEquals(Terminal_INST_terminal5,targetObject)
+					&& activeMSD.symbolicVariableEquals(int_arg_int_symbolic_var_ID,args.get(0)))
 				{
 					unification=true;
 					if(activeMSD.isInCut(0,0,0,0,0,0,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(1,0,0,0,0,0,0,0);
+						activeMSD.setPrivateVariable(int_arg_int_symbolic_var_ID,args.get(0));
+						cutChanged=true; activeMSD.setCut(1,1,0,0,0,0,0,0);
 						return cutChanged;
 					}
 				}
@@ -141,24 +157,24 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 
 			case MSDMethods.SysManager_Entrance_setTerminalId:
 				if(activeMSD.instancesEquals(SysManager_INST_sysManager,sourceObject)
-					&& activeMSD.instancesEquals(Entrance_INST_entrance1r,targetObject)
-					&& activeMSD.variableEquals(int_arg_int_exact_int_arg03,args.get(0)))
+					&& activeMSD.instancesEquals(Entrance_INST_entrance5r,targetObject)
+					&& activeMSD.variableEquals(int_arg_int_exact_opaque_arg03Before,int_arg_int_exact_opaque_arg03,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(4,2,1,0,0,0,0,0))
+					if(activeMSD.isInCut(4,3,1,0,0,0,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(5,2,1,1,0,0,0,0);
+						cutChanged=true; activeMSD.setCut(5,3,1,1,0,0,0,0);
 						return cutChanged;
 					}
 				}
 				if(activeMSD.instancesEquals(SysManager_INST_sysManager,sourceObject)
-					&& activeMSD.instancesEquals(Entrance_INST_entrance1l,targetObject)
-					&& activeMSD.variableEquals(int_arg_int_exact_int_arg05,args.get(0)))
+					&& activeMSD.instancesEquals(Entrance_INST_entrance5l,targetObject)
+					&& activeMSD.variableEquals(int_arg_int_exact_opaque_arg05Before,int_arg_int_exact_opaque_arg05,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(6,2,1,2,0,0,0,0))
+					if(activeMSD.isInCut(6,3,1,2,0,0,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(7,2,1,2,1,0,0,0);
+						cutChanged=true; activeMSD.setCut(7,3,1,2,1,0,0,0);
 						return cutChanged;
 					}
 				}
@@ -168,24 +184,24 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 
 			case MSDMethods.SysManager_Entrance_setDirection:
 				if(activeMSD.instancesEquals(SysManager_INST_sysManager,sourceObject)
-					&& activeMSD.instancesEquals(Entrance_INST_entrance1r,targetObject)
+					&& activeMSD.instancesEquals(Entrance_INST_entrance5r,targetObject)
 					&& activeMSD.variableEquals(String_arg_String_exact_String_arg04,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(5,2,1,1,0,0,0,0))
+					if(activeMSD.isInCut(5,3,1,1,0,0,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(6,2,1,2,0,0,0,0);
+						cutChanged=true; activeMSD.setCut(6,3,1,2,0,0,0,0);
 						return cutChanged;
 					}
 				}
 				if(activeMSD.instancesEquals(SysManager_INST_sysManager,sourceObject)
-					&& activeMSD.instancesEquals(Entrance_INST_entrance1l,targetObject)
+					&& activeMSD.instancesEquals(Entrance_INST_entrance5l,targetObject)
 					&& activeMSD.variableEquals(String_arg_String_exact_String_arg06,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(7,2,1,2,1,0,0,0))
+					if(activeMSD.isInCut(7,3,1,2,1,0,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(8,2,1,2,2,0,0,0);
+						cutChanged=true; activeMSD.setCut(8,3,1,2,2,0,0,0);
 						return cutChanged;
 					}
 				}
@@ -195,13 +211,13 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 
 			case MSDMethods.SysManager_Terminal_setLocation:
 				if(activeMSD.instancesEquals(SysManager_INST_sysManager,sourceObject)
-					&& activeMSD.instancesEquals(Terminal_INST_terminal1,targetObject)
-					&& activeMSD.variableEquals(int_arg_int_exact_int_arg00,args.get(0)))
+					&& activeMSD.instancesEquals(Terminal_INST_terminal5,targetObject)
+					&& activeMSD.variableEquals(int_arg_int_exact_opaque_arg00Before,int_arg_int_exact_opaque_arg00,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(1,0,0,0,0,0,0,0))
+					if(activeMSD.isInCut(1,1,0,0,0,0,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(2,1,0,0,0,0,0,0);
+						cutChanged=true; activeMSD.setCut(2,2,0,0,0,0,0,0);
 						return cutChanged;
 					}
 				}
@@ -211,24 +227,24 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 
 			case MSDMethods.SysManager_Exit_setDirection:
 				if(activeMSD.instancesEquals(SysManager_INST_sysManager,sourceObject)
-					&& activeMSD.instancesEquals(Exit_INST_exit1r,targetObject)
+					&& activeMSD.instancesEquals(Exit_INST_exit5r,targetObject)
 					&& activeMSD.variableEquals(String_arg_String_exact_String_arg09,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(10,2,1,2,2,1,1,0))
+					if(activeMSD.isInCut(10,3,1,2,2,1,1,0))
 					{
-						cutChanged=true; activeMSD.setCut(11,2,1,2,2,1,2,0);
+						cutChanged=true; activeMSD.setCut(11,3,1,2,2,1,2,0);
 						return cutChanged;
 					}
 				}
 				if(activeMSD.instancesEquals(SysManager_INST_sysManager,sourceObject)
-					&& activeMSD.instancesEquals(Exit_INST_exit1l,targetObject)
+					&& activeMSD.instancesEquals(Exit_INST_exit5l,targetObject)
 					&& activeMSD.variableEquals(String_arg_String_exact_String_arg011,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(12,2,1,2,2,1,2,1))
+					if(activeMSD.isInCut(12,3,1,2,2,1,2,1))
 					{
-						cutChanged=true; activeMSD.setCut(13,2,1,2,2,1,2,2);
+						cutChanged=true; activeMSD.setCut(13,3,1,2,2,1,2,2);
 						break;
 					}
 				}
@@ -238,13 +254,13 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 
 			case MSDMethods.SysManager_ExitsManager_setID:
 				if(activeMSD.instancesEquals(SysManager_INST_sysManager,sourceObject)
-					&& activeMSD.instancesEquals(ExitsManager_INST_existsManager1,targetObject)
-					&& activeMSD.variableEquals(int_arg_int_exact_int_arg07,args.get(0)))
+					&& activeMSD.instancesEquals(ExitsManager_INST_exitsManager5,targetObject)
+					&& activeMSD.variableEquals(int_arg_int_exact_opaque_arg07Before,int_arg_int_exact_opaque_arg07,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(8,2,1,2,2,0,0,0))
+					if(activeMSD.isInCut(8,3,1,2,2,0,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(9,2,1,2,2,1,0,0);
+						cutChanged=true; activeMSD.setCut(9,3,1,2,2,1,0,0);
 						return cutChanged;
 					}
 				}
@@ -254,13 +270,13 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 
 			case MSDMethods.SysManager_Terminal_setID:
 				if(activeMSD.instancesEquals(SysManager_INST_sysManager,sourceObject)
-					&& activeMSD.instancesEquals(Terminal_INST_terminal1,targetObject)
-					&& activeMSD.variableEquals(int_arg_int_exact_int_arg01,args.get(0)))
+					&& activeMSD.instancesEquals(Terminal_INST_terminal5,targetObject)
+					&& activeMSD.variableEquals(int_arg_int_exact_opaque_arg01Before,int_arg_int_exact_opaque_arg01,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(2,1,0,0,0,0,0,0))
+					if(activeMSD.isInCut(2,2,0,0,0,0,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(3,2,0,0,0,0,0,0);
+						cutChanged=true; activeMSD.setCut(3,3,0,0,0,0,0,0);
 						return cutChanged;
 					}
 				}
@@ -270,13 +286,13 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 
 			case MSDMethods.SysManager_PlatformManager_setID:
 				if(activeMSD.instancesEquals(SysManager_INST_sysManager,sourceObject)
-					&& activeMSD.instancesEquals(PlatformManager_INST_platformManager1,targetObject)
-					&& activeMSD.variableEquals(int_arg_int_exact_int_arg02,args.get(0)))
+					&& activeMSD.instancesEquals(PlatformManager_INST_platformManager5,targetObject)
+					&& activeMSD.variableEquals(int_arg_int_exact_opaque_arg02Before,int_arg_int_exact_opaque_arg02,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(3,2,0,0,0,0,0,0))
+					if(activeMSD.isInCut(3,3,0,0,0,0,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(4,2,1,0,0,0,0,0);
+						cutChanged=true; activeMSD.setCut(4,3,1,0,0,0,0,0);
 						return cutChanged;
 					}
 				}
@@ -286,24 +302,24 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 
 			case MSDMethods.SysManager_Exit_setID:
 				if(activeMSD.instancesEquals(SysManager_INST_sysManager,sourceObject)
-					&& activeMSD.instancesEquals(Exit_INST_exit1r,targetObject)
-					&& activeMSD.variableEquals(int_arg_int_exact_int_arg08,args.get(0)))
+					&& activeMSD.instancesEquals(Exit_INST_exit5r,targetObject)
+					&& activeMSD.variableEquals(int_arg_int_exact_opaque_arg08Before,int_arg_int_exact_opaque_arg08,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(9,2,1,2,2,1,0,0))
+					if(activeMSD.isInCut(9,3,1,2,2,1,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(10,2,1,2,2,1,1,0);
+						cutChanged=true; activeMSD.setCut(10,3,1,2,2,1,1,0);
 						return cutChanged;
 					}
 				}
 				if(activeMSD.instancesEquals(SysManager_INST_sysManager,sourceObject)
-					&& activeMSD.instancesEquals(Exit_INST_exit1l,targetObject)
-					&& activeMSD.variableEquals(int_arg_int_exact_int_arg010,args.get(0)))
+					&& activeMSD.instancesEquals(Exit_INST_exit5l,targetObject)
+					&& activeMSD.variableEquals(int_arg_int_exact_opaque_arg010Before,int_arg_int_exact_opaque_arg010,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(11,2,1,2,2,1,2,0))
+					if(activeMSD.isInCut(11,3,1,2,2,1,2,0))
 					{
-						cutChanged=true; activeMSD.setCut(12,2,1,2,2,1,2,1);
+						cutChanged=true; activeMSD.setCut(12,3,1,2,2,1,2,1);
 						return cutChanged;
 					}
 				}
@@ -324,47 +340,17 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 	private boolean evaluateCondition(int conditionNumber,ActiveMSDAspect activeMSD)
 	{
 		SysManager sysManager = (SysManager)bindObjectByExpression(activeMSD,SysManager_INST_sysManager,null, true);;
-		Terminal terminal1 = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal1,null, true);;
-		PlatformManager platformManager1 = (PlatformManager)bindObjectByExpression(activeMSD,PlatformManager_INST_platformManager1,null, true);;
-		Entrance entrance1r = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance1r,null, true);;
-		Entrance entrance1l = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance1l,null, true);;
-		ExitsManager existsManager1 = (ExitsManager)bindObjectByExpression(activeMSD,ExitsManager_INST_existsManager1,null, true);;
-		Exit exit1r = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit1r,null, true);;
-		Exit exit1l = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit1l,null, true);;
-
-		int arg05 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg05)!=null){
-			arg05 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg05);
-		}
-
-		String arg011 = null;
-		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
-			arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
-		}
-
-		int arg03 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg03)!=null){
-			arg03 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg03);
-		}
-
-		int arg02 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg02)!=null){
-			arg02 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg02);
-		}
+		Terminal terminal5 = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal5,null, true);;
+		PlatformManager platformManager5 = (PlatformManager)bindObjectByExpression(activeMSD,PlatformManager_INST_platformManager5,null, true);;
+		Entrance entrance5r = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance5r,null, true);;
+		Entrance entrance5l = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance5l,null, true);;
+		ExitsManager exitsManager5 = (ExitsManager)bindObjectByExpression(activeMSD,ExitsManager_INST_exitsManager5,null, true);;
+		Exit exit5r = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit5r,null, true);;
+		Exit exit5l = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit5l,null, true);;
 
 		int arg08 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg08)!=null){
-			arg08 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg08);
-		}
-
-		int arg07 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg07)!=null){
-			arg07 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg07);
-		}
-
-		int arg010 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg010)!=null){
-			arg010 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg010);
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08)!=null){
+			arg08 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08);
 		}
 
 		String arg09 = null;
@@ -377,19 +363,54 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 			arg06 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06);
 		}
 
-		int arg01 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg01)!=null){
-			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg01);
-		}
-
 		String arg04 = null;
 		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04)!=null){
 			arg04 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04);
 		}
 
+		int arg010 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010)!=null){
+			arg010 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010);
+		}
+
+		int ID = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID)!=null){
+			ID = (int) activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID);
+		}
+
+		String arg011 = null;
+		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
+			arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
+		}
+
+		int arg03 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03)!=null){
+			arg03 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03);
+		}
+
+		int arg02 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02)!=null){
+			arg02 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02);
+		}
+
+		int arg01 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
+			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
+		}
+
 		int arg00 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg00)!=null){
-			arg00 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg00);
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00)!=null){
+			arg00 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00);
+		}
+
+		int arg07 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07)!=null){
+			arg07 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07);
+		}
+
+		int arg05 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05)!=null){
+			arg05 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05);
 		}
 
 		switch (conditionNumber)
@@ -402,47 +423,17 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 	private void evaluateForbiddenConditions(ActiveMSDAspect activeMSD)
 	{
 		SysManager sysManager = (SysManager)bindObjectByExpression(activeMSD,SysManager_INST_sysManager,null, true);;
-		Terminal terminal1 = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal1,null, true);;
-		PlatformManager platformManager1 = (PlatformManager)bindObjectByExpression(activeMSD,PlatformManager_INST_platformManager1,null, true);;
-		Entrance entrance1r = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance1r,null, true);;
-		Entrance entrance1l = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance1l,null, true);;
-		ExitsManager existsManager1 = (ExitsManager)bindObjectByExpression(activeMSD,ExitsManager_INST_existsManager1,null, true);;
-		Exit exit1r = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit1r,null, true);;
-		Exit exit1l = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit1l,null, true);;
-
-		int arg05 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg05)!=null){
-			arg05 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg05);
-		}
-
-		String arg011 = null;
-		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
-			arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
-		}
-
-		int arg03 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg03)!=null){
-			arg03 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg03);
-		}
-
-		int arg02 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg02)!=null){
-			arg02 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg02);
-		}
+		Terminal terminal5 = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal5,null, true);;
+		PlatformManager platformManager5 = (PlatformManager)bindObjectByExpression(activeMSD,PlatformManager_INST_platformManager5,null, true);;
+		Entrance entrance5r = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance5r,null, true);;
+		Entrance entrance5l = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance5l,null, true);;
+		ExitsManager exitsManager5 = (ExitsManager)bindObjectByExpression(activeMSD,ExitsManager_INST_exitsManager5,null, true);;
+		Exit exit5r = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit5r,null, true);;
+		Exit exit5l = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit5l,null, true);;
 
 		int arg08 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg08)!=null){
-			arg08 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg08);
-		}
-
-		int arg07 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg07)!=null){
-			arg07 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg07);
-		}
-
-		int arg010 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg010)!=null){
-			arg010 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg010);
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08)!=null){
+			arg08 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08);
 		}
 
 		String arg09 = null;
@@ -455,19 +446,54 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 			arg06 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06);
 		}
 
-		int arg01 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg01)!=null){
-			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg01);
-		}
-
 		String arg04 = null;
 		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04)!=null){
 			arg04 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04);
 		}
 
+		int arg010 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010)!=null){
+			arg010 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010);
+		}
+
+		int ID = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID)!=null){
+			ID = (int) activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID);
+		}
+
+		String arg011 = null;
+		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
+			arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
+		}
+
+		int arg03 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03)!=null){
+			arg03 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03);
+		}
+
+		int arg02 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02)!=null){
+			arg02 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02);
+		}
+
+		int arg01 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
+			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
+		}
+
 		int arg00 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg00)!=null){
-			arg00 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg00);
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00)!=null){
+			arg00 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00);
+		}
+
+		int arg07 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07)!=null){
+			arg07 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07);
+		}
+
+		int arg05 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05)!=null){
+			arg05 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05);
 		}
 
 	
@@ -483,55 +509,25 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 	protected void doBindings(ActiveMSDAspect activeMSD)
 	{
 		activeMSD.setLineInstance(SysManager_INST_sysManager,AppObjects.getObject("sysManager","SysManager"));
-		activeMSD.setLineInstance(Terminal_INST_terminal1,AppObjects.getObject("terminal1","Terminal"));
-		activeMSD.setLineInstance(PlatformManager_INST_platformManager1,AppObjects.getObject("platformManager1","PlatformManager"));
-		activeMSD.setLineInstance(Entrance_INST_entrance1r,AppObjects.getObject("entrance1r","Entrance"));
-		activeMSD.setLineInstance(Entrance_INST_entrance1l,AppObjects.getObject("entrance1l","Entrance"));
-		activeMSD.setLineInstance(ExitsManager_INST_existsManager1,AppObjects.getObject("existsManager1","ExitsManager"));
-		activeMSD.setLineInstance(Exit_INST_exit1r,AppObjects.getObject("exit1r","Exit"));
-		activeMSD.setLineInstance(Exit_INST_exit1l,AppObjects.getObject("exit1l","Exit"));
+		activeMSD.setLineInstance(Terminal_INST_terminal5,AppObjects.getObject("terminal5","Terminal"));
+		activeMSD.setLineInstance(PlatformManager_INST_platformManager5,AppObjects.getObject("platformManager5","PlatformManager"));
+		activeMSD.setLineInstance(Entrance_INST_entrance5r,AppObjects.getObject("entrance5r","Entrance"));
+		activeMSD.setLineInstance(Entrance_INST_entrance5l,AppObjects.getObject("entrance5l","Entrance"));
+		activeMSD.setLineInstance(ExitsManager_INST_exitsManager5,AppObjects.getObject("exitsManager5","ExitsManager"));
+		activeMSD.setLineInstance(Exit_INST_exit5r,AppObjects.getObject("exit5r","Exit"));
+		activeMSD.setLineInstance(Exit_INST_exit5l,AppObjects.getObject("exit5l","Exit"));
 		SysManager sysManager = (SysManager)bindObjectByExpression(activeMSD,SysManager_INST_sysManager, null, false );
-		Terminal terminal1 = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal1, null, false );
-		PlatformManager platformManager1 = (PlatformManager)bindObjectByExpression(activeMSD,PlatformManager_INST_platformManager1, null, false );
-		Entrance entrance1r = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance1r, null, false );
-		Entrance entrance1l = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance1l, null, false );
-		ExitsManager existsManager1 = (ExitsManager)bindObjectByExpression(activeMSD,ExitsManager_INST_existsManager1, null, false );
-		Exit exit1r = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit1r, null, false );
-		Exit exit1l = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit1l, null, false );
-
-		int arg05 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg05)!=null){
-			arg05 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg05);
-		}
-
-		String arg011 = null;
-		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
-			arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
-		}
-
-		int arg03 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg03)!=null){
-			arg03 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg03);
-		}
-
-		int arg02 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg02)!=null){
-			arg02 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg02);
-		}
+		Terminal terminal5 = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal5, null, false );
+		PlatformManager platformManager5 = (PlatformManager)bindObjectByExpression(activeMSD,PlatformManager_INST_platformManager5, null, false );
+		Entrance entrance5r = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance5r, null, false );
+		Entrance entrance5l = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance5l, null, false );
+		ExitsManager exitsManager5 = (ExitsManager)bindObjectByExpression(activeMSD,ExitsManager_INST_exitsManager5, null, false );
+		Exit exit5r = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit5r, null, false );
+		Exit exit5l = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit5l, null, false );
 
 		int arg08 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg08)!=null){
-			arg08 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg08);
-		}
-
-		int arg07 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg07)!=null){
-			arg07 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg07);
-		}
-
-		int arg010 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg010)!=null){
-			arg010 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg010);
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08)!=null){
+			arg08 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08);
 		}
 
 		String arg09 = null;
@@ -544,19 +540,54 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 			arg06 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06);
 		}
 
-		int arg01 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg01)!=null){
-			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg01);
-		}
-
 		String arg04 = null;
 		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04)!=null){
 			arg04 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04);
 		}
 
+		int arg010 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010)!=null){
+			arg010 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010);
+		}
+
+		int ID = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID)!=null){
+			ID = (int) activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID);
+		}
+
+		String arg011 = null;
+		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
+			arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
+		}
+
+		int arg03 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03)!=null){
+			arg03 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03);
+		}
+
+		int arg02 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02)!=null){
+			arg02 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02);
+		}
+
+		int arg01 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
+			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
+		}
+
 		int arg00 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg00)!=null){
-			arg00 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg00);
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00)!=null){
+			arg00 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00);
+		}
+
+		int arg07 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07)!=null){
+			arg07 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07);
+		}
+
+		int arg05 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05)!=null){
+			arg05 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05);
 		}
 		int minimalDistance = 0;
 		if(activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance)!=null){
@@ -564,28 +595,28 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 		} 
 
 		try{
-			activeMSD.setPrivateVariable(int_arg_int_exact_int_arg00, (int)0);
+			activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg00, (int)(ID-1)*500);
 		}catch(Exception e){}
 		try{
-			activeMSD.setPrivateVariable(int_arg_int_exact_int_arg01, (int)1);
+			activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg01, (int)ID);
 		}catch(Exception e){}
 		try{
-			activeMSD.setPrivateVariable(int_arg_int_exact_int_arg02, (int)1);
+			activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg02, (int)ID);
 		}catch(Exception e){}
 		try{
-			activeMSD.setPrivateVariable(int_arg_int_exact_int_arg03, (int)1);
+			activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg03, (int)ID);
 		}catch(Exception e){}
 		try{
-			activeMSD.setPrivateVariable(int_arg_int_exact_int_arg05, (int)1);
+			activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg05, (int)ID);
 		}catch(Exception e){}
 		try{
-			activeMSD.setPrivateVariable(int_arg_int_exact_int_arg07, (int)1);
+			activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg07, (int)ID);
 		}catch(Exception e){}
 		try{
-			activeMSD.setPrivateVariable(int_arg_int_exact_int_arg08, (int)1);
+			activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg08, (int)ID);
 		}catch(Exception e){}
 		try{
-			activeMSD.setPrivateVariable(int_arg_int_exact_int_arg010, (int)1);
+			activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg010, (int)ID);
 		}catch(Exception e){}
 		try{
 			activeMSD.setPrivateVariable(String_arg_String_exact_String_arg04, (String)"right");
@@ -670,58 +701,582 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 	{
 	}
 
-	private void after_SysManager_SysManager_initTerminals(Object _sysManagerSource ,Object _sysManager)
+	private void before_SysManager_Exit_setID(Object _sysManager ,Object _exit5l, ArrayList<Object> args)
 	{
-		changeCutState(MSDMethods.SysManager_SysManager_initTerminals,
-					_sysManager,_sysManager,null);
-	}
+				for(ActiveMSDAspect activeMSD:getActiveMSDArray()){
+			int minimalDistance = 0;
+			if(activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance)!=null){
+				minimalDistance = (Integer) activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance);
+			} 
+	
+			SysManager sysManager = (SysManager) activeMSD.getLineInstance(SysManager_INST_sysManager);
+			Terminal terminal5 = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal5);
+			PlatformManager platformManager5 = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager5);
+			Entrance entrance5r = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance5r);
+			Entrance entrance5l = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance5l);
+			ExitsManager exitsManager5 = (ExitsManager) activeMSD.getLineInstance(ExitsManager_INST_exitsManager5);
+			Exit exit5r = (Exit) activeMSD.getLineInstance(Exit_INST_exit5r);
+			Exit exit5l = (Exit) activeMSD.getLineInstance(Exit_INST_exit5l);
 
-	private void after_SysManager_Terminal_setLocation(Object _sysManager ,Object _terminal1, ArrayList<Object> args)
-	{
-		changeCutState(MSDMethods.SysManager_Terminal_setLocation,
-					_sysManager,_terminal1,args);
+			int arg08 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08)!=null){
+				arg08 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08);
+			}
+	
+			String arg09 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg09)!=null){
+				arg09 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg09);
+			}
+	
+			String arg06 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06)!=null){
+				arg06 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06);
+			}
+	
+			String arg04 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04)!=null){
+				arg04 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04);
+			}
+	
+			int arg010 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010)!=null){
+				arg010 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010);
+			}
+	
+			int ID = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID)!=null){
+				ID = (int) activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID);
+			}
+	
+			String arg011 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
+				arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
+			}
+	
+			int arg03 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03)!=null){
+				arg03 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03);
+			}
+	
+			int arg02 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02)!=null){
+				arg02 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02);
+			}
+	
+			int arg01 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
+				arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
+			}
+	
+			int arg00 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00)!=null){
+				arg00 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00);
+			}
+	
+			int arg07 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07)!=null){
+				arg07 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07);
+			}
+	
+			int arg05 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05)!=null){
+				arg05 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05);
+			}
+	
+			try{
+				activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg08Before, (int)ID);
+				activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg010Before, (int)ID);
+			}catch(Exception e){}
+		}
 	}
-
-	private void after_SysManager_Terminal_setID(Object _sysManager ,Object _terminal1, ArrayList<Object> args)
-	{
-		changeCutState(MSDMethods.SysManager_Terminal_setID,
-					_sysManager,_terminal1,args);
-	}
-
-	private void after_SysManager_PlatformManager_setID(Object _sysManager ,Object _platformManager1, ArrayList<Object> args)
-	{
-		changeCutState(MSDMethods.SysManager_PlatformManager_setID,
-					_sysManager,_platformManager1,args);
-	}
-
-	private void after_SysManager_Entrance_setTerminalId(Object _sysManager ,Object _entrance1r, ArrayList<Object> args)
-	{
-		changeCutState(MSDMethods.SysManager_Entrance_setTerminalId,
-					_sysManager,_entrance1r,args);
-	}
-
-	private void after_SysManager_Entrance_setDirection(Object _sysManager ,Object _entrance1r, ArrayList<Object> args)
-	{
-		changeCutState(MSDMethods.SysManager_Entrance_setDirection,
-					_sysManager,_entrance1r,args);
-	}
-
-	private void after_SysManager_ExitsManager_setID(Object _sysManager ,Object _existsManager1, ArrayList<Object> args)
-	{
-		changeCutState(MSDMethods.SysManager_ExitsManager_setID,
-					_sysManager,_existsManager1,args);
-	}
-
-	private void after_SysManager_Exit_setID(Object _sysManager ,Object _exit1r, ArrayList<Object> args)
+	private void after_SysManager_Exit_setID(Object _sysManager ,Object _exit5l, ArrayList<Object> args)
 	{
 		changeCutState(MSDMethods.SysManager_Exit_setID,
-					_sysManager,_exit1r,args);
+					_sysManager,_exit5l,args);
 	}
 
-	private void after_SysManager_Exit_setDirection(Object _sysManager ,Object _exit1r, ArrayList<Object> args)
+	private void before_SysManager_ExitsManager_setID(Object _sysManager ,Object _exitsManager5, ArrayList<Object> args)
+	{
+				for(ActiveMSDAspect activeMSD:getActiveMSDArray()){
+			int minimalDistance = 0;
+			if(activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance)!=null){
+				minimalDistance = (Integer) activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance);
+			} 
+	
+			SysManager sysManager = (SysManager) activeMSD.getLineInstance(SysManager_INST_sysManager);
+			Terminal terminal5 = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal5);
+			PlatformManager platformManager5 = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager5);
+			Entrance entrance5r = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance5r);
+			Entrance entrance5l = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance5l);
+			ExitsManager exitsManager5 = (ExitsManager) activeMSD.getLineInstance(ExitsManager_INST_exitsManager5);
+			Exit exit5r = (Exit) activeMSD.getLineInstance(Exit_INST_exit5r);
+			Exit exit5l = (Exit) activeMSD.getLineInstance(Exit_INST_exit5l);
+
+			int arg08 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08)!=null){
+				arg08 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08);
+			}
+	
+			String arg09 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg09)!=null){
+				arg09 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg09);
+			}
+	
+			String arg06 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06)!=null){
+				arg06 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06);
+			}
+	
+			String arg04 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04)!=null){
+				arg04 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04);
+			}
+	
+			int arg010 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010)!=null){
+				arg010 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010);
+			}
+	
+			int ID = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID)!=null){
+				ID = (int) activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID);
+			}
+	
+			String arg011 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
+				arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
+			}
+	
+			int arg03 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03)!=null){
+				arg03 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03);
+			}
+	
+			int arg02 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02)!=null){
+				arg02 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02);
+			}
+	
+			int arg01 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
+				arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
+			}
+	
+			int arg00 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00)!=null){
+				arg00 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00);
+			}
+	
+			int arg07 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07)!=null){
+				arg07 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07);
+			}
+	
+			int arg05 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05)!=null){
+				arg05 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05);
+			}
+	
+			try{
+				activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg07Before, (int)ID);
+			}catch(Exception e){}
+		}
+	}
+	private void after_SysManager_ExitsManager_setID(Object _sysManager ,Object _exitsManager5, ArrayList<Object> args)
+	{
+		changeCutState(MSDMethods.SysManager_ExitsManager_setID,
+					_sysManager,_exitsManager5,args);
+	}
+
+	private void before_SysManager_Entrance_setTerminalId(Object _sysManager ,Object _entrance5l, ArrayList<Object> args)
+	{
+				for(ActiveMSDAspect activeMSD:getActiveMSDArray()){
+			int minimalDistance = 0;
+			if(activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance)!=null){
+				minimalDistance = (Integer) activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance);
+			} 
+	
+			SysManager sysManager = (SysManager) activeMSD.getLineInstance(SysManager_INST_sysManager);
+			Terminal terminal5 = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal5);
+			PlatformManager platformManager5 = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager5);
+			Entrance entrance5r = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance5r);
+			Entrance entrance5l = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance5l);
+			ExitsManager exitsManager5 = (ExitsManager) activeMSD.getLineInstance(ExitsManager_INST_exitsManager5);
+			Exit exit5r = (Exit) activeMSD.getLineInstance(Exit_INST_exit5r);
+			Exit exit5l = (Exit) activeMSD.getLineInstance(Exit_INST_exit5l);
+
+			int arg08 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08)!=null){
+				arg08 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08);
+			}
+	
+			String arg09 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg09)!=null){
+				arg09 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg09);
+			}
+	
+			String arg06 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06)!=null){
+				arg06 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06);
+			}
+	
+			String arg04 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04)!=null){
+				arg04 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04);
+			}
+	
+			int arg010 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010)!=null){
+				arg010 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010);
+			}
+	
+			int ID = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID)!=null){
+				ID = (int) activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID);
+			}
+	
+			String arg011 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
+				arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
+			}
+	
+			int arg03 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03)!=null){
+				arg03 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03);
+			}
+	
+			int arg02 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02)!=null){
+				arg02 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02);
+			}
+	
+			int arg01 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
+				arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
+			}
+	
+			int arg00 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00)!=null){
+				arg00 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00);
+			}
+	
+			int arg07 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07)!=null){
+				arg07 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07);
+			}
+	
+			int arg05 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05)!=null){
+				arg05 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05);
+			}
+	
+			try{
+				activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg03Before, (int)ID);
+				activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg05Before, (int)ID);
+			}catch(Exception e){}
+		}
+	}
+	private void after_SysManager_Entrance_setTerminalId(Object _sysManager ,Object _entrance5l, ArrayList<Object> args)
+	{
+		changeCutState(MSDMethods.SysManager_Entrance_setTerminalId,
+					_sysManager,_entrance5l,args);
+	}
+
+	private void before_SysManager_PlatformManager_setID(Object _sysManager ,Object _platformManager5, ArrayList<Object> args)
+	{
+				for(ActiveMSDAspect activeMSD:getActiveMSDArray()){
+			int minimalDistance = 0;
+			if(activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance)!=null){
+				minimalDistance = (Integer) activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance);
+			} 
+	
+			SysManager sysManager = (SysManager) activeMSD.getLineInstance(SysManager_INST_sysManager);
+			Terminal terminal5 = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal5);
+			PlatformManager platformManager5 = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager5);
+			Entrance entrance5r = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance5r);
+			Entrance entrance5l = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance5l);
+			ExitsManager exitsManager5 = (ExitsManager) activeMSD.getLineInstance(ExitsManager_INST_exitsManager5);
+			Exit exit5r = (Exit) activeMSD.getLineInstance(Exit_INST_exit5r);
+			Exit exit5l = (Exit) activeMSD.getLineInstance(Exit_INST_exit5l);
+
+			int arg08 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08)!=null){
+				arg08 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08);
+			}
+	
+			String arg09 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg09)!=null){
+				arg09 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg09);
+			}
+	
+			String arg06 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06)!=null){
+				arg06 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06);
+			}
+	
+			String arg04 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04)!=null){
+				arg04 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04);
+			}
+	
+			int arg010 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010)!=null){
+				arg010 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010);
+			}
+	
+			int ID = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID)!=null){
+				ID = (int) activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID);
+			}
+	
+			String arg011 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
+				arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
+			}
+	
+			int arg03 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03)!=null){
+				arg03 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03);
+			}
+	
+			int arg02 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02)!=null){
+				arg02 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02);
+			}
+	
+			int arg01 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
+				arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
+			}
+	
+			int arg00 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00)!=null){
+				arg00 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00);
+			}
+	
+			int arg07 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07)!=null){
+				arg07 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07);
+			}
+	
+			int arg05 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05)!=null){
+				arg05 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05);
+			}
+	
+			try{
+				activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg02Before, (int)ID);
+			}catch(Exception e){}
+		}
+	}
+	private void after_SysManager_PlatformManager_setID(Object _sysManager ,Object _platformManager5, ArrayList<Object> args)
+	{
+		changeCutState(MSDMethods.SysManager_PlatformManager_setID,
+					_sysManager,_platformManager5,args);
+	}
+
+	private void before_SysManager_Terminal_setID(Object _sysManager ,Object _terminal5, ArrayList<Object> args)
+	{
+				for(ActiveMSDAspect activeMSD:getActiveMSDArray()){
+			int minimalDistance = 0;
+			if(activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance)!=null){
+				minimalDistance = (Integer) activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance);
+			} 
+	
+			SysManager sysManager = (SysManager) activeMSD.getLineInstance(SysManager_INST_sysManager);
+			Terminal terminal5 = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal5);
+			PlatformManager platformManager5 = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager5);
+			Entrance entrance5r = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance5r);
+			Entrance entrance5l = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance5l);
+			ExitsManager exitsManager5 = (ExitsManager) activeMSD.getLineInstance(ExitsManager_INST_exitsManager5);
+			Exit exit5r = (Exit) activeMSD.getLineInstance(Exit_INST_exit5r);
+			Exit exit5l = (Exit) activeMSD.getLineInstance(Exit_INST_exit5l);
+
+			int arg08 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08)!=null){
+				arg08 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08);
+			}
+	
+			String arg09 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg09)!=null){
+				arg09 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg09);
+			}
+	
+			String arg06 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06)!=null){
+				arg06 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06);
+			}
+	
+			String arg04 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04)!=null){
+				arg04 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04);
+			}
+	
+			int arg010 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010)!=null){
+				arg010 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010);
+			}
+	
+			int ID = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID)!=null){
+				ID = (int) activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID);
+			}
+	
+			String arg011 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
+				arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
+			}
+	
+			int arg03 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03)!=null){
+				arg03 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03);
+			}
+	
+			int arg02 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02)!=null){
+				arg02 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02);
+			}
+	
+			int arg01 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
+				arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
+			}
+	
+			int arg00 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00)!=null){
+				arg00 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00);
+			}
+	
+			int arg07 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07)!=null){
+				arg07 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07);
+			}
+	
+			int arg05 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05)!=null){
+				arg05 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05);
+			}
+	
+			try{
+				activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg01Before, (int)ID);
+			}catch(Exception e){}
+		}
+	}
+	private void after_SysManager_Terminal_setID(Object _sysManager ,Object _terminal5, ArrayList<Object> args)
+	{
+		changeCutState(MSDMethods.SysManager_Terminal_setID,
+					_sysManager,_terminal5,args);
+	}
+
+	private void before_SysManager_Terminal_setLocation(Object _sysManager ,Object _terminal5, ArrayList<Object> args)
+	{
+				for(ActiveMSDAspect activeMSD:getActiveMSDArray()){
+			int minimalDistance = 0;
+			if(activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance)!=null){
+				minimalDistance = (Integer) activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance);
+			} 
+	
+			SysManager sysManager = (SysManager) activeMSD.getLineInstance(SysManager_INST_sysManager);
+			Terminal terminal5 = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal5);
+			PlatformManager platformManager5 = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager5);
+			Entrance entrance5r = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance5r);
+			Entrance entrance5l = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance5l);
+			ExitsManager exitsManager5 = (ExitsManager) activeMSD.getLineInstance(ExitsManager_INST_exitsManager5);
+			Exit exit5r = (Exit) activeMSD.getLineInstance(Exit_INST_exit5r);
+			Exit exit5l = (Exit) activeMSD.getLineInstance(Exit_INST_exit5l);
+
+			int arg08 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08)!=null){
+				arg08 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08);
+			}
+	
+			String arg09 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg09)!=null){
+				arg09 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg09);
+			}
+	
+			String arg06 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06)!=null){
+				arg06 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06);
+			}
+	
+			String arg04 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04)!=null){
+				arg04 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04);
+			}
+	
+			int arg010 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010)!=null){
+				arg010 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010);
+			}
+	
+			int ID = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID)!=null){
+				ID = (int) activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID);
+			}
+	
+			String arg011 = null;
+			if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
+				arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
+			}
+	
+			int arg03 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03)!=null){
+				arg03 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03);
+			}
+	
+			int arg02 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02)!=null){
+				arg02 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02);
+			}
+	
+			int arg01 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
+				arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
+			}
+	
+			int arg00 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00)!=null){
+				arg00 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00);
+			}
+	
+			int arg07 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07)!=null){
+				arg07 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07);
+			}
+	
+			int arg05 = 0;
+			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05)!=null){
+				arg05 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05);
+			}
+	
+			try{
+				activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg00Before, (int)(ID-1)*500);
+			}catch(Exception e){}
+		}
+	}
+	private void after_SysManager_Terminal_setLocation(Object _sysManager ,Object _terminal5, ArrayList<Object> args)
+	{
+		changeCutState(MSDMethods.SysManager_Terminal_setLocation,
+					_sysManager,_terminal5,args);
+	}
+
+	private void after_SysManager_Terminal_initTerminal(Object _sysManager ,Object _terminal5, ArrayList<Object> args)
+	{
+		changeCutState(MSDMethods.SysManager_Terminal_initTerminal,
+					_sysManager,_terminal5,args);
+	}
+
+	private void after_SysManager_Entrance_setDirection(Object _sysManager ,Object _entrance5r, ArrayList<Object> args)
+	{
+		changeCutState(MSDMethods.SysManager_Entrance_setDirection,
+					_sysManager,_entrance5r,args);
+	}
+
+	private void after_SysManager_Exit_setDirection(Object _sysManager ,Object _exit5r, ArrayList<Object> args)
 	{
 		changeCutState(MSDMethods.SysManager_Exit_setDirection,
-					_sysManager,_exit1r,args);
+					_sysManager,_exit5r,args);
 	}
 
 	@Override
@@ -729,36 +1284,36 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 		Object target, String tgtClassName, String method, 
 		ArrayList<String> argTypes, ArrayList<Object> argValues)
 	{
-		if(srcClassName.equals("SysManager") && tgtClassName.equals("SysManager") && method.equals("initTerminals")){
-			after_SysManager_SysManager_initTerminals(source, target);
-			return;
-		}
-		if(srcClassName.equals("SysManager") && tgtClassName.equals("Terminal") && method.equals("setLocation")){
-			after_SysManager_Terminal_setLocation(source, target, argValues);
-			return;
-		}
-		if(srcClassName.equals("SysManager") && tgtClassName.equals("Terminal") && method.equals("setID")){
-			after_SysManager_Terminal_setID(source, target, argValues);
-			return;
-		}
-		if(srcClassName.equals("SysManager") && tgtClassName.equals("PlatformManager") && method.equals("setID")){
-			after_SysManager_PlatformManager_setID(source, target, argValues);
-			return;
-		}
-		if(srcClassName.equals("SysManager") && tgtClassName.equals("Entrance") && method.equals("setTerminalId")){
-			after_SysManager_Entrance_setTerminalId(source, target, argValues);
-			return;
-		}
-		if(srcClassName.equals("SysManager") && tgtClassName.equals("Entrance") && method.equals("setDirection")){
-			after_SysManager_Entrance_setDirection(source, target, argValues);
+		if(srcClassName.equals("SysManager") && tgtClassName.equals("Exit") && method.equals("setID")){
+			after_SysManager_Exit_setID(source, target, argValues);
 			return;
 		}
 		if(srcClassName.equals("SysManager") && tgtClassName.equals("ExitsManager") && method.equals("setID")){
 			after_SysManager_ExitsManager_setID(source, target, argValues);
 			return;
 		}
-		if(srcClassName.equals("SysManager") && tgtClassName.equals("Exit") && method.equals("setID")){
-			after_SysManager_Exit_setID(source, target, argValues);
+		if(srcClassName.equals("SysManager") && tgtClassName.equals("Entrance") && method.equals("setTerminalId")){
+			after_SysManager_Entrance_setTerminalId(source, target, argValues);
+			return;
+		}
+		if(srcClassName.equals("SysManager") && tgtClassName.equals("PlatformManager") && method.equals("setID")){
+			after_SysManager_PlatformManager_setID(source, target, argValues);
+			return;
+		}
+		if(srcClassName.equals("SysManager") && tgtClassName.equals("Terminal") && method.equals("setID")){
+			after_SysManager_Terminal_setID(source, target, argValues);
+			return;
+		}
+		if(srcClassName.equals("SysManager") && tgtClassName.equals("Terminal") && method.equals("setLocation")){
+			after_SysManager_Terminal_setLocation(source, target, argValues);
+			return;
+		}
+		if(srcClassName.equals("SysManager") && tgtClassName.equals("Terminal") && method.equals("initTerminal")){
+			after_SysManager_Terminal_initTerminal(source, target, argValues);
+			return;
+		}
+		if(srcClassName.equals("SysManager") && tgtClassName.equals("Entrance") && method.equals("setDirection")){
+			after_SysManager_Entrance_setDirection(source, target, argValues);
 			return;
 		}
 		if(srcClassName.equals("SysManager") && tgtClassName.equals("Exit") && method.equals("setDirection")){
@@ -772,6 +1327,30 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 		Object target, String tgtClassName, String method, 
 		ArrayList<String> argTypes, ArrayList<Object> argValues)
 	{
+		if(srcClassName.equals("SysManager") && tgtClassName.equals("Exit") && method.equals("setID")){
+			before_SysManager_Exit_setID(source, target, argValues);
+			return;
+		}
+		if(srcClassName.equals("SysManager") && tgtClassName.equals("ExitsManager") && method.equals("setID")){
+			before_SysManager_ExitsManager_setID(source, target, argValues);
+			return;
+		}
+		if(srcClassName.equals("SysManager") && tgtClassName.equals("Entrance") && method.equals("setTerminalId")){
+			before_SysManager_Entrance_setTerminalId(source, target, argValues);
+			return;
+		}
+		if(srcClassName.equals("SysManager") && tgtClassName.equals("PlatformManager") && method.equals("setID")){
+			before_SysManager_PlatformManager_setID(source, target, argValues);
+			return;
+		}
+		if(srcClassName.equals("SysManager") && tgtClassName.equals("Terminal") && method.equals("setID")){
+			before_SysManager_Terminal_setID(source, target, argValues);
+			return;
+		}
+		if(srcClassName.equals("SysManager") && tgtClassName.equals("Terminal") && method.equals("setLocation")){
+			before_SysManager_Terminal_setLocation(source, target, argValues);
+			return;
+		}
 	}
 
 	@Override
@@ -795,47 +1374,17 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 			MSDMethodSet CV,MSDMethodSet HV,ActiveMSDAspect activeMSD)
 	{
 		SysManager sysManager = (SysManager)bindObjectByExpression(activeMSD,SysManager_INST_sysManager,null, true);;
-		Terminal terminal1 = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal1,null, true);;
-		PlatformManager platformManager1 = (PlatformManager)bindObjectByExpression(activeMSD,PlatformManager_INST_platformManager1,null, true);;
-		Entrance entrance1r = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance1r,null, true);;
-		Entrance entrance1l = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance1l,null, true);;
-		ExitsManager existsManager1 = (ExitsManager)bindObjectByExpression(activeMSD,ExitsManager_INST_existsManager1,null, true);;
-		Exit exit1r = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit1r,null, true);;
-		Exit exit1l = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit1l,null, true);;
+		Terminal terminal5 = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal5,null, true);;
+		PlatformManager platformManager5 = (PlatformManager)bindObjectByExpression(activeMSD,PlatformManager_INST_platformManager5,null, true);;
+		Entrance entrance5r = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance5r,null, true);;
+		Entrance entrance5l = (Entrance)bindObjectByExpression(activeMSD,Entrance_INST_entrance5l,null, true);;
+		ExitsManager exitsManager5 = (ExitsManager)bindObjectByExpression(activeMSD,ExitsManager_INST_exitsManager5,null, true);;
+		Exit exit5r = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit5r,null, true);;
+		Exit exit5l = (Exit)bindObjectByExpression(activeMSD,Exit_INST_exit5l,null, true);;
 
-		Integer VAR_int_exact_int_arg05 = null;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg05)!=null){
-			VAR_int_exact_int_arg05 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg05);
-		}
-
-		String VAR_String_exact_String_arg011 = null;
-		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
-			VAR_String_exact_String_arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
-		}
-
-		Integer VAR_int_exact_int_arg03 = null;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg03)!=null){
-			VAR_int_exact_int_arg03 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg03);
-		}
-
-		Integer VAR_int_exact_int_arg02 = null;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg02)!=null){
-			VAR_int_exact_int_arg02 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg02);
-		}
-
-		Integer VAR_int_exact_int_arg08 = null;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg08)!=null){
-			VAR_int_exact_int_arg08 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg08);
-		}
-
-		Integer VAR_int_exact_int_arg07 = null;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg07)!=null){
-			VAR_int_exact_int_arg07 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg07);
-		}
-
-		Integer VAR_int_exact_int_arg010 = null;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg010)!=null){
-			VAR_int_exact_int_arg010 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg010);
+		Integer VAR_int_exact_opaque_arg08 = null;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08)!=null){
+			VAR_int_exact_opaque_arg08 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08);
 		}
 
 		String VAR_String_exact_String_arg09 = null;
@@ -848,168 +1397,204 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 			VAR_String_exact_String_arg06 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06);
 		}
 
-		Integer VAR_int_exact_int_arg01 = null;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg01)!=null){
-			VAR_int_exact_int_arg01 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg01);
-		}
-
 		String VAR_String_exact_String_arg04 = null;
 		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04)!=null){
 			VAR_String_exact_String_arg04 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04);
 		}
 
-		Integer VAR_int_exact_int_arg00 = null;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg00)!=null){
-			VAR_int_exact_int_arg00 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg00);
+		Integer VAR_int_exact_opaque_arg010 = null;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010)!=null){
+			VAR_int_exact_opaque_arg010 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010);
 		}
 
-		MSDMethod MSDm75 = new MSDMethod(sysManager,sysManager,
-			MSDMethods.SysManager_SysManager_initTerminals,null,"SysManager:SysManager:initTerminals",niceName,activeMSD.getGlobalId());// initTerminals() Monitored
-		ArrayList<Object>  args76 = getArgsList(VAR_int_exact_int_arg03);
-		MSDMethod MSDm76 = new MSDMethod(sysManager,entrance1r,
-			MSDMethods.SysManager_Entrance_setTerminalId,args76,"SysManager:Entrance:setTerminalId",niceName,activeMSD.getGlobalId());// setTerminalId() Execute
-		ArrayList<Object>  args77 = getArgsList(VAR_int_exact_int_arg05);
-		MSDMethod MSDm77 = new MSDMethod(sysManager,entrance1l,
-			MSDMethods.SysManager_Entrance_setTerminalId,args77,"SysManager:Entrance:setTerminalId",niceName,activeMSD.getGlobalId());// setTerminalId() Execute
-		ArrayList<Object>  args78 = getArgsList(VAR_String_exact_String_arg04);
-		MSDMethod MSDm78 = new MSDMethod(sysManager,entrance1r,
-			MSDMethods.SysManager_Entrance_setDirection,args78,"SysManager:Entrance:setDirection",niceName,activeMSD.getGlobalId());// setDirection() Execute
-		ArrayList<Object>  args79 = getArgsList(VAR_String_exact_String_arg06);
-		MSDMethod MSDm79 = new MSDMethod(sysManager,entrance1l,
-			MSDMethods.SysManager_Entrance_setDirection,args79,"SysManager:Entrance:setDirection",niceName,activeMSD.getGlobalId());// setDirection() Execute
-		ArrayList<Object>  args80 = getArgsList(VAR_int_exact_int_arg00);
-		MSDMethod MSDm80 = new MSDMethod(sysManager,terminal1,
-			MSDMethods.SysManager_Terminal_setLocation,args80,"SysManager:Terminal:setLocation",niceName,activeMSD.getGlobalId());// setLocation() Execute
-		ArrayList<Object>  args81 = getArgsList(VAR_String_exact_String_arg09);
-		MSDMethod MSDm81 = new MSDMethod(sysManager,exit1r,
-			MSDMethods.SysManager_Exit_setDirection,args81,"SysManager:Exit:setDirection",niceName,activeMSD.getGlobalId());// setDirection() Execute
-		ArrayList<Object>  args82 = getArgsList(VAR_String_exact_String_arg011);
-		MSDMethod MSDm82 = new MSDMethod(sysManager,exit1l,
-			MSDMethods.SysManager_Exit_setDirection,args82,"SysManager:Exit:setDirection",niceName,activeMSD.getGlobalId());// setDirection() Execute
-		ArrayList<Object>  args83 = getArgsList(VAR_int_exact_int_arg07);
-		MSDMethod MSDm83 = new MSDMethod(sysManager,existsManager1,
-			MSDMethods.SysManager_ExitsManager_setID,args83,"SysManager:ExitsManager:setID",niceName,activeMSD.getGlobalId());// setID() Execute
-		ArrayList<Object>  args84 = getArgsList(VAR_int_exact_int_arg01);
-		MSDMethod MSDm84 = new MSDMethod(sysManager,terminal1,
-			MSDMethods.SysManager_Terminal_setID,args84,"SysManager:Terminal:setID",niceName,activeMSD.getGlobalId());// setID() Execute
-		ArrayList<Object>  args85 = getArgsList(VAR_int_exact_int_arg02);
-		MSDMethod MSDm85 = new MSDMethod(sysManager,platformManager1,
-			MSDMethods.SysManager_PlatformManager_setID,args85,"SysManager:PlatformManager:setID",niceName,activeMSD.getGlobalId());// setID() Execute
-		ArrayList<Object>  args86 = getArgsList(VAR_int_exact_int_arg08);
-		MSDMethod MSDm86 = new MSDMethod(sysManager,exit1r,
-			MSDMethods.SysManager_Exit_setID,args86,"SysManager:Exit:setID",niceName,activeMSD.getGlobalId());// setID() Execute
-		ArrayList<Object>  args87 = getArgsList(VAR_int_exact_int_arg010);
-		MSDMethod MSDm87 = new MSDMethod(sysManager,exit1l,
-			MSDMethods.SysManager_Exit_setID,args87,"SysManager:Exit:setID",niceName,activeMSD.getGlobalId());// setID() Execute
+		Integer VAR_int_symbolic_var_ID = null;
+		if(activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID)!=null){
+			VAR_int_symbolic_var_ID = (Integer) activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID);
+		}
+
+		String VAR_String_exact_String_arg011 = null;
+		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
+			VAR_String_exact_String_arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
+		}
+
+		Integer VAR_int_exact_opaque_arg03 = null;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03)!=null){
+			VAR_int_exact_opaque_arg03 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03);
+		}
+
+		Integer VAR_int_exact_opaque_arg02 = null;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02)!=null){
+			VAR_int_exact_opaque_arg02 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02);
+		}
+
+		Integer VAR_int_exact_opaque_arg01 = null;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
+			VAR_int_exact_opaque_arg01 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
+		}
+
+		Integer VAR_int_exact_opaque_arg00 = null;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00)!=null){
+			VAR_int_exact_opaque_arg00 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00);
+		}
+
+		Integer VAR_int_exact_opaque_arg07 = null;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07)!=null){
+			VAR_int_exact_opaque_arg07 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07);
+		}
+
+		Integer VAR_int_exact_opaque_arg05 = null;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05)!=null){
+			VAR_int_exact_opaque_arg05 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05);
+		}
+
+		ArrayList<Object>  args80 = getArgsList(VAR_int_symbolic_var_ID);
+		MSDMethod MSDm80 = new MSDMethod(sysManager,terminal5,
+			MSDMethods.SysManager_Terminal_initTerminal,args80,"SysManager:Terminal:initTerminal",niceName,activeMSD.getGlobalId());// initTerminal() Monitored
+		ArrayList<Object>  args81 = getArgsList(VAR_int_exact_opaque_arg03);
+		MSDMethod MSDm81 = new MSDMethod(sysManager,entrance5r,
+			MSDMethods.SysManager_Entrance_setTerminalId,args81,"SysManager:Entrance:setTerminalId",niceName,activeMSD.getGlobalId());// setTerminalId() Execute
+		ArrayList<Object>  args82 = getArgsList(VAR_int_exact_opaque_arg05);
+		MSDMethod MSDm82 = new MSDMethod(sysManager,entrance5l,
+			MSDMethods.SysManager_Entrance_setTerminalId,args82,"SysManager:Entrance:setTerminalId",niceName,activeMSD.getGlobalId());// setTerminalId() Execute
+		ArrayList<Object>  args83 = getArgsList(VAR_String_exact_String_arg04);
+		MSDMethod MSDm83 = new MSDMethod(sysManager,entrance5r,
+			MSDMethods.SysManager_Entrance_setDirection,args83,"SysManager:Entrance:setDirection",niceName,activeMSD.getGlobalId());// setDirection() Execute
+		ArrayList<Object>  args84 = getArgsList(VAR_String_exact_String_arg06);
+		MSDMethod MSDm84 = new MSDMethod(sysManager,entrance5l,
+			MSDMethods.SysManager_Entrance_setDirection,args84,"SysManager:Entrance:setDirection",niceName,activeMSD.getGlobalId());// setDirection() Execute
+		ArrayList<Object>  args85 = getArgsList(VAR_int_exact_opaque_arg00);
+		MSDMethod MSDm85 = new MSDMethod(sysManager,terminal5,
+			MSDMethods.SysManager_Terminal_setLocation,args85,"SysManager:Terminal:setLocation",niceName,activeMSD.getGlobalId());// setLocation() Execute
+		ArrayList<Object>  args86 = getArgsList(VAR_String_exact_String_arg09);
+		MSDMethod MSDm86 = new MSDMethod(sysManager,exit5r,
+			MSDMethods.SysManager_Exit_setDirection,args86,"SysManager:Exit:setDirection",niceName,activeMSD.getGlobalId());// setDirection() Execute
+		ArrayList<Object>  args87 = getArgsList(VAR_String_exact_String_arg011);
+		MSDMethod MSDm87 = new MSDMethod(sysManager,exit5l,
+			MSDMethods.SysManager_Exit_setDirection,args87,"SysManager:Exit:setDirection",niceName,activeMSD.getGlobalId());// setDirection() Execute
+		ArrayList<Object>  args88 = getArgsList(VAR_int_exact_opaque_arg07);
+		MSDMethod MSDm88 = new MSDMethod(sysManager,exitsManager5,
+			MSDMethods.SysManager_ExitsManager_setID,args88,"SysManager:ExitsManager:setID",niceName,activeMSD.getGlobalId());// setID() Execute
+		ArrayList<Object>  args89 = getArgsList(VAR_int_exact_opaque_arg01);
+		MSDMethod MSDm89 = new MSDMethod(sysManager,terminal5,
+			MSDMethods.SysManager_Terminal_setID,args89,"SysManager:Terminal:setID",niceName,activeMSD.getGlobalId());// setID() Execute
+		ArrayList<Object>  args90 = getArgsList(VAR_int_exact_opaque_arg02);
+		MSDMethod MSDm90 = new MSDMethod(sysManager,platformManager5,
+			MSDMethods.SysManager_PlatformManager_setID,args90,"SysManager:PlatformManager:setID",niceName,activeMSD.getGlobalId());// setID() Execute
+		ArrayList<Object>  args91 = getArgsList(VAR_int_exact_opaque_arg08);
+		MSDMethod MSDm91 = new MSDMethod(sysManager,exit5r,
+			MSDMethods.SysManager_Exit_setID,args91,"SysManager:Exit:setID",niceName,activeMSD.getGlobalId());// setID() Execute
+		ArrayList<Object>  args92 = getArgsList(VAR_int_exact_opaque_arg010);
+		MSDMethod MSDm92 = new MSDMethod(sysManager,exit5l,
+			MSDMethods.SysManager_Exit_setID,args92,"SysManager:Exit:setID",niceName,activeMSD.getGlobalId());// setID() Execute
 
 		 if(activeMSD.isInCut(0,0,0,0,0,0,0,0))
 		{
-				ME.add(MSDm75);
-				CV.add(MSDm77,MSDm79,MSDm84,MSDm76,MSDm82,MSDm81,MSDm85,MSDm87);
-				CV.add(MSDm78,MSDm80,MSDm86,MSDm83);
+				ME.add(MSDm80);
+				CV.add(MSDm89,MSDm92,MSDm84,MSDm85,MSDm87,MSDm88,MSDm90,MSDm81);
+				CV.add(MSDm82,MSDm91,MSDm83,MSDm86);
 				return;
 		}
-		 if(activeMSD.isInCut(1,0,0,0,0,0,0,0))
-		{
-				if(MSDm80.sourceInstance!=null && MSDm80.targetInstance!=null){
-					EE.add(MSDm80);
-				}
-				HV.add(MSDm77,MSDm79,MSDm84,MSDm76,MSDm82,MSDm81,MSDm85,MSDm87);
-				HV.add(MSDm78,MSDm75,MSDm86,MSDm83);
-				return;
-		}
-		 if(activeMSD.isInCut(2,1,0,0,0,0,0,0))
-		{
-				if(MSDm84.sourceInstance!=null && MSDm84.targetInstance!=null){
-					EE.add(MSDm84);
-				}
-				HV.add(MSDm77,MSDm79,MSDm76,MSDm82,MSDm81,MSDm78,MSDm75,MSDm80);
-				return;
-		}
-		 if(activeMSD.isInCut(3,2,0,0,0,0,0,0))
+		 if(activeMSD.isInCut(1,1,0,0,0,0,0,0))
 		{
 				if(MSDm85.sourceInstance!=null && MSDm85.targetInstance!=null){
 					EE.add(MSDm85);
 				}
-				HV.add(MSDm77,MSDm79,MSDm76,MSDm82,MSDm81,MSDm78,MSDm75,MSDm80);
+				HV.add(MSDm89,MSDm92,MSDm84,MSDm87,MSDm88,MSDm90,MSDm81,MSDm82);
+				HV.add(MSDm91,MSDm80,MSDm83,MSDm86);
 				return;
 		}
-		 if(activeMSD.isInCut(4,2,1,0,0,0,0,0))
+		 if(activeMSD.isInCut(2,2,0,0,0,0,0,0))
 		{
-				if(MSDm76.sourceInstance!=null && MSDm76.targetInstance!=null){
-					EE.add(MSDm76);
+				if(MSDm89.sourceInstance!=null && MSDm89.targetInstance!=null){
+					EE.add(MSDm89);
 				}
-				HV.add(MSDm79,MSDm84,MSDm82,MSDm81,MSDm85,MSDm87,MSDm78,MSDm75);
-				HV.add(MSDm80,MSDm86,MSDm83);
+				HV.add(MSDm84,MSDm85,MSDm87,MSDm81,MSDm82,MSDm80,MSDm83,MSDm86);
 				return;
 		}
-		 if(activeMSD.isInCut(5,2,1,1,0,0,0,0))
+		 if(activeMSD.isInCut(3,3,0,0,0,0,0,0))
 		{
-				if(MSDm78.sourceInstance!=null && MSDm78.targetInstance!=null){
-					EE.add(MSDm78);
+				if(MSDm90.sourceInstance!=null && MSDm90.targetInstance!=null){
+					EE.add(MSDm90);
 				}
-				HV.add(MSDm77,MSDm84,MSDm76,MSDm85,MSDm87,MSDm75,MSDm80,MSDm86);
-				HV.add(MSDm83);
+				HV.add(MSDm84,MSDm85,MSDm87,MSDm81,MSDm82,MSDm80,MSDm83,MSDm86);
 				return;
 		}
-		 if(activeMSD.isInCut(6,2,1,2,0,0,0,0))
-		{
-				if(MSDm77.sourceInstance!=null && MSDm77.targetInstance!=null){
-					EE.add(MSDm77);
-				}
-				HV.add(MSDm79,MSDm84,MSDm82,MSDm81,MSDm85,MSDm87,MSDm78,MSDm75);
-				HV.add(MSDm80,MSDm86,MSDm83);
-				return;
-		}
-		 if(activeMSD.isInCut(7,2,1,2,1,0,0,0))
-		{
-				if(MSDm79.sourceInstance!=null && MSDm79.targetInstance!=null){
-					EE.add(MSDm79);
-				}
-				HV.add(MSDm77,MSDm84,MSDm76,MSDm85,MSDm87,MSDm75,MSDm80,MSDm86);
-				HV.add(MSDm83);
-				return;
-		}
-		 if(activeMSD.isInCut(8,2,1,2,2,0,0,0))
-		{
-				if(MSDm83.sourceInstance!=null && MSDm83.targetInstance!=null){
-					EE.add(MSDm83);
-				}
-				HV.add(MSDm77,MSDm79,MSDm76,MSDm82,MSDm81,MSDm78,MSDm75,MSDm80);
-				return;
-		}
-		 if(activeMSD.isInCut(9,2,1,2,2,1,0,0))
-		{
-				if(MSDm86.sourceInstance!=null && MSDm86.targetInstance!=null){
-					EE.add(MSDm86);
-				}
-				HV.add(MSDm77,MSDm79,MSDm76,MSDm82,MSDm81,MSDm78,MSDm75,MSDm80);
-				return;
-		}
-		 if(activeMSD.isInCut(10,2,1,2,2,1,1,0))
+		 if(activeMSD.isInCut(4,3,1,0,0,0,0,0))
 		{
 				if(MSDm81.sourceInstance!=null && MSDm81.targetInstance!=null){
 					EE.add(MSDm81);
 				}
-				HV.add(MSDm77,MSDm84,MSDm76,MSDm85,MSDm87,MSDm75,MSDm80,MSDm86);
-				HV.add(MSDm83);
+				HV.add(MSDm89,MSDm92,MSDm84,MSDm85,MSDm87,MSDm88,MSDm90,MSDm91);
+				HV.add(MSDm80,MSDm83,MSDm86);
 				return;
 		}
-		 if(activeMSD.isInCut(11,2,1,2,2,1,2,0))
+		 if(activeMSD.isInCut(5,3,1,1,0,0,0,0))
 		{
-				if(MSDm87.sourceInstance!=null && MSDm87.targetInstance!=null){
-					EE.add(MSDm87);
+				if(MSDm83.sourceInstance!=null && MSDm83.targetInstance!=null){
+					EE.add(MSDm83);
 				}
-				HV.add(MSDm77,MSDm79,MSDm76,MSDm82,MSDm81,MSDm78,MSDm75,MSDm80);
+				HV.add(MSDm89,MSDm92,MSDm85,MSDm88,MSDm90,MSDm81,MSDm82,MSDm91);
+				HV.add(MSDm80);
 				return;
 		}
-		 if(activeMSD.isInCut(12,2,1,2,2,1,2,1))
+		 if(activeMSD.isInCut(6,3,1,2,0,0,0,0))
 		{
 				if(MSDm82.sourceInstance!=null && MSDm82.targetInstance!=null){
 					EE.add(MSDm82);
 				}
-				HV.add(MSDm77,MSDm84,MSDm76,MSDm85,MSDm87,MSDm75,MSDm80,MSDm86);
-				HV.add(MSDm83);
+				HV.add(MSDm89,MSDm92,MSDm84,MSDm85,MSDm87,MSDm88,MSDm90,MSDm91);
+				HV.add(MSDm80,MSDm83,MSDm86);
+				return;
+		}
+		 if(activeMSD.isInCut(7,3,1,2,1,0,0,0))
+		{
+				if(MSDm84.sourceInstance!=null && MSDm84.targetInstance!=null){
+					EE.add(MSDm84);
+				}
+				HV.add(MSDm89,MSDm92,MSDm85,MSDm88,MSDm90,MSDm81,MSDm82,MSDm91);
+				HV.add(MSDm80);
+				return;
+		}
+		 if(activeMSD.isInCut(8,3,1,2,2,0,0,0))
+		{
+				if(MSDm88.sourceInstance!=null && MSDm88.targetInstance!=null){
+					EE.add(MSDm88);
+				}
+				HV.add(MSDm84,MSDm85,MSDm87,MSDm81,MSDm82,MSDm80,MSDm83,MSDm86);
+				return;
+		}
+		 if(activeMSD.isInCut(9,3,1,2,2,1,0,0))
+		{
+				if(MSDm91.sourceInstance!=null && MSDm91.targetInstance!=null){
+					EE.add(MSDm91);
+				}
+				HV.add(MSDm84,MSDm85,MSDm87,MSDm81,MSDm82,MSDm80,MSDm83,MSDm86);
+				return;
+		}
+		 if(activeMSD.isInCut(10,3,1,2,2,1,1,0))
+		{
+				if(MSDm86.sourceInstance!=null && MSDm86.targetInstance!=null){
+					EE.add(MSDm86);
+				}
+				HV.add(MSDm89,MSDm92,MSDm85,MSDm88,MSDm90,MSDm81,MSDm82,MSDm91);
+				HV.add(MSDm80);
+				return;
+		}
+		 if(activeMSD.isInCut(11,3,1,2,2,1,2,0))
+		{
+				if(MSDm92.sourceInstance!=null && MSDm92.targetInstance!=null){
+					EE.add(MSDm92);
+				}
+				HV.add(MSDm84,MSDm85,MSDm87,MSDm81,MSDm82,MSDm80,MSDm83,MSDm86);
+				return;
+		}
+		 if(activeMSD.isInCut(12,3,1,2,2,1,2,1))
+		{
+				if(MSDm87.sourceInstance!=null && MSDm87.targetInstance!=null){
+					EE.add(MSDm87);
+				}
+				HV.add(MSDm89,MSDm92,MSDm85,MSDm88,MSDm90,MSDm81,MSDm82,MSDm91);
+				HV.add(MSDm80);
 				return;
 		}
 	}
@@ -1023,39 +1608,9 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 	public Object bindObjectByExpression (ActiveMSDAspect activeMSD,int lifelineIndex, 
 			Object obj, boolean retrieveOnly){
 
-		int arg05 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg05)!=null){
-			arg05 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg05);
-		}
-
-		String arg011 = null;
-		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
-			arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
-		}
-
-		int arg03 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg03)!=null){
-			arg03 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg03);
-		}
-
-		int arg02 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg02)!=null){
-			arg02 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg02);
-		}
-
 		int arg08 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg08)!=null){
-			arg08 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg08);
-		}
-
-		int arg07 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg07)!=null){
-			arg07 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg07);
-		}
-
-		int arg010 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg010)!=null){
-			arg010 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg010);
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08)!=null){
+			arg08 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg08);
 		}
 
 		String arg09 = null;
@@ -1068,19 +1623,54 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 			arg06 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg06);
 		}
 
-		int arg01 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg01)!=null){
-			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg01);
-		}
-
 		String arg04 = null;
 		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04)!=null){
 			arg04 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg04);
 		}
 
+		int arg010 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010)!=null){
+			arg010 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg010);
+		}
+
+		int ID = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID)!=null){
+			ID = (int) activeMSD.getPrivateVariable(int_arg_int_symbolic_var_ID);
+		}
+
+		String arg011 = null;
+		if(activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011)!=null){
+			arg011 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg011);
+		}
+
+		int arg03 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03)!=null){
+			arg03 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg03);
+		}
+
+		int arg02 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02)!=null){
+			arg02 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg02);
+		}
+
+		int arg01 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
+			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
+		}
+
 		int arg00 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_int_arg00)!=null){
-			arg00 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_int_arg00);
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00)!=null){
+			arg00 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg00);
+		}
+
+		int arg07 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07)!=null){
+			arg07 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg07);
+		}
+
+		int arg05 = 0;
+		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05)!=null){
+			arg05 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg05);
 		}
 
 		Object result = null;
@@ -1088,13 +1678,13 @@ public class MSDAspectSysManager_InitTerminal5 extends MSDAspect implements MSDS
 		result = activeMSD.getLineInstance(lifelineIndex);
 		if (result == null){
 			SysManager sysManager = (SysManager) activeMSD.getLineInstance(SysManager_INST_sysManager);
-			Terminal terminal1 = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal1);
-			PlatformManager platformManager1 = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager1);
-			Entrance entrance1r = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance1r);
-			Entrance entrance1l = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance1l);
-			ExitsManager existsManager1 = (ExitsManager) activeMSD.getLineInstance(ExitsManager_INST_existsManager1);
-			Exit exit1r = (Exit) activeMSD.getLineInstance(Exit_INST_exit1r);
-			Exit exit1l = (Exit) activeMSD.getLineInstance(Exit_INST_exit1l);
+			Terminal terminal5 = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal5);
+			PlatformManager platformManager5 = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager5);
+			Entrance entrance5r = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance5r);
+			Entrance entrance5l = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance5l);
+			ExitsManager exitsManager5 = (ExitsManager) activeMSD.getLineInstance(ExitsManager_INST_exitsManager5);
+			Exit exit5r = (Exit) activeMSD.getLineInstance(Exit_INST_exit5r);
+			Exit exit5l = (Exit) activeMSD.getLineInstance(Exit_INST_exit5l);
 			switch (lifelineIndex){
 			}
 		}

@@ -24,27 +24,87 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 	private MSDCoordinatorAspect()
 	{
 		PlaygoCoordinator.getInstance().subscribe(
-				this, "Terminal", "PlatformManager", "setPlatform3busy");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "PlatformManager", "PlatformManager", "setPlatform3busy");
-		PlaygoCoordinator.getInstance().subscribe(
 				this, "Car", "Cruiser", "setEngineEngaged");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "Env", "SysManager", "runCycle");
 		PlaygoCoordinator.getInstance().subscribe(
-				this, "Car", "Car", "startArrival");
-		PlaygoCoordinator.getInstance().subscribe(
 				this, "SysManager", "Car", "alert80");
 		PlaygoCoordinator.getInstance().subscribe(
-				this, "SysManager", "Terminal", "initTerminal");
-		PlaygoCoordinator.getInstance().subscribe(
 				this, "Env", "SysManager", "runCycleSmall");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Car", "Car", "passTerminal");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Car", "Car", "moveCar");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Car", "Car", "stopAtTerminal");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "SysManager", "Car", "setCarID");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Terminal", "PlatformManager", "setPlatform1busy");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "PlatformManager", "PlatformManager", "setPlatform1busy");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "SysManager", "Exit", "setID");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "SysManager", "Terminal", "setID");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "SysManager", "Cruiser", "setID");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "SysManager", "PlatformManager", "setID");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "SysManager", "ExitsManager", "setID");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Terminal", "Exit", "moveTo");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Terminal", "Entrance", "moveTo");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "SysManager", "Car", "initCar");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Terminal", "PlatformManager", "setPlatform2busy");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "PlatformManager", "PlatformManager", "setPlatform2busy");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Car", "Car", "startDepart");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "SysManager", "Car", "setPlatform");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Terminal", "Car", "arriveAck");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Env", "PlatformManager", "lockPlatforms");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Car", "Car", "clearDest");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Terminal", "Car", "departAck");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Exit", "Exit", "blank");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Car", "PlatformManager", "freePlatform");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Env", "PlatformManager", "freePlatform");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Car", "Terminal", "arriveReq");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "SysManager", "Car", "setTerminal");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Terminal", "Car", "setTerminal");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "SysManager", "Entrance", "setTerminalId");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Car", "Cruiser", "start");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Env", "SysManager", "initSystem");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Terminal", "PlatformManager", "setPlatform3busy");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "PlatformManager", "PlatformManager", "setPlatform3busy");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Car", "Car", "startArrival");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "SysManager", "Terminal", "initTerminal");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "SysManager", "Car", "destinationSet");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "Car", "ExitsManager", "exitClear");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "Car", "Car", "passTerminal");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "Env", "SysManager", "chooseTerminal");
 		PlaygoCoordinator.getInstance().subscribe(
@@ -60,97 +120,45 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "Car", "Car", "setDirection");
 		PlaygoCoordinator.getInstance().subscribe(
-				this, "Car", "Car", "moveCar");
-		PlaygoCoordinator.getInstance().subscribe(
 				this, "SysManager", "Car", "alert100");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "Car", "Car", "stopAtTerminal");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "Cruiser", "Cruiser", "setEngineStarted");
 		PlaygoCoordinator.getInstance().subscribe(
-				this, "SysManager", "Car", "setCarID");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "Terminal", "PlatformManager", "setPlatform1busy");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "PlatformManager", "PlatformManager", "setPlatform1busy");
-		PlaygoCoordinator.getInstance().subscribe(
 				this, "Car", "Car", "setMode");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "SysManager", "Exit", "setID");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "SysManager", "Terminal", "setID");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "SysManager", "PlatformManager", "setID");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "SysManager", "ExitsManager", "setID");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "SysManager", "Cruiser", "setID");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "Entrance", "Terminal", "moveCompleted");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "Exit", "Terminal", "moveCompleted");
 		PlaygoCoordinator.getInstance().subscribe(
-				this, "Terminal", "Entrance", "moveTo");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "Terminal", "Exit", "moveTo");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "SysManager", "Car", "initCar");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "Terminal", "PlatformManager", "setPlatform2busy");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "PlatformManager", "PlatformManager", "setPlatform2busy");
+				this, "Entrance", "Terminal", "moveCompleted");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "Terminal", "PlatformManager", "allocatePlatform");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "Car", "Car", "startDepart");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "SysManager", "Car", "setPlatform");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "Terminal", "Car", "setPlatform");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "Terminal", "Car", "arriveAck");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "Env", "PlatformManager", "lockPlatforms");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "SysManager", "Car", "alertStop");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "Env", "SysManager", "chooseTerminal3");
 		PlaygoCoordinator.getInstance().subscribe(
-				this, "SysManager", "SysManager", "initTerminals");
-		PlaygoCoordinator.getInstance().subscribe(
 				this, "Env", "SysManager", "car2To2");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "SysManager", "SysManager", "initCars");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "Car", "Car", "clearDest");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "Terminal", "PlatformManager", "setPlatform4busy");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "PlatformManager", "PlatformManager", "setPlatform4busy");
 		PlaygoCoordinator.getInstance().subscribe(
-				this, "Terminal", "Car", "departAck");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "Env", "PlatformManager", "freePlatform");
-		PlaygoCoordinator.getInstance().subscribe(
 				this, "Car", "Car", "endDepart");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "Car", "Terminal", "arriveReq");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "SysManager", "Car", "setTerminal");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "Terminal", "Car", "setTerminal");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "SysManager", "Terminal", "setLocation");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "SysManager", "Car", "setLocation");
 		PlaygoCoordinator.getInstance().subscribe(
-				this, "SysManager", "Entrance", "setTerminalId");
+				this, "Terminal", "ExitsManager", "allocateExit1");
 		PlaygoCoordinator.getInstance().subscribe(
-				this, "Car", "Cruiser", "start");
-		PlaygoCoordinator.getInstance().subscribe(
-				this, "Env", "SysManager", "initSystem");
+				this, "Terminal", "ExitsManager", "allocateExit2");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "PlatformManager", "Terminal", "platformAllocated");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Terminal", "ExitsManager", "allocateExit3");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "Terminal", "ExitsManager", "allocateExit4");
 	}
 
 	public static MSDCoordinatorAspect getInstance(){
@@ -240,18 +248,6 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 		MSDAspectLocationAlerts_Alert80.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		aspects.add(MSDAspectLocationAlerts_Alert80.getInstance());
 
-		MSDAspectCarHandler_HandleArrival.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		aspects.add(MSDAspectCarHandler_HandleArrival.getInstance());
-
-		MSDAspectCarHandler_EntranceMove.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		aspects.add(MSDAspectCarHandler_EntranceMove.getInstance());
-
-		MSDAspectCarHandler_ExitMove.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		aspects.add(MSDAspectCarHandler_ExitMove.getInstance());
-
-		MSDAspectCarHandler_HandleDeparture.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		aspects.add(MSDAspectCarHandler_HandleDeparture.getInstance());
-
 		MSDAspectPlatformManager_AllocatePlatform.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		aspects.add(MSDAspectPlatformManager_AllocatePlatform.getInstance());
 
@@ -261,6 +257,15 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 		MSDAspectPlatformManager_LSC3.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		aspects.add(MSDAspectPlatformManager_LSC3.getInstance());
 
+		MSDAspectPlatformManager_LSC1.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		aspects.add(MSDAspectPlatformManager_LSC1.getInstance());
+
+		MSDAspectPlatformManager_LSC4.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		aspects.add(MSDAspectPlatformManager_LSC4.getInstance());
+
+		MSDAspectPlatformManager_LSC5.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		aspects.add(MSDAspectPlatformManager_LSC5.getInstance());
+
 		MSDAspectsysEvents_ChooseDestenation2.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		aspects.add(MSDAspectsysEvents_ChooseDestenation2.getInstance());
 
@@ -269,6 +274,12 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 
 		MSDAspectsysEvents_car2To2.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		aspects.add(MSDAspectsysEvents_car2To2.getInstance());
+
+		MSDAspectcarHandler2_HandleDeparture.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		aspects.add(MSDAspectcarHandler2_HandleDeparture.getInstance());
+
+		MSDAspectcarHandler2_HandleArrival.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		aspects.add(MSDAspectcarHandler2_HandleArrival.getInstance());
 
 		MSDAspectSysManager_InitSystem.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectSysManager_InitTerminal1.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
@@ -291,16 +302,17 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 		MSDAspectLocationAlerts_Alert100.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectLocationAlerts_AlertStop.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectLocationAlerts_Alert80.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		MSDAspectCarHandler_HandleArrival.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		MSDAspectCarHandler_EntranceMove.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		MSDAspectCarHandler_ExitMove.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		MSDAspectCarHandler_HandleDeparture.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectPlatformManager_AllocatePlatform.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectPlatformManager_LSC2.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectPlatformManager_LSC3.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectPlatformManager_LSC1.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectPlatformManager_LSC4.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectPlatformManager_LSC5.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectsysEvents_ChooseDestenation2.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectsysEvents_ChooseDestenation3.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectsysEvents_car2To2.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectcarHandler2_HandleDeparture.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectcarHandler2_HandleArrival.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 
 		MSDMethod MSDm = chooseMethod(strategy, monitoringEnabled, executingEnabled, 
 				coldViolation, hotViolation, 
@@ -341,16 +353,17 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 		MSDAspectLocationAlerts_Alert100.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectLocationAlerts_AlertStop.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectLocationAlerts_Alert80.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		MSDAspectCarHandler_HandleArrival.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		MSDAspectCarHandler_EntranceMove.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		MSDAspectCarHandler_ExitMove.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		MSDAspectCarHandler_HandleDeparture.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectPlatformManager_AllocatePlatform.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectPlatformManager_LSC2.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectPlatformManager_LSC3.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectPlatformManager_LSC1.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectPlatformManager_LSC4.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectPlatformManager_LSC5.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectsysEvents_ChooseDestenation2.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectsysEvents_ChooseDestenation3.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectsysEvents_car2To2.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectcarHandler2_HandleDeparture.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectcarHandler2_HandleArrival.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 
 	if (envMeth != null && MSDm != null && envMeth.messageID == ENV_MESSAGE_ID) {
 		envMeth = null;
@@ -452,8 +465,8 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 			 ((Car)MSDm.targetInstance).setMode(
 				(String)MSDm.args.get(0));
 			break;
-			case MSDMethods.SysManager_Exit_setID:
-			 ((Exit)MSDm.targetInstance).setID(
+			case MSDMethods.SysManager_Cruiser_setID:
+			 ((Cruiser)MSDm.targetInstance).setID(
 				(Integer)MSDm.args.get(0));
 			break;
 			case MSDMethods.SysManager_Terminal_setID:
@@ -464,19 +477,23 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 			 ((PlatformManager)MSDm.targetInstance).setID(
 				(Integer)MSDm.args.get(0));
 			break;
+			case MSDMethods.SysManager_Exit_setID:
+			 ((Exit)MSDm.targetInstance).setID(
+				(Integer)MSDm.args.get(0));
+			break;
 			case MSDMethods.SysManager_ExitsManager_setID:
 			 ((ExitsManager)MSDm.targetInstance).setID(
 				(Integer)MSDm.args.get(0));
 			break;
-			case MSDMethods.SysManager_Cruiser_setID:
-			 ((Cruiser)MSDm.targetInstance).setID(
-				(Integer)MSDm.args.get(0));
+			case MSDMethods.Exit_Terminal_moveCompleted:
+			 ((Terminal)MSDm.targetInstance).moveCompleted();
 			break;
 			case MSDMethods.Entrance_Terminal_moveCompleted:
 			 ((Terminal)MSDm.targetInstance).moveCompleted();
 			break;
-			case MSDMethods.Exit_Terminal_moveCompleted:
-			 ((Terminal)MSDm.targetInstance).moveCompleted();
+			case MSDMethods.Terminal_Exit_moveTo:
+			 ((Exit)MSDm.targetInstance).moveTo(
+				(Integer)MSDm.args.get(0));
 			break;
 			case MSDMethods.Terminal_Entrance_moveTo:
 			 ((Entrance)MSDm.targetInstance).moveTo(
@@ -500,10 +517,6 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 			 ((Car)MSDm.targetInstance).setPlatform(
 				(Integer)MSDm.args.get(0));
 			break;
-			case MSDMethods.Terminal_Car_setPlatform:
-			 ((Car)MSDm.targetInstance).setPlatform(
-				(Integer)MSDm.args.get(0));
-			break;
 			case MSDMethods.Terminal_Car_arriveAck:
 			 ((Car)MSDm.targetInstance).arriveAck();
 			break;
@@ -523,6 +536,15 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 			case MSDMethods.PlatformManager_PlatformManager_setPlatform4busy:
 			 ((PlatformManager)MSDm.targetInstance).setPlatform4busy(
 				(Boolean)MSDm.args.get(0));
+			break;
+			case MSDMethods.Terminal_Car_departAck:
+			 ((Car)MSDm.targetInstance).departAck();
+			break;
+			case MSDMethods.Exit_Exit_blank:
+			 ((Exit)MSDm.targetInstance).blank();
+			break;
+			case MSDMethods.Car_PlatformManager_freePlatform:
+			 ((PlatformManager)MSDm.targetInstance).freePlatform();
 			break;
 			case MSDMethods.Car_Car_endDepart:
 			 ((Car)MSDm.targetInstance).endDepart();
@@ -554,9 +576,21 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 			case MSDMethods.Car_Cruiser_start:
 			 ((Cruiser)MSDm.targetInstance).start();
 			break;
+			case MSDMethods.Terminal_ExitsManager_allocateExit1:
+			 ((ExitsManager)MSDm.targetInstance).allocateExit1();
+			break;
+			case MSDMethods.Terminal_ExitsManager_allocateExit2:
+			 ((ExitsManager)MSDm.targetInstance).allocateExit2();
+			break;
 			case MSDMethods.PlatformManager_Terminal_platformAllocated:
 			 ((Terminal)MSDm.targetInstance).platformAllocated(
 				(Integer)MSDm.args.get(0));
+			break;
+			case MSDMethods.Terminal_ExitsManager_allocateExit3:
+			 ((ExitsManager)MSDm.targetInstance).allocateExit3();
+			break;
+			case MSDMethods.Terminal_ExitsManager_allocateExit4:
+			 ((ExitsManager)MSDm.targetInstance).allocateExit4();
 			break;
 		}
 	}

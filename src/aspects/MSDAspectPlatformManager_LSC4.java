@@ -1,4 +1,4 @@
-//  The file MSDAspectCarHandler_EntranceMove.aj was automatically generated using S2A 2.0.0.qualifier.
+//  The file MSDAspectPlatformManager_LSC4.aj was automatically generated using S2A 2.0.0.qualifier.
 //  For information see http://www.wisdom.weizmann.ac.il/~maozs/s2a/
 
 package aspects;
@@ -10,7 +10,7 @@ import il.ac.wis.cs.s2a.runtime.lib.*;
 import il.ac.wis.cs.playgo.playtoolkit.*;
 
 
-public class MSDAspectCarHandler_EntranceMove extends MSDAspect implements MSDSubscribe
+public class MSDAspectPlatformManager_LSC4 extends MSDAspect implements MSDSubscribe
 {
 
 
@@ -22,18 +22,18 @@ public class MSDAspectCarHandler_EntranceMove extends MSDAspect implements MSDSu
 
 	static final int int_var_symbolic_minimalDistance = 1;
 
-	private final String niceName = "CarHandler_EntranceMove";
+	private final String niceName = "PlatformManager_LSC4";
 
-	private static MSDAspectCarHandler_EntranceMove instance = null;
+	private static MSDAspectPlatformManager_LSC4 instance = null;
 
-	public static MSDAspectCarHandler_EntranceMove getInstance(){
+	public static MSDAspectPlatformManager_LSC4 getInstance(){
 		if(instance==null){
-			instance = new MSDAspectCarHandler_EntranceMove();
+			instance = new MSDAspectPlatformManager_LSC4();
 		}
 		return instance;
 	}
 
-	private MSDAspectCarHandler_EntranceMove()
+	private MSDAspectPlatformManager_LSC4()
 	{
 		addAspectEvent(MSDMethods.Terminal_Entrance_moveTo);
 		PlaygoCoordinator.getInstance().subscribe(this, 
@@ -49,7 +49,7 @@ public class MSDAspectCarHandler_EntranceMove extends MSDAspect implements MSDSu
 		numberOfInstances = 2;
 		numberOfVariables = 2;
 		numberOfTimeTags = 0;
-		interactionId = "1499083609627";
+		interactionId = "1499586852479";
 		setCutsExpressions();
 	}
 
@@ -322,24 +322,24 @@ public class MSDAspectCarHandler_EntranceMove extends MSDAspect implements MSDSu
 			VAR_int_symbolic_var_platform = (Integer) activeMSD.getPrivateVariable(int_arg_int_symbolic_var_platform);
 		}
 
-		MSDMethod MSDm151 = new MSDMethod(entrance,terminal,
+		MSDMethod MSDm169 = new MSDMethod(entrance,terminal,
 			MSDMethods.Entrance_Terminal_moveCompleted,null,"Entrance:Terminal:moveCompleted",niceName,activeMSD.getGlobalId());// moveCompleted() Execute
-		ArrayList<Object>  args152 = getArgsList(VAR_int_symbolic_var_platform);
-		MSDMethod MSDm152 = new MSDMethod(terminal,entrance,
-			MSDMethods.Terminal_Entrance_moveTo,args152,"Terminal:Entrance:moveTo",niceName,activeMSD.getGlobalId());// moveTo() Monitored
+		ArrayList<Object>  args170 = getArgsList(VAR_int_symbolic_var_platform);
+		MSDMethod MSDm170 = new MSDMethod(terminal,entrance,
+			MSDMethods.Terminal_Entrance_moveTo,args170,"Terminal:Entrance:moveTo",niceName,activeMSD.getGlobalId());// moveTo() Monitored
 
 		 if(activeMSD.isInCut(0,0))
 		{
-				ME.add(MSDm152);
-				CV.add(MSDm151);
+				ME.add(MSDm170);
+				CV.add(MSDm169);
 				return;
 		}
 		 if(activeMSD.isInCut(1,1))
 		{
-				if(MSDm151.sourceInstance!=null && MSDm151.targetInstance!=null){
-					EE.add(MSDm151);
+				if(MSDm169.sourceInstance!=null && MSDm169.targetInstance!=null){
+					EE.add(MSDm169);
 				}
-				HV.add(MSDm152);
+				HV.add(MSDm170);
 				return;
 		}
 	}

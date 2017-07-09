@@ -19,6 +19,7 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 	static final int Terminal_INST_terminal = 1;
 	static final int Cruiser_INST_cruiser = 2;
 	static final int ExitsManager_INST_existsManager = 3;
+	static final int PlatformManager_INST_platformManager = 4;
 
 	static final int boolean_arg_boolean_exact_boolean_arg00 = 0;
 
@@ -58,23 +59,27 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 		addAspectEvent(MSDMethods.Car_ExitsManager_exitClear);
 		PlaygoCoordinator.getInstance().subscribe(this, 
 			"Car", "ExitsManager", "exitClear");
+		addAspectEvent(MSDMethods.Car_PlatformManager_freePlatform);
+		PlaygoCoordinator.getInstance().subscribe(this, 
+			"Car", "PlatformManager", "freePlatform");
 		addAspectEvent(MSDMethods.Car_Car_endDepart);
 		PlaygoCoordinator.getInstance().subscribe(this, 
 			"Car", "Car", "endDepart");
 
 		addMinimalEvent(MSDMethods.Car_Car_startDepart);
-		setHotCut(9,4,4,1);
-		setHotCut(8,4,4,0);
-		setHotCut(5,3,2,0);
-		setHotCut(6,3,3,0);
-		setHotCut(2,0,1,0);
-		setHotCut(1,0,0,0);
-		setLastCut(10,4,4,1);
-		numberOfLifeLines = 4;
-		numberOfInstances = 4;
+		setHotCut(5,3,2,0,0);
+		setHotCut(6,3,3,0,0);
+		setHotCut(10,4,4,1,1);
+		setHotCut(1,0,0,0,0);
+		setHotCut(2,0,1,0,0);
+		setHotCut(9,4,4,1,0);
+		setHotCut(8,4,4,0,0);
+		setLastCut(11,4,4,1,1);
+		numberOfLifeLines = 5;
+		numberOfInstances = 5;
 		numberOfVariables = 2;
 		numberOfTimeTags = 0;
-		interactionId = "1499083609496";
+		interactionId = "1499586852290";
 		setCutsExpressions();
 	}
 
@@ -106,9 +111,9 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 					&& activeMSD.variableEquals(boolean_arg_boolean_exact_boolean_arg00,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(5,3,2,0))
+					if(activeMSD.isInCut(5,3,2,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(6,3,3,0);
+						cutChanged=true; activeMSD.setCut(6,3,3,0,0);
 						return cutChanged;
 					}
 				}
@@ -123,10 +128,10 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 				 &&  this.validateBoundedObject(activeMSD,Car_INST_car,targetObject))
 				{
 					unification=true;
-					if(activeMSD.isInCut(0,0,0,0))
+					if(activeMSD.isInCut(0,0,0,0,0))
 					{
 						activeMSD.setLineInstance(Car_INST_car,targetObject); doBindings(activeMSD);if(activeMSD.isDeadCopy())return true;
-						cutChanged=true; activeMSD.setCut(1,0,0,0);
+						cutChanged=true; activeMSD.setCut(1,0,0,0,0);
 						return cutChanged;
 					}
 				}
@@ -144,9 +149,24 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 					&& activeMSD.instancesEquals(ExitsManager_INST_existsManager,targetObject))
 				{
 					unification=true;
-					if(activeMSD.isInCut(8,4,4,0))
+					if(activeMSD.isInCut(8,4,4,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(9,4,4,1);
+						cutChanged=true; activeMSD.setCut(9,4,4,1,0);
+						return cutChanged;
+					}
+				}
+				if(!unification)//No unification...
+					return false;
+				break;
+
+			case MSDMethods.Car_PlatformManager_freePlatform:
+				if(activeMSD.instancesEquals(Car_INST_car,sourceObject)
+					&& activeMSD.instancesEquals(PlatformManager_INST_platformManager,targetObject))
+				{
+					unification=true;
+					if(activeMSD.isInCut(9,4,4,1,0))
+					{
+						cutChanged=true; activeMSD.setCut(10,4,4,1,1);
 						return cutChanged;
 					}
 				}
@@ -159,9 +179,9 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 					&& activeMSD.instancesEquals(Terminal_INST_terminal,targetObject))
 				{
 					unification=true;
-					if(activeMSD.isInCut(2,0,1,0))
+					if(activeMSD.isInCut(2,0,1,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(3,1,1,0);
+						cutChanged=true; activeMSD.setCut(3,1,1,0,0);
 						return cutChanged;
 					}
 				}
@@ -174,9 +194,9 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 					&& activeMSD.instancesEquals(Car_INST_car,targetObject))
 				{
 					unification=true;
-					if(activeMSD.isInCut(9,4,4,1))
+					if(activeMSD.isInCut(10,4,4,1,1))
 					{
-						cutChanged=true; activeMSD.setCut(10,4,4,1);
+						cutChanged=true; activeMSD.setCut(11,4,4,1,1);
 						break;
 					}
 				}
@@ -189,13 +209,13 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 					&& activeMSD.instancesEquals(Car_INST_car,targetObject))
 				{
 					unification=true;
-					if(activeMSD.isInCut(3,1,1,0))
+					if(activeMSD.isInCut(3,1,1,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(4,2,1,0);
+						cutChanged=true; activeMSD.setCut(4,2,1,0,0);
 						if(evaluateCondition(4,activeMSD))
 						{
 							activeMSD.notWaitingForCond(4); //out of wait condition
-							cutChanged=true; activeMSD.setCut(5,3,2,0);
+							cutChanged=true; activeMSD.setCut(5,3,2,0,0);
 							return cutChanged;
 						}
 						activeMSD.setWaitingForCond(4); //in wait condition
@@ -211,13 +231,13 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 					&& activeMSD.instancesEquals(Car_INST_car,targetObject))
 				{
 					unification=true;
-					if(activeMSD.isInCut(6,3,3,0))
+					if(activeMSD.isInCut(6,3,3,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(7,3,3,0);
+						cutChanged=true; activeMSD.setCut(7,3,3,0,0);
 						if(evaluateCondition(7,activeMSD))
 						{
 							activeMSD.notWaitingForCond(7); //out of wait condition
-							cutChanged=true; activeMSD.setCut(8,4,4,0);
+							cutChanged=true; activeMSD.setCut(8,4,4,0,0);
 							return cutChanged;
 						}
 						activeMSD.setWaitingForCond(7); //in wait condition
@@ -233,9 +253,9 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 					&& activeMSD.instancesEquals(Cruiser_INST_cruiser,targetObject))
 				{
 					unification=true;
-					if(activeMSD.isInCut(1,0,0,0))
+					if(activeMSD.isInCut(1,0,0,0,0))
 					{
-						cutChanged=true; activeMSD.setCut(2,0,1,0);
+						cutChanged=true; activeMSD.setCut(2,0,1,0,0);
 						return cutChanged;
 					}
 				}
@@ -259,6 +279,7 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 		Terminal terminal = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal,null, true);;
 		Cruiser cruiser = (Cruiser)bindObjectByExpression(activeMSD,Cruiser_INST_cruiser,null, true);;
 		ExitsManager existsManager = (ExitsManager)bindObjectByExpression(activeMSD,ExitsManager_INST_existsManager,null, true);;
+		PlatformManager platformManager = (PlatformManager)bindObjectByExpression(activeMSD,PlatformManager_INST_platformManager,null, true);;
 
 		boolean arg00 = false;
 		if(activeMSD.getPrivateVariable(boolean_arg_boolean_exact_boolean_arg00)!=null){
@@ -299,6 +320,7 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 		Terminal terminal = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal,null, true);;
 		Cruiser cruiser = (Cruiser)bindObjectByExpression(activeMSD,Cruiser_INST_cruiser,null, true);;
 		ExitsManager existsManager = (ExitsManager)bindObjectByExpression(activeMSD,ExitsManager_INST_existsManager,null, true);;
+		PlatformManager platformManager = (PlatformManager)bindObjectByExpression(activeMSD,PlatformManager_INST_platformManager,null, true);;
 
 		boolean arg00 = false;
 		if(activeMSD.getPrivateVariable(boolean_arg_boolean_exact_boolean_arg00)!=null){
@@ -327,8 +349,8 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 
 	protected void setCutsExpressions()
 	{
-		this.setExpressionForCut("5,3,2,0" , "wait: cruiser.getEngineStarted()==true");
-		this.setExpressionForCut("8,4,4,0" , "wait: car.getLocation()!=terminal.getLocation()");
+		this.setExpressionForCut("8,4,4,0,0" , "wait: car.getLocation()!=terminal.getLocation()");
+		this.setExpressionForCut("5,3,2,0,0" , "wait: cruiser.getEngineStarted()==true");
 
 	}
 
@@ -340,6 +362,7 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 		Terminal terminal = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal, null, false );
 		Cruiser cruiser = (Cruiser)bindObjectByExpression(activeMSD,Cruiser_INST_cruiser, null, false );
 		ExitsManager existsManager = (ExitsManager)bindObjectByExpression(activeMSD,ExitsManager_INST_existsManager, null, false );
+		PlatformManager platformManager = (PlatformManager)bindObjectByExpression(activeMSD,PlatformManager_INST_platformManager, null, false );
 
 		boolean arg00 = false;
 		if(activeMSD.getPrivateVariable(boolean_arg_boolean_exact_boolean_arg00)!=null){
@@ -398,8 +421,9 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 		Terminal terminal = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal);
 		Cruiser cruiser = (Cruiser) activeMSD.getLineInstance(Cruiser_INST_cruiser);
 		ExitsManager existsManager = (ExitsManager) activeMSD.getLineInstance(ExitsManager_INST_existsManager);
+		PlatformManager platformManager = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager);
 	
-		if(car==null || terminal==null || cruiser==null || existsManager==null){
+		if(car==null || terminal==null || cruiser==null || existsManager==null || platformManager==null){
 			return true;
 		}else{
 			return false;
@@ -474,6 +498,12 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 					_car,_existsManager,null);
 	}
 
+	private void after_Car_PlatformManager_freePlatform(Object _car ,Object _platformManager)
+	{
+		changeCutState(MSDMethods.Car_PlatformManager_freePlatform,
+					_car,_platformManager,null);
+	}
+
 	private void after_Car_Car_endDepart(Object _carSource ,Object _car)
 	{
 		changeCutState(MSDMethods.Car_Car_endDepart,
@@ -513,6 +543,10 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 			after_Car_ExitsManager_exitClear(source, target);
 			return;
 		}
+		if(srcClassName.equals("Car") && tgtClassName.equals("PlatformManager") && method.equals("freePlatform")){
+			after_Car_PlatformManager_freePlatform(source, target);
+			return;
+		}
 		if(srcClassName.equals("Car") && tgtClassName.equals("Car") && method.equals("endDepart")){
 			after_Car_Car_endDepart(source, target);
 			return;
@@ -537,13 +571,13 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 
 	private void evalTrueWaitCond4(ActiveMSDAspect activeMSD){
 							activeMSD.notWaitingForCond(4); //out of wait condition
-							activeMSD.setCut(5,3,2,0);
+							activeMSD.setCut(5,3,2,0,0);
 	}
 
 
 	private void evalTrueWaitCond7(ActiveMSDAspect activeMSD){
 							activeMSD.notWaitingForCond(7); //out of wait condition
-							activeMSD.setCut(8,4,4,0);
+							activeMSD.setCut(8,4,4,0,0);
 	}
 
 	protected void  evaluateWaitConditions(ActiveMSDAspect activeMSD)
@@ -582,88 +616,99 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 		Terminal terminal = (Terminal)bindObjectByExpression(activeMSD,Terminal_INST_terminal,null, true);;
 		Cruiser cruiser = (Cruiser)bindObjectByExpression(activeMSD,Cruiser_INST_cruiser,null, true);;
 		ExitsManager existsManager = (ExitsManager)bindObjectByExpression(activeMSD,ExitsManager_INST_existsManager,null, true);;
+		PlatformManager platformManager = (PlatformManager)bindObjectByExpression(activeMSD,PlatformManager_INST_platformManager,null, true);;
 
 		Boolean VAR_boolean_exact_boolean_arg00 = false;
 		if(activeMSD.getPrivateVariable(boolean_arg_boolean_exact_boolean_arg00)!=null){
 			VAR_boolean_exact_boolean_arg00 = (Boolean) activeMSD.getPrivateVariable(boolean_arg_boolean_exact_boolean_arg00);
 		}
 
-		ArrayList<Object>  args101 = getArgsList(VAR_boolean_exact_boolean_arg00);
-		MSDMethod MSDm101 = new MSDMethod(car,cruiser,
-			MSDMethods.Car_Cruiser_setEngineEngaged,args101,"Car:Cruiser:setEngineEngaged",niceName,activeMSD.getGlobalId());// setEngineEngaged() Execute
-		MSDMethod MSDm102 = new MSDMethod(car,car,
-			MSDMethods.Car_Car_startDepart,null,"Car:Car:startDepart",niceName,activeMSD.getGlobalId());// startDepart() Monitored
-		MSDMethod MSDm103 = new MSDMethod(car,existsManager,
-			MSDMethods.Car_ExitsManager_exitClear,null,"Car:ExitsManager:exitClear",niceName,activeMSD.getGlobalId());// exitClear() Execute
-		MSDMethod MSDm104 = new MSDMethod(car,terminal,
-			MSDMethods.Car_Terminal_departReq,null,"Car:Terminal:departReq",niceName,activeMSD.getGlobalId());// departReq() Execute
-		MSDMethod MSDm105 = new MSDMethod(car,car,
-			MSDMethods.Car_Car_endDepart,null,"Car:Car:endDepart",niceName,activeMSD.getGlobalId());// endDepart() Execute
-		MSDMethod MSDm106 = new MSDMethod(terminal,car,
-			MSDMethods.Terminal_Car_departAck,null,"Terminal:Car:departAck",niceName,activeMSD.getGlobalId());// departAck() Monitored
+		ArrayList<Object>  args106 = getArgsList(VAR_boolean_exact_boolean_arg00);
+		MSDMethod MSDm106 = new MSDMethod(car,cruiser,
+			MSDMethods.Car_Cruiser_setEngineEngaged,args106,"Car:Cruiser:setEngineEngaged",niceName,activeMSD.getGlobalId());// setEngineEngaged() Execute
 		MSDMethod MSDm107 = new MSDMethod(car,car,
+			MSDMethods.Car_Car_startDepart,null,"Car:Car:startDepart",niceName,activeMSD.getGlobalId());// startDepart() Monitored
+		MSDMethod MSDm108 = new MSDMethod(car,existsManager,
+			MSDMethods.Car_ExitsManager_exitClear,null,"Car:ExitsManager:exitClear",niceName,activeMSD.getGlobalId());// exitClear() Execute
+		MSDMethod MSDm109 = new MSDMethod(car,platformManager,
+			MSDMethods.Car_PlatformManager_freePlatform,null,"Car:PlatformManager:freePlatform",niceName,activeMSD.getGlobalId());// freePlatform() Execute
+		MSDMethod MSDm110 = new MSDMethod(car,terminal,
+			MSDMethods.Car_Terminal_departReq,null,"Car:Terminal:departReq",niceName,activeMSD.getGlobalId());// departReq() Execute
+		MSDMethod MSDm111 = new MSDMethod(car,car,
+			MSDMethods.Car_Car_endDepart,null,"Car:Car:endDepart",niceName,activeMSD.getGlobalId());// endDepart() Execute
+		MSDMethod MSDm112 = new MSDMethod(terminal,car,
+			MSDMethods.Terminal_Car_departAck,null,"Terminal:Car:departAck",niceName,activeMSD.getGlobalId());// departAck() Monitored
+		MSDMethod MSDm113 = new MSDMethod(car,car,
 			MSDMethods.Car_Car_clearDest,null,"Car:Car:clearDest",niceName,activeMSD.getGlobalId());// clearDest() Execute
-		MSDMethod MSDm108 = new MSDMethod(car,cruiser,
+		MSDMethod MSDm114 = new MSDMethod(car,cruiser,
 			MSDMethods.Car_Cruiser_start,null,"Car:Cruiser:start",niceName,activeMSD.getGlobalId());// start() Execute
 
-		 if(activeMSD.isInCut(0,0,0,0))
+		 if(activeMSD.isInCut(0,0,0,0,0))
 		{
-				ME.add(MSDm102);
-				CV.add(MSDm101,MSDm104,MSDm106,MSDm108,MSDm107,MSDm105,MSDm103);
+				ME.add(MSDm107);
+				CV.add(MSDm108,MSDm110,MSDm112,MSDm114,MSDm106,MSDm111,MSDm109,MSDm113);
 				return;
 		}
-		 if(activeMSD.isInCut(1,0,0,0))
+		 if(activeMSD.isInCut(1,0,0,0,0))
+		{
+				if(MSDm114.sourceInstance!=null && MSDm114.targetInstance!=null){
+					EE.add(MSDm114);
+				}
+				HV.add(MSDm108,MSDm110,MSDm112,MSDm106,MSDm111,MSDm107,MSDm109,MSDm113);
+				return;
+		}
+		 if(activeMSD.isInCut(2,0,1,0,0))
+		{
+				if(MSDm110.sourceInstance!=null && MSDm110.targetInstance!=null){
+					EE.add(MSDm110);
+				}
+				HV.add(MSDm108,MSDm112,MSDm114,MSDm106,MSDm111,MSDm107,MSDm109,MSDm113);
+				return;
+		}
+		 if(activeMSD.isInCut(3,1,1,0,0))
+		{
+				ME.add(MSDm112);
+				CV.add(MSDm108,MSDm110,MSDm114,MSDm106,MSDm111,MSDm107,MSDm109,MSDm113);
+				return;
+		}
+		 if(activeMSD.isInCut(5,3,2,0,0))
+		{
+				if(MSDm106.sourceInstance!=null && MSDm106.targetInstance!=null){
+					EE.add(MSDm106);
+				}
+				HV.add(MSDm108,MSDm110,MSDm112,MSDm114,MSDm111,MSDm107,MSDm109,MSDm113);
+				return;
+		}
+		 if(activeMSD.isInCut(6,3,3,0,0))
+		{
+				if(MSDm113.sourceInstance!=null && MSDm113.targetInstance!=null){
+					EE.add(MSDm113);
+				}
+				HV.add(MSDm108,MSDm110,MSDm112,MSDm114,MSDm106,MSDm111,MSDm107,MSDm109);
+				return;
+		}
+		 if(activeMSD.isInCut(8,4,4,0,0))
 		{
 				if(MSDm108.sourceInstance!=null && MSDm108.targetInstance!=null){
 					EE.add(MSDm108);
 				}
-				HV.add(MSDm101,MSDm104,MSDm106,MSDm102,MSDm107,MSDm105,MSDm103);
+				HV.add(MSDm110,MSDm112,MSDm114,MSDm106,MSDm111,MSDm107,MSDm109,MSDm113);
 				return;
 		}
-		 if(activeMSD.isInCut(2,0,1,0))
+		 if(activeMSD.isInCut(9,4,4,1,0))
 		{
-				if(MSDm104.sourceInstance!=null && MSDm104.targetInstance!=null){
-					EE.add(MSDm104);
+				if(MSDm109.sourceInstance!=null && MSDm109.targetInstance!=null){
+					EE.add(MSDm109);
 				}
-				HV.add(MSDm101,MSDm106,MSDm108,MSDm102,MSDm107,MSDm105,MSDm103);
+				HV.add(MSDm108,MSDm110,MSDm112,MSDm114,MSDm106,MSDm111,MSDm107,MSDm113);
 				return;
 		}
-		 if(activeMSD.isInCut(3,1,1,0))
+		 if(activeMSD.isInCut(10,4,4,1,1))
 		{
-				ME.add(MSDm106);
-				CV.add(MSDm101,MSDm104,MSDm108,MSDm102,MSDm107,MSDm105,MSDm103);
-				return;
-		}
-		 if(activeMSD.isInCut(5,3,2,0))
-		{
-				if(MSDm101.sourceInstance!=null && MSDm101.targetInstance!=null){
-					EE.add(MSDm101);
+				if(MSDm111.sourceInstance!=null && MSDm111.targetInstance!=null){
+					EE.add(MSDm111);
 				}
-				HV.add(MSDm104,MSDm106,MSDm108,MSDm102,MSDm107,MSDm105,MSDm103);
-				return;
-		}
-		 if(activeMSD.isInCut(6,3,3,0))
-		{
-				if(MSDm107.sourceInstance!=null && MSDm107.targetInstance!=null){
-					EE.add(MSDm107);
-				}
-				HV.add(MSDm101,MSDm104,MSDm106,MSDm108,MSDm102,MSDm105,MSDm103);
-				return;
-		}
-		 if(activeMSD.isInCut(8,4,4,0))
-		{
-				if(MSDm103.sourceInstance!=null && MSDm103.targetInstance!=null){
-					EE.add(MSDm103);
-				}
-				HV.add(MSDm101,MSDm104,MSDm106,MSDm108,MSDm102,MSDm107,MSDm105);
-				return;
-		}
-		 if(activeMSD.isInCut(9,4,4,1))
-		{
-				if(MSDm105.sourceInstance!=null && MSDm105.targetInstance!=null){
-					EE.add(MSDm105);
-				}
-				HV.add(MSDm101,MSDm104,MSDm106,MSDm108,MSDm102,MSDm107,MSDm103);
+				HV.add(MSDm108,MSDm110,MSDm112,MSDm114,MSDm106,MSDm107,MSDm109,MSDm113);
 				return;
 		}
 	}
@@ -683,6 +728,7 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 		Terminal terminal = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal);
 		Cruiser cruiser = (Cruiser) activeMSD.getLineInstance(Cruiser_INST_cruiser);
 		ExitsManager existsManager = (ExitsManager) activeMSD.getLineInstance(ExitsManager_INST_existsManager);
+		PlatformManager platformManager = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager);
 	
 
 		boolean arg00 = false;
@@ -728,6 +774,7 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 		Terminal terminal = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal);
 		Cruiser cruiser = (Cruiser) activeMSD.getLineInstance(Cruiser_INST_cruiser);
 		ExitsManager existsManager = (ExitsManager) activeMSD.getLineInstance(ExitsManager_INST_existsManager);
+		PlatformManager platformManager = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager);
 	
 
 		boolean arg00 = false;
@@ -775,6 +822,7 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 		Terminal terminal = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal);
 		Cruiser cruiser = (Cruiser) activeMSD.getLineInstance(Cruiser_INST_cruiser);
 		ExitsManager existsManager = (ExitsManager) activeMSD.getLineInstance(ExitsManager_INST_existsManager);
+		PlatformManager platformManager = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager);
 	
 
 		boolean arg00 = false;
@@ -822,6 +870,7 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 		Terminal terminal = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal);
 		Cruiser cruiser = (Cruiser) activeMSD.getLineInstance(Cruiser_INST_cruiser);
 		ExitsManager existsManager = (ExitsManager) activeMSD.getLineInstance(ExitsManager_INST_existsManager);
+		PlatformManager platformManager = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager);
 	
 
 		boolean arg00 = false;
@@ -862,6 +911,54 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 		return result;
 	}
 	
+	private ArrayList<Object> getplatformManager_PlatformManagerInstances(ActiveMSDAspect activeMSD, 
+			boolean isUniversal, Object monitoredObj)
+	{
+		Car car = (Car) activeMSD.getLineInstance(Car_INST_car);
+		Terminal terminal = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal);
+		Cruiser cruiser = (Cruiser) activeMSD.getLineInstance(Cruiser_INST_cruiser);
+		ExitsManager existsManager = (ExitsManager) activeMSD.getLineInstance(ExitsManager_INST_existsManager);
+		PlatformManager platformManager = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager);
+	
+
+		boolean arg00 = false;
+		boolean arg00Bound=false;
+		if(activeMSD.getPrivateVariable(boolean_arg_boolean_exact_boolean_arg00)!=null){
+			arg00 = (boolean) activeMSD.getPrivateVariable(boolean_arg_boolean_exact_boolean_arg00);
+			arg00Bound=true;
+		}
+		if(terminal==null){
+			return null;				//not enabled
+		}
+		ArrayList<Object> instances = AppObjects.getObjects("PlatformManager");
+		ArrayList<Object> result = new ArrayList<Object>();
+		if(instances==null || instances.size()<1){
+			result = null;
+		}
+		else if(monitoredObj==null){
+			result = null;
+		}
+		else{
+			ArrayList<Object> unboundInstances = getUnboundInstances(activeMSD, instances);
+			for(Object inst:unboundInstances){
+				if(((PlatformManager)inst).getID()==terminal.getID()){
+					if(monitoredObj.equals("NONE") || monitoredObj.equals(inst)){
+						result.add(inst);
+						if( ! isUniversal){		//existential
+							return result;		//return result with one object
+						}
+					}
+				}
+			}
+		}
+		if( (monitoredObj==null || monitoredObj.equals("NONE")) && (result==null || result.size()<1) ){
+			activeMSD.closeAndRemove();		//enabled with no binding results
+			activeMSD.setDeadCopy(true);
+			return null;
+		}
+		return result;
+	}
+	
 	@SuppressWarnings("unused")
 	public Object bindObjectByExpression (ActiveMSDAspect activeMSD,int lifelineIndex, 
 			Object obj, boolean retrieveOnly){
@@ -879,6 +976,7 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 			Terminal terminal = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal);
 			Cruiser cruiser = (Cruiser) activeMSD.getLineInstance(Cruiser_INST_cruiser);
 			ExitsManager existsManager = (ExitsManager) activeMSD.getLineInstance(ExitsManager_INST_existsManager);
+			PlatformManager platformManager = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager);
 			switch (lifelineIndex){
 				case Car_INST_car:
 					try{
@@ -941,6 +1039,29 @@ public class MSDAspectCar_Departure extends MSDAspect implements MSDSubscribe
 				case ExitsManager_INST_existsManager:
 					try{
 						result = getexistsManager_ExitsManagerInstances(activeMSD, false, "NONE");
+						 
+						if(result!=null && result instanceof ArrayList<?>){
+							ArrayList<?> results = (ArrayList<?>)result;
+							int size = results.size();
+							if(size==0){
+								result = null;
+							}else if(size==1){
+								result = results.get(0);
+							}else{	//more than one object
+								result = results.remove(0);
+								handleDynamicLifeline(lifelineIndex, activeMSD, results);
+							}
+						}
+					}catch(NullPointerException npe){
+						result = null;
+					}
+					if(result!=null && !retrieveOnly){
+						activeMSD.setLineInstance(lifelineIndex, result);
+					}
+					break;
+				case PlatformManager_INST_platformManager:
+					try{
+						result = getplatformManager_PlatformManagerInstances(activeMSD, false, "NONE");
 						 
 						if(result!=null && result instanceof ArrayList<?>){
 							ArrayList<?> results = (ArrayList<?>)result;

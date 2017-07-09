@@ -47,16 +47,16 @@ public class MSDAspectCar_Car_choose_direction extends MSDAspect implements MSDS
 		addMinimalEvent(MSDMethods.SysManager_Car_destinationSet);
 		setHotCut(4,3,2);
 		setHotCut(2,2,1);
-		addOperCut("car.location > terminal.location",2,2,1);
-		addOperCut("car.location > terminal.location",3,2,1);
 		addOperCut("else",4,3,2);
 		addOperCut("else",5,3,2);
+		addOperCut("car.location > terminal.location",2,2,1);
+		addOperCut("car.location > terminal.location",3,2,1);
 		setLastCut(6,4,3);
 		numberOfLifeLines = 3;
 		numberOfInstances = 3;
 		numberOfVariables = 3;
 		numberOfTimeTags = 0;
-		interactionId = "1499083609535";
+		interactionId = "1499586852331";
 		setCutsExpressions();
 	}
 
@@ -117,12 +117,12 @@ public class MSDAspectCar_Car_choose_direction extends MSDAspect implements MSDS
 			case MSDMethods.Car_Car_setDirection:
 				if(activeMSD.instancesEquals(Car_INST_car,sourceObject)
 					&& activeMSD.instancesEquals(Car_INST_car,targetObject)
-					&& activeMSD.variableEquals(String_arg_String_exact_String_arg01,args.get(0)))
+					&& activeMSD.variableEquals(String_arg_String_exact_String_arg00,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(4,3,2))
+					if(activeMSD.isInCut(2,2,1))
 					{
-						cutChanged=true; activeMSD.setCut(5,3,2);
+						cutChanged=true; activeMSD.setCut(3,2,1);
 						if(evaluateCondition(2,activeMSD))
 						{
 							cutChanged=true; activeMSD.setCut(6,4,3);
@@ -135,12 +135,12 @@ public class MSDAspectCar_Car_choose_direction extends MSDAspect implements MSDS
 				}
 				if(activeMSD.instancesEquals(Car_INST_car,sourceObject)
 					&& activeMSD.instancesEquals(Car_INST_car,targetObject)
-					&& activeMSD.variableEquals(String_arg_String_exact_String_arg00,args.get(0)))
+					&& activeMSD.variableEquals(String_arg_String_exact_String_arg01,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(2,2,1))
+					if(activeMSD.isInCut(4,3,2))
 					{
-						cutChanged=true; activeMSD.setCut(3,2,1);
+						cutChanged=true; activeMSD.setCut(5,3,2);
 						if(evaluateCondition(2,activeMSD))
 						{
 							cutChanged=true; activeMSD.setCut(6,4,3);
@@ -393,35 +393,35 @@ public class MSDAspectCar_Car_choose_direction extends MSDAspect implements MSDS
 			VAR_String_exact_String_arg01 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_String_arg01);
 		}
 
-		MSDMethod MSDm120 = new MSDMethod(sysManager,car,
+		MSDMethod MSDm126 = new MSDMethod(sysManager,car,
 			MSDMethods.SysManager_Car_destinationSet,null,"SysManager:Car:destinationSet",niceName,activeMSD.getGlobalId());// destinationSet() Monitored
-		ArrayList<Object>  args121 = getArgsList(VAR_String_exact_String_arg01);
-		MSDMethod MSDm121 = new MSDMethod(car,car,
-			MSDMethods.Car_Car_setDirection,args121,"Car:Car:setDirection",niceName,activeMSD.getGlobalId());// setDirection() Execute
-		ArrayList<Object>  args122 = getArgsList(VAR_String_exact_String_arg00);
-		MSDMethod MSDm122 = new MSDMethod(car,car,
-			MSDMethods.Car_Car_setDirection,args122,"Car:Car:setDirection",niceName,activeMSD.getGlobalId());// setDirection() Execute
+		ArrayList<Object>  args127 = getArgsList(VAR_String_exact_String_arg00);
+		MSDMethod MSDm127 = new MSDMethod(car,car,
+			MSDMethods.Car_Car_setDirection,args127,"Car:Car:setDirection",niceName,activeMSD.getGlobalId());// setDirection() Execute
+		ArrayList<Object>  args128 = getArgsList(VAR_String_exact_String_arg01);
+		MSDMethod MSDm128 = new MSDMethod(car,car,
+			MSDMethods.Car_Car_setDirection,args128,"Car:Car:setDirection",niceName,activeMSD.getGlobalId());// setDirection() Execute
 
 		 if(activeMSD.isInCut(0,0,0))
 		{
-				ME.add(MSDm120);
-				CV.add(MSDm121,MSDm122);
+				ME.add(MSDm126);
+				CV.add(MSDm127,MSDm128);
 				return;
 		}
 		 if(activeMSD.isInCut(2,2,1))
 		{
-				if(MSDm122.sourceInstance!=null && MSDm122.targetInstance!=null){
-					EE.add(MSDm122);
+				if(MSDm127.sourceInstance!=null && MSDm127.targetInstance!=null){
+					EE.add(MSDm127);
 				}
-				HV.add(MSDm120);
+				HV.add(MSDm126);
 				return;
 		}
 		 if(activeMSD.isInCut(4,3,2))
 		{
-				if(MSDm121.sourceInstance!=null && MSDm121.targetInstance!=null){
-					EE.add(MSDm121);
+				if(MSDm128.sourceInstance!=null && MSDm128.targetInstance!=null){
+					EE.add(MSDm128);
 				}
-				HV.add(MSDm120);
+				HV.add(MSDm126);
 				return;
 		}
 	}

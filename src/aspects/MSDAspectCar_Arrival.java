@@ -58,16 +58,16 @@ public class MSDAspectCar_Arrival extends MSDAspect implements MSDSubscribe
 		setHotCut(1,0,0,0);
 		setHotCut(4,1,3,1);
 		setHotCut(6,2,4,2);
-		addOperCut("car.Destination == terminal.ID",4,1,3,1);
-		addOperCut("car.Destination == terminal.ID",5,1,3,1);
 		addOperCut("else",6,2,4,2);
 		addOperCut("else",7,2,4,2);
+		addOperCut("car.Destination == terminal.ID",4,1,3,1);
+		addOperCut("car.Destination == terminal.ID",5,1,3,1);
 		setLastCut(8,3,5,3);
 		numberOfLifeLines = 4;
 		numberOfInstances = 4;
 		numberOfVariables = 3;
 		numberOfTimeTags = 0;
-		interactionId = "1499083609511";
+		interactionId = "1499586852307";
 		setCutsExpressions();
 	}
 
@@ -479,52 +479,52 @@ public class MSDAspectCar_Arrival extends MSDAspect implements MSDSubscribe
 			VAR_String_exact_opaque_direction0 = (String) activeMSD.getPrivateVariable(String_arg_String_exact_opaque_direction0);
 		}
 
-		MSDMethod MSDm109 = new MSDMethod(car,car,
+		MSDMethod MSDm115 = new MSDMethod(car,car,
 			MSDMethods.Car_Car_passTerminal,null,"Car:Car:passTerminal",niceName,activeMSD.getGlobalId());// passTerminal() Execute
-		MSDMethod MSDm110 = new MSDMethod(terminal,car,
+		MSDMethod MSDm116 = new MSDMethod(terminal,car,
 			MSDMethods.Terminal_Car_arriveAck,null,"Terminal:Car:arriveAck",niceName,activeMSD.getGlobalId());// arriveAck() Monitored
-		ArrayList<Object>  args111 = getArgsList(VAR_String_exact_opaque_direction0);
-		MSDMethod MSDm111 = new MSDMethod(car,terminal,
-			MSDMethods.Car_Terminal_arriveReq,args111,"Car:Terminal:arriveReq",niceName,activeMSD.getGlobalId());// arriveReq() Execute
-		MSDMethod MSDm112 = new MSDMethod(car,car,
+		ArrayList<Object>  args117 = getArgsList(VAR_String_exact_opaque_direction0);
+		MSDMethod MSDm117 = new MSDMethod(car,terminal,
+			MSDMethods.Car_Terminal_arriveReq,args117,"Car:Terminal:arriveReq",niceName,activeMSD.getGlobalId());// arriveReq() Execute
+		MSDMethod MSDm118 = new MSDMethod(car,car,
 			MSDMethods.Car_Car_stopAtTerminal,null,"Car:Car:stopAtTerminal",niceName,activeMSD.getGlobalId());// stopAtTerminal() Execute
-		MSDMethod MSDm113 = new MSDMethod(car,car,
+		MSDMethod MSDm119 = new MSDMethod(car,car,
 			MSDMethods.Car_Car_startArrival,null,"Car:Car:startArrival",niceName,activeMSD.getGlobalId());// startArrival() Monitored
 
 		 if(activeMSD.isInCut(0,0,0,0))
 		{
-				ME.add(MSDm113);
-				CV.add(MSDm110,MSDm112,MSDm111,MSDm109);
+				ME.add(MSDm119);
+				CV.add(MSDm116,MSDm118,MSDm117,MSDm115);
 				return;
 		}
 		 if(activeMSD.isInCut(1,0,0,0))
 		{
-				if(MSDm111.sourceInstance!=null && MSDm111.targetInstance!=null){
-					EE.add(MSDm111);
+				if(MSDm117.sourceInstance!=null && MSDm117.targetInstance!=null){
+					EE.add(MSDm117);
 				}
-				HV.add(MSDm110,MSDm112,MSDm113,MSDm109);
+				HV.add(MSDm116,MSDm118,MSDm119,MSDm115);
 				return;
 		}
 		 if(activeMSD.isInCut(2,0,1,0))
 		{
-				ME.add(MSDm110);
-				CV.add(MSDm112,MSDm113,MSDm111,MSDm109);
+				ME.add(MSDm116);
+				CV.add(MSDm118,MSDm119,MSDm117,MSDm115);
 				return;
 		}
 		 if(activeMSD.isInCut(4,1,3,1))
 		{
-				if(MSDm112.sourceInstance!=null && MSDm112.targetInstance!=null){
-					EE.add(MSDm112);
+				if(MSDm118.sourceInstance!=null && MSDm118.targetInstance!=null){
+					EE.add(MSDm118);
 				}
-				HV.add(MSDm110,MSDm113,MSDm111,MSDm109);
+				HV.add(MSDm116,MSDm119,MSDm117,MSDm115);
 				return;
 		}
 		 if(activeMSD.isInCut(6,2,4,2))
 		{
-				if(MSDm109.sourceInstance!=null && MSDm109.targetInstance!=null){
-					EE.add(MSDm109);
+				if(MSDm115.sourceInstance!=null && MSDm115.targetInstance!=null){
+					EE.add(MSDm115);
 				}
-				HV.add(MSDm110,MSDm112,MSDm113,MSDm111);
+				HV.add(MSDm116,MSDm118,MSDm119,MSDm117);
 				return;
 		}
 	}

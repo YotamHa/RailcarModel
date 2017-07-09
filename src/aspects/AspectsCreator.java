@@ -28,16 +28,17 @@ public class AspectsCreator
 		MSDAspectLocationAlerts_Alert100.getInstance();
 		MSDAspectLocationAlerts_AlertStop.getInstance();
 		MSDAspectLocationAlerts_Alert80.getInstance();
-		MSDAspectCarHandler_HandleArrival.getInstance();
-		MSDAspectCarHandler_EntranceMove.getInstance();
-		MSDAspectCarHandler_ExitMove.getInstance();
-		MSDAspectCarHandler_HandleDeparture.getInstance();
 		MSDAspectPlatformManager_AllocatePlatform.getInstance();
 		MSDAspectPlatformManager_LSC2.getInstance();
 		MSDAspectPlatformManager_LSC3.getInstance();
+		MSDAspectPlatformManager_LSC1.getInstance();
+		MSDAspectPlatformManager_LSC4.getInstance();
+		MSDAspectPlatformManager_LSC5.getInstance();
 		MSDAspectsysEvents_ChooseDestenation2.getInstance();
 		MSDAspectsysEvents_ChooseDestenation3.getInstance();
 		MSDAspectsysEvents_car2To2.getInstance();
+		MSDAspectcarHandler2_HandleDeparture.getInstance();
+		MSDAspectcarHandler2_HandleArrival.getInstance();
 		MSDCoordinatorAspect.getInstance();
 	}
 }

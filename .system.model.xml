@@ -2968,14 +2968,14 @@
       <objectCreationType>STATIC</objectCreationType>
     </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
     <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
-      <name>existsManager1</name>
+      <name>exitsManager1</name>
       <represents>ExitsManager</represents>
       <iconPath></iconPath>
       <external>false</external>
       <objectCreationType>STATIC</objectCreationType>
     </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
     <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
-      <name>existsManager2</name>
+      <name>exitsManager2</name>
       <represents>ExitsManager</represents>
       <iconPath></iconPath>
       <external>false</external>
@@ -3017,6 +3017,182 @@
     <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
       <name>cruiser</name>
       <represents>Cruiser</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>exit2r</name>
+      <represents>Exit</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>exit2l</name>
+      <represents>Exit</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>platformManager3</name>
+      <represents>PlatformManager</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>entrance3r</name>
+      <represents>Entrance</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>entrance3l</name>
+      <represents>Entrance</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>exitsManager4</name>
+      <represents>ExitsManager</represents>
+      <iconPath></iconPath>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>exit3r</name>
+      <represents>Exit</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>exit3l</name>
+      <represents>Exit</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>terminal4</name>
+      <represents>Terminal</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>platformManager4</name>
+      <represents>PlatformManager</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>entrance4r</name>
+      <represents>Entrance</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>entrance4l</name>
+      <represents>Entrance</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>exit4r</name>
+      <represents>Exit</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>exit4l</name>
+      <represents>Exit</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>terminal5</name>
+      <represents>Terminal</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>platformManager5</name>
+      <represents>PlatformManager</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>entrance5r</name>
+      <represents>Entrance</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>entrance5l</name>
+      <represents>Entrance</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>exitsManager6</name>
+      <represents>ExitsManager</represents>
+      <iconPath></iconPath>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>exitsManager5</name>
+      <represents>ExitsManager</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>exit5r</name>
+      <represents>Exit</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>exit5l</name>
+      <represents>Exit</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>terminal6</name>
+      <represents>Terminal</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>platformManager6</name>
+      <represents>PlatformManager</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>entrance6r</name>
+      <represents>Entrance</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>entrance6l</name>
+      <represents>Entrance</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>exit6r</name>
+      <represents>Exit</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>exit6l</name>
+      <represents>Exit</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>platformManager</name>
+      <represents>PlatformManager</represents>
       <external>false</external>
       <objectCreationType>STATIC</objectCreationType>
     </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>

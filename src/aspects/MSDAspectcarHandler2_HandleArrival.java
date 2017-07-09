@@ -1,4 +1,4 @@
-//  The file MSDAspectCarHandler_HandleArrival.aj was automatically generated using S2A 2.0.0.qualifier.
+//  The file MSDAspectcarHandler2_HandleArrival.aj was automatically generated using S2A 2.0.0.qualifier.
 //  For information see http://www.wisdom.weizmann.ac.il/~maozs/s2a/
 
 package aspects;
@@ -10,7 +10,7 @@ import il.ac.wis.cs.s2a.runtime.lib.*;
 import il.ac.wis.cs.playgo.playtoolkit.*;
 
 
-public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDSubscribe
+public class MSDAspectcarHandler2_HandleArrival extends MSDAspect implements MSDSubscribe
 {
 
 
@@ -23,24 +23,22 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 	static final int int_arg_int_symbolic_var_number = 0;
 	static final int int_arg_int_exact_opaque_platform0 = 1;
 	static final int int_arg_int_exact_opaque_platform0Before = 2;
-	static final int int_arg_int_exact_opaque_arg01 = 3;
-	static final int int_arg_int_exact_opaque_arg01Before = 4;
-	static final int String_arg_String_symbolic_var_direction = 5;
+	static final int String_arg_String_symbolic_var_direction = 3;
 
-	static final int int_var_symbolic_minimalDistance = 6;
+	static final int int_var_symbolic_minimalDistance = 4;
 
-	private final String niceName = "CarHandler_HandleArrival";
+	private final String niceName = "carHandler2_HandleArrival";
 
-	private static MSDAspectCarHandler_HandleArrival instance = null;
+	private static MSDAspectcarHandler2_HandleArrival instance = null;
 
-	public static MSDAspectCarHandler_HandleArrival getInstance(){
+	public static MSDAspectcarHandler2_HandleArrival getInstance(){
 		if(instance==null){
-			instance = new MSDAspectCarHandler_HandleArrival();
+			instance = new MSDAspectcarHandler2_HandleArrival();
 		}
 		return instance;
 	}
 
-	private MSDAspectCarHandler_HandleArrival()
+	private MSDAspectcarHandler2_HandleArrival()
 	{
 		addAspectEvent(MSDMethods.Car_Terminal_arriveReq);
 		PlaygoCoordinator.getInstance().subscribe(this, 
@@ -57,9 +55,6 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 		addAspectEvent(MSDMethods.Entrance_Terminal_moveCompleted);
 		PlaygoCoordinator.getInstance().subscribe(this, 
 			"Entrance", "Terminal", "moveCompleted");
-		addAspectEvent(MSDMethods.Terminal_Car_setPlatform);
-		PlaygoCoordinator.getInstance().subscribe(this, 
-			"Terminal", "Car", "setPlatform");
 		addAspectEvent(MSDMethods.Terminal_Car_arriveAck);
 		PlaygoCoordinator.getInstance().subscribe(this, 
 			"Terminal", "Car", "arriveAck");
@@ -68,13 +63,12 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 		setHotCut(1,3,2,0);
 		setHotCut(1,5,2,2);
 		setHotCut(1,1,0,0);
-		setHotCut(2,6,2,2);
-		setLastCut(3,7,2,2);
+		setLastCut(2,6,2,2);
 		numberOfLifeLines = 4;
 		numberOfInstances = 4;
-		numberOfVariables = 7;
+		numberOfVariables = 5;
 		numberOfTimeTags = 0;
-		interactionId = "1499083609615";
+		interactionId = "1499586852564";
 		setCutsExpressions();
 	}
 
@@ -110,30 +104,14 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 		boolean cutChanged=false;
 		switch (MSDm)
 		{
-			case MSDMethods.Terminal_Car_setPlatform:
-				if(activeMSD.instancesEquals(Terminal_INST_terminal,sourceObject)
-					&& activeMSD.instancesEquals(Car_INST_car,targetObject)
-					&& activeMSD.variableEquals(int_arg_int_exact_opaque_arg01Before,int_arg_int_exact_opaque_arg01,args.get(0)))
-				{
-					unification=true;
-					if(activeMSD.isInCut(1,5,2,2))
-					{
-						cutChanged=true; activeMSD.setCut(2,6,2,2);
-						return cutChanged;
-					}
-				}
-				if(!unification)//No unification...
-					return false;
-				break;
-
 			case MSDMethods.Terminal_Car_arriveAck:
 				if(activeMSD.instancesEquals(Terminal_INST_terminal,sourceObject)
 					&& activeMSD.instancesEquals(Car_INST_car,targetObject))
 				{
 					unification=true;
-					if(activeMSD.isInCut(2,6,2,2))
+					if(activeMSD.isInCut(1,5,2,2))
 					{
-						cutChanged=true; activeMSD.setCut(3,7,2,2);
+						cutChanged=true; activeMSD.setCut(2,6,2,2);
 						break;
 					}
 				}
@@ -263,11 +241,6 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 			platform0 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0);
 		}
 
-		int arg01 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
-			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
-		}
-
 		switch (conditionNumber)
 		{
 		}
@@ -295,11 +268,6 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 		int platform0 = 0;
 		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0)!=null){
 			platform0 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0);
-		}
-
-		int arg01 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
-			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
 		}
 
 	
@@ -333,11 +301,6 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0)!=null){
 			platform0 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0);
 		}
-
-		int arg01 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
-			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
-		}
 		int minimalDistance = 0;
 		if(activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance)!=null){
 			minimalDistance = (Integer) activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance);
@@ -345,9 +308,6 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 
 		try{
 			activeMSD.setPrivateVariable(int_arg_int_exact_opaque_platform0, (int)number);
-		}catch(Exception e){}
-		try{
-			activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg01, (int)number);
 		}catch(Exception e){}
 	}
 
@@ -428,50 +388,6 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 	{
 	}
 
-	private void before_Terminal_Car_setPlatform(Object _terminal ,Object _car, ArrayList<Object> args)
-	{
-				for(ActiveMSDAspect activeMSD:getActiveMSDArray()){
-			int minimalDistance = 0;
-			if(activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance)!=null){
-				minimalDistance = (Integer) activeMSD.getPrivateVariable(int_var_symbolic_minimalDistance);
-			} 
-	
-			Car car = (Car) activeMSD.getLineInstance(Car_INST_car);
-			Terminal terminal = (Terminal) activeMSD.getLineInstance(Terminal_INST_terminal);
-			PlatformManager platformManager = (PlatformManager) activeMSD.getLineInstance(PlatformManager_INST_platformManager);
-			Entrance entrance = (Entrance) activeMSD.getLineInstance(Entrance_INST_entrance);
-
-			String direction = null;
-			if(activeMSD.getPrivateVariable(String_arg_String_symbolic_var_direction)!=null){
-				direction = (String) activeMSD.getPrivateVariable(String_arg_String_symbolic_var_direction);
-			}
-	
-			int number = 0;
-			if(activeMSD.getPrivateVariable(int_arg_int_symbolic_var_number)!=null){
-				number = (int) activeMSD.getPrivateVariable(int_arg_int_symbolic_var_number);
-			}
-	
-			int platform0 = 0;
-			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0)!=null){
-				platform0 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0);
-			}
-	
-			int arg01 = 0;
-			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
-				arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
-			}
-	
-			try{
-				activeMSD.setPrivateVariable(int_arg_int_exact_opaque_arg01Before, (int)number);
-			}catch(Exception e){}
-		}
-	}
-	private void after_Terminal_Car_setPlatform(Object _terminal ,Object _car, ArrayList<Object> args)
-	{
-		changeCutState(MSDMethods.Terminal_Car_setPlatform,
-					_terminal,_car,args);
-	}
-
 	private void before_Terminal_Entrance_moveTo(Object _terminal ,Object _entrance, ArrayList<Object> args)
 	{
 				for(ActiveMSDAspect activeMSD:getActiveMSDArray()){
@@ -498,11 +414,6 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 			int platform0 = 0;
 			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0)!=null){
 				platform0 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0);
-			}
-	
-			int arg01 = 0;
-			if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
-				arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
 			}
 	
 			try{
@@ -551,10 +462,6 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 		Object target, String tgtClassName, String method, 
 		ArrayList<String> argTypes, ArrayList<Object> argValues)
 	{
-		if(srcClassName.equals("Terminal") && tgtClassName.equals("Car") && method.equals("setPlatform")){
-			after_Terminal_Car_setPlatform(source, target, argValues);
-			return;
-		}
 		if(srcClassName.equals("Terminal") && tgtClassName.equals("Entrance") && method.equals("moveTo")){
 			after_Terminal_Entrance_moveTo(source, target, argValues);
 			return;
@@ -586,10 +493,6 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 		Object target, String tgtClassName, String method, 
 		ArrayList<String> argTypes, ArrayList<Object> argValues)
 	{
-		if(srcClassName.equals("Terminal") && tgtClassName.equals("Car") && method.equals("setPlatform")){
-			before_Terminal_Car_setPlatform(source, target, argValues);
-			return;
-		}
 		if(srcClassName.equals("Terminal") && tgtClassName.equals("Entrance") && method.equals("moveTo")){
 			before_Terminal_Entrance_moveTo(source, target, argValues);
 			return;
@@ -636,78 +539,62 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 			VAR_int_exact_opaque_platform0 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0);
 		}
 
-		Integer VAR_int_exact_opaque_arg01 = null;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
-			VAR_int_exact_opaque_arg01 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
-		}
-
-		ArrayList<Object>  args144 = getArgsList(VAR_int_exact_opaque_arg01);
-		MSDMethod MSDm144 = new MSDMethod(terminal,car,
-			MSDMethods.Terminal_Car_setPlatform,args144,"Terminal:Car:setPlatform",niceName,activeMSD.getGlobalId());// setPlatform() Execute
-		MSDMethod MSDm145 = new MSDMethod(terminal,car,
+		MSDMethod MSDm194 = new MSDMethod(terminal,car,
 			MSDMethods.Terminal_Car_arriveAck,null,"Terminal:Car:arriveAck",niceName,activeMSD.getGlobalId());// arriveAck() Execute
-		MSDMethod MSDm146 = new MSDMethod(entrance,terminal,
+		MSDMethod MSDm195 = new MSDMethod(entrance,terminal,
 			MSDMethods.Entrance_Terminal_moveCompleted,null,"Entrance:Terminal:moveCompleted",niceName,activeMSD.getGlobalId());// moveCompleted() Monitored
-		ArrayList<Object>  args147 = getArgsList(VAR_int_symbolic_var_number);
-		MSDMethod MSDm147 = new MSDMethod(platformManager,terminal,
-			MSDMethods.PlatformManager_Terminal_platformAllocated,args147,"PlatformManager:Terminal:platformAllocated",niceName,activeMSD.getGlobalId());// platformAllocated() Monitored
-		ArrayList<Object>  args148 = getArgsList(VAR_int_exact_opaque_platform0);
-		MSDMethod MSDm148 = new MSDMethod(terminal,entrance,
-			MSDMethods.Terminal_Entrance_moveTo,args148,"Terminal:Entrance:moveTo",niceName,activeMSD.getGlobalId());// moveTo() Execute
-		ArrayList<Object>  args149 = getArgsList(VAR_String_symbolic_var_direction);
-		MSDMethod MSDm149 = new MSDMethod(car,terminal,
-			MSDMethods.Car_Terminal_arriveReq,args149,"Car:Terminal:arriveReq",niceName,activeMSD.getGlobalId());// arriveReq() Monitored
-		MSDMethod MSDm150 = new MSDMethod(terminal,platformManager,
+		ArrayList<Object>  args196 = getArgsList(VAR_int_symbolic_var_number);
+		MSDMethod MSDm196 = new MSDMethod(platformManager,terminal,
+			MSDMethods.PlatformManager_Terminal_platformAllocated,args196,"PlatformManager:Terminal:platformAllocated",niceName,activeMSD.getGlobalId());// platformAllocated() Monitored
+		ArrayList<Object>  args197 = getArgsList(VAR_int_exact_opaque_platform0);
+		MSDMethod MSDm197 = new MSDMethod(terminal,entrance,
+			MSDMethods.Terminal_Entrance_moveTo,args197,"Terminal:Entrance:moveTo",niceName,activeMSD.getGlobalId());// moveTo() Execute
+		ArrayList<Object>  args198 = getArgsList(VAR_String_symbolic_var_direction);
+		MSDMethod MSDm198 = new MSDMethod(car,terminal,
+			MSDMethods.Car_Terminal_arriveReq,args198,"Car:Terminal:arriveReq",niceName,activeMSD.getGlobalId());// arriveReq() Monitored
+		MSDMethod MSDm199 = new MSDMethod(terminal,platformManager,
 			MSDMethods.Terminal_PlatformManager_allocatePlatform,null,"Terminal:PlatformManager:allocatePlatform",niceName,activeMSD.getGlobalId());// allocatePlatform() Execute
 
 		 if(activeMSD.isInCut(0,0,0,0))
 		{
-				ME.add(MSDm149);
-				CV.add(MSDm144,MSDm147,MSDm150,MSDm148,MSDm145,MSDm146);
+				ME.add(MSDm198);
+				CV.add(MSDm196,MSDm199,MSDm194,MSDm197,MSDm195);
 				return;
 		}
 		 if(activeMSD.isInCut(1,1,0,0))
 		{
-				if(MSDm150.sourceInstance!=null && MSDm150.targetInstance!=null){
-					EE.add(MSDm150);
+				if(MSDm199.sourceInstance!=null && MSDm199.targetInstance!=null){
+					EE.add(MSDm199);
 				}
-				HV.add(MSDm144,MSDm147,MSDm149,MSDm148,MSDm145,MSDm146);
+				HV.add(MSDm196,MSDm198,MSDm194,MSDm197,MSDm195);
 				return;
 		}
 		 if(activeMSD.isInCut(1,2,1,0))
 		{
-				ME.add(MSDm147);
-				CV.add(MSDm144,MSDm150,MSDm149,MSDm148,MSDm145,MSDm146);
+				ME.add(MSDm196);
+				CV.add(MSDm199,MSDm198,MSDm194,MSDm197,MSDm195);
 				return;
 		}
 		 if(activeMSD.isInCut(1,3,2,0))
 		{
-				if(MSDm148.sourceInstance!=null && MSDm148.targetInstance!=null){
-					EE.add(MSDm148);
+				if(MSDm197.sourceInstance!=null && MSDm197.targetInstance!=null){
+					EE.add(MSDm197);
 				}
-				HV.add(MSDm144,MSDm147,MSDm150,MSDm149,MSDm145,MSDm146);
+				HV.add(MSDm196,MSDm199,MSDm198,MSDm194,MSDm195);
 				return;
 		}
 		 if(activeMSD.isInCut(1,4,2,1))
 		{
-				ME.add(MSDm146);
-				CV.add(MSDm144,MSDm147,MSDm150,MSDm149,MSDm148,MSDm145);
+				ME.add(MSDm195);
+				CV.add(MSDm196,MSDm199,MSDm198,MSDm194,MSDm197);
 				return;
 		}
 		 if(activeMSD.isInCut(1,5,2,2))
 		{
-				if(MSDm144.sourceInstance!=null && MSDm144.targetInstance!=null){
-					EE.add(MSDm144);
+				if(MSDm194.sourceInstance!=null && MSDm194.targetInstance!=null){
+					EE.add(MSDm194);
 				}
-				HV.add(MSDm147,MSDm150,MSDm149,MSDm148,MSDm145,MSDm146);
-				return;
-		}
-		 if(activeMSD.isInCut(2,6,2,2))
-		{
-				if(MSDm145.sourceInstance!=null && MSDm145.targetInstance!=null){
-					EE.add(MSDm145);
-				}
-				HV.add(MSDm144,MSDm147,MSDm150,MSDm149,MSDm148,MSDm146);
+				HV.add(MSDm196,MSDm199,MSDm198,MSDm197,MSDm195);
 				return;
 		}
 	}
@@ -748,13 +635,6 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0)!=null){
 			platform0 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0);
 			platform0Bound=true;
-		}
-
-		int arg01 = 0;
-		boolean arg01Bound=false;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
-			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
-			arg01Bound=true;
 		}
 	
 		ArrayList<Object> instances = AppObjects.getObjects("Car");
@@ -818,13 +698,6 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 			platform0 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0);
 			platform0Bound=true;
 		}
-
-		int arg01 = 0;
-		boolean arg01Bound=false;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
-			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
-			arg01Bound=true;
-		}
 	
 		ArrayList<Object> instances = AppObjects.getObjects("Terminal");
 		ArrayList<Object> result = new ArrayList<Object>();
@@ -883,13 +756,6 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0)!=null){
 			platform0 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0);
 			platform0Bound=true;
-		}
-
-		int arg01 = 0;
-		boolean arg01Bound=false;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
-			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
-			arg01Bound=true;
 		}
 		if(terminal==null){
 			return null;				//not enabled
@@ -952,16 +818,7 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 			platform0 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0);
 			platform0Bound=true;
 		}
-
-		int arg01 = 0;
-		boolean arg01Bound=false;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
-			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
-			arg01Bound=true;
-		}
-		if(terminal==null ||car==null){
-			return null;				//not enabled
-		}
+	
 		ArrayList<Object> instances = AppObjects.getObjects("Entrance");
 		ArrayList<Object> result = new ArrayList<Object>();
 		if(instances==null || instances.size()<1){
@@ -973,7 +830,7 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 		else{
 			ArrayList<Object> unboundInstances = getUnboundInstances(activeMSD, instances);
 			for(Object inst:unboundInstances){
-				if(((Entrance)inst).getTerminalId()==terminal.getID() && ((Entrance)inst).getDirection().equals(car.getDirection())){
+				if(true){
 					if(monitoredObj.equals("NONE") || monitoredObj.equals(inst)){
 						result.add(inst);
 						if( ! isUniversal){		//existential
@@ -1008,11 +865,6 @@ public class MSDAspectCarHandler_HandleArrival extends MSDAspect implements MSDS
 		int platform0 = 0;
 		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0)!=null){
 			platform0 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0);
-		}
-
-		int arg01 = 0;
-		if(activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01)!=null){
-			arg01 = (int) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_arg01);
 		}
 
 		Object result = null;

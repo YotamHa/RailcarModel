@@ -1,7 +1,8 @@
 package org.yakindu.scr.car;
 import org.yakindu.scr.IStatemachine;
+import org.yakindu.scr.ITimerCallback;
 
-public interface ICarStatemachine extends IStatemachine {
+public interface ICarStatemachine extends ITimerCallback, IStatemachine {
 	public interface SCInterface {
 		public void raiseInitCar();
 		public void raiseDestinationSet();
@@ -22,6 +23,8 @@ public interface ICarStatemachine extends IStatemachine {
 		public void setMode(String value);
 		public long getDestenation();
 		public void setDestenation(long value);
+		public boolean getInTerminal();
+		public void setInTerminal(boolean value);
 
 		public void setSCInterfaceOperationCallback(
 				SCInterfaceOperationCallback operationCallback);

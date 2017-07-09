@@ -238,9 +238,6 @@
            <void property="parent">
             <object idref="S2ANode4"/>
            </void>
-           <void property="traceChecked">
-            <boolean>false</boolean>
-           </void>
            <void property="type">
             <object idref="S2ANodeType0"/>
            </void>
@@ -253,9 +250,6 @@
            </void>
            <void property="parent">
             <object idref="S2ANode4"/>
-           </void>
-           <void property="traceChecked">
-            <boolean>false</boolean>
            </void>
            <void property="type">
             <object idref="S2ANodeType0"/>
@@ -283,9 +277,6 @@
            <void property="parent">
             <object idref="S2ANode4"/>
            </void>
-           <void property="traceChecked">
-            <boolean>false</boolean>
-           </void>
            <void property="type">
             <object idref="S2ANodeType0"/>
            </void>
@@ -298,9 +289,6 @@
            </void>
            <void property="parent">
             <object idref="S2ANode4"/>
-           </void>
-           <void property="traceChecked">
-            <boolean>false</boolean>
            </void>
            <void property="type">
             <object idref="S2ANodeType0"/>
@@ -464,113 +452,10 @@
          <void method="add">
           <object class="il.ac.wis.cs.playgo.s2a.S2ANode">
            <void property="name">
-            <string>HandleArrival</string>
-           </void>
-           <void property="parent">
-            <object idref="S2ANode10"/>
-           </void>
-           <void property="traceChecked">
-            <boolean>false</boolean>
-           </void>
-           <void property="type">
-            <object idref="S2ANodeType0"/>
-           </void>
-          </object>
-         </void>
-         <void method="add">
-          <object class="il.ac.wis.cs.playgo.s2a.S2ANode">
-           <void property="name">
-            <string>EntranceMove</string>
-           </void>
-           <void property="parent">
-            <object idref="S2ANode10"/>
-           </void>
-           <void property="traceChecked">
-            <boolean>false</boolean>
-           </void>
-           <void property="type">
-            <object idref="S2ANodeType0"/>
-           </void>
-          </object>
-         </void>
-         <void method="add">
-          <object class="il.ac.wis.cs.playgo.s2a.S2ANode">
-           <void property="name">
-            <string>HandleDeparture</string>
-           </void>
-           <void property="parent">
-            <object idref="S2ANode10"/>
-           </void>
-           <void property="traceChecked">
-            <boolean>false</boolean>
-           </void>
-           <void property="type">
-            <object idref="S2ANodeType0"/>
-           </void>
-          </object>
-         </void>
-         <void method="add">
-          <object class="il.ac.wis.cs.playgo.s2a.S2ANode">
-           <void property="name">
-            <string>ExitMove</string>
-           </void>
-           <void property="parent">
-            <object idref="S2ANode10"/>
-           </void>
-           <void property="traceChecked">
-            <boolean>false</boolean>
-           </void>
-           <void property="type">
-            <object idref="S2ANodeType0"/>
-           </void>
-          </object>
-         </void>
-        </void>
-        <void property="name">
-         <string>CarHandler</string>
-        </void>
-        <void property="parent">
-         <object idref="S2ANode9"/>
-        </void>
-        <void property="traceChecked">
-         <boolean>false</boolean>
-        </void>
-        <void property="type">
-         <object idref="S2ANodeType1"/>
-        </void>
-       </object>
-      </void>
-     </void>
-     <void property="name">
-      <string>CarHandler.lsc</string>
-     </void>
-     <void property="parent">
-      <object idref="S2ANode0"/>
-     </void>
-     <void property="traceChecked">
-      <boolean>false</boolean>
-     </void>
-     <void property="type">
-      <object idref="S2ANodeType2"/>
-     </void>
-     <void property="userData">
-      <string>C:\workspace\runtime-playGo_debug\Railcar4\CarHandler.lsc</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="il.ac.wis.cs.playgo.s2a.S2ANode" id="S2ANode11">
-     <void property="children">
-      <void method="add">
-       <object class="il.ac.wis.cs.playgo.s2a.S2ANode" id="S2ANode12">
-        <void property="children">
-         <void method="add">
-          <object class="il.ac.wis.cs.playgo.s2a.S2ANode">
-           <void property="name">
             <string>AllocatePlatform</string>
            </void>
            <void property="parent">
-            <object idref="S2ANode12"/>
+            <object idref="S2ANode10"/>
            </void>
            <void property="traceChecked">
             <boolean>false</boolean>
@@ -586,7 +471,7 @@
             <string>LSC2</string>
            </void>
            <void property="parent">
-            <object idref="S2ANode12"/>
+            <object idref="S2ANode10"/>
            </void>
            <void property="type">
             <object idref="S2ANodeType0"/>
@@ -599,7 +484,39 @@
             <string>LSC3</string>
            </void>
            <void property="parent">
-            <object idref="S2ANode12"/>
+            <object idref="S2ANode10"/>
+           </void>
+           <void property="type">
+            <object idref="S2ANodeType0"/>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="il.ac.wis.cs.playgo.s2a.S2ANode">
+           <void property="name">
+            <string>LSC1</string>
+           </void>
+           <void property="parent">
+            <object idref="S2ANode10"/>
+           </void>
+           <void property="traceChecked">
+            <boolean>false</boolean>
+           </void>
+           <void property="type">
+            <object idref="S2ANodeType0"/>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="il.ac.wis.cs.playgo.s2a.S2ANode">
+           <void property="name">
+            <string>LSC4</string>
+           </void>
+           <void property="parent">
+            <object idref="S2ANode10"/>
+           </void>
+           <void property="traceChecked">
+            <boolean>false</boolean>
            </void>
            <void property="type">
             <object idref="S2ANodeType0"/>
@@ -611,7 +528,7 @@
          <string>PlatformManager</string>
         </void>
         <void property="parent">
-         <object idref="S2ANode11"/>
+         <object idref="S2ANode9"/>
         </void>
         <void property="type">
          <object idref="S2ANodeType1"/>
@@ -634,10 +551,10 @@
     </object>
    </void>
    <void method="add">
-    <object class="il.ac.wis.cs.playgo.s2a.S2ANode" id="S2ANode13">
+    <object class="il.ac.wis.cs.playgo.s2a.S2ANode" id="S2ANode11">
      <void property="children">
       <void method="add">
-       <object class="il.ac.wis.cs.playgo.s2a.S2ANode" id="S2ANode14">
+       <object class="il.ac.wis.cs.playgo.s2a.S2ANode" id="S2ANode12">
         <void property="children">
          <void method="add">
           <object class="il.ac.wis.cs.playgo.s2a.S2ANode">
@@ -645,7 +562,7 @@
             <string>ChooseDestenation2</string>
            </void>
            <void property="parent">
-            <object idref="S2ANode14"/>
+            <object idref="S2ANode12"/>
            </void>
            <void property="type">
             <object idref="S2ANodeType0"/>
@@ -658,7 +575,7 @@
             <string>ChooseDestenation3</string>
            </void>
            <void property="parent">
-            <object idref="S2ANode14"/>
+            <object idref="S2ANode12"/>
            </void>
            <void property="type">
             <object idref="S2ANodeType0"/>
@@ -671,7 +588,7 @@
             <string>car2To2</string>
            </void>
            <void property="parent">
-            <object idref="S2ANode14"/>
+            <object idref="S2ANode12"/>
            </void>
            <void property="type">
             <object idref="S2ANodeType0"/>
@@ -683,7 +600,7 @@
          <string>sysEvents</string>
         </void>
         <void property="parent">
-         <object idref="S2ANode13"/>
+         <object idref="S2ANode11"/>
         </void>
         <void property="type">
          <object idref="S2ANodeType1"/>
@@ -702,6 +619,65 @@
      </void>
      <void property="userData">
       <string>C:\workspace\runtime-playGo_debug\Railcar4\sysEvents.lsc</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="il.ac.wis.cs.playgo.s2a.S2ANode" id="S2ANode13">
+     <void property="children">
+      <void method="add">
+       <object class="il.ac.wis.cs.playgo.s2a.S2ANode" id="S2ANode14">
+        <void property="children">
+         <void method="add">
+          <object class="il.ac.wis.cs.playgo.s2a.S2ANode">
+           <void property="name">
+            <string>HandleDeparture</string>
+           </void>
+           <void property="parent">
+            <object idref="S2ANode14"/>
+           </void>
+           <void property="type">
+            <object idref="S2ANodeType0"/>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="il.ac.wis.cs.playgo.s2a.S2ANode">
+           <void property="name">
+            <string>HandleArrival</string>
+           </void>
+           <void property="parent">
+            <object idref="S2ANode14"/>
+           </void>
+           <void property="type">
+            <object idref="S2ANodeType0"/>
+           </void>
+          </object>
+         </void>
+        </void>
+        <void property="name">
+         <string>carHandler2</string>
+        </void>
+        <void property="parent">
+         <object idref="S2ANode13"/>
+        </void>
+        <void property="type">
+         <object idref="S2ANodeType1"/>
+        </void>
+       </object>
+      </void>
+     </void>
+     <void property="name">
+      <string>carHandler2.lsc</string>
+     </void>
+     <void property="parent">
+      <object idref="S2ANode0"/>
+     </void>
+     <void property="type">
+      <object idref="S2ANodeType2"/>
+     </void>
+     <void property="userData">
+      <string>C:\workspace\runtime-playGo_debug\Railcar4\carHandler2.lsc</string>
      </void>
     </object>
    </void>

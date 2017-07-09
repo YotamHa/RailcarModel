@@ -1,4 +1,5 @@
 package org.yakindu.scr.car;
+import org.yakindu.scr.ITimer;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -6,11 +7,12 @@ import il.ac.wis.cs.playgo.ee.sct.IExecutionEngineSCT;
 import il.ac.wis.cs.playgo.playtoolkit.ebridge.IExecutionBridge;
 import il.ac.wis.cs.playgo.ee.sct.ExecutionBridge2SCT;
 /*
+ import org.yakindu.scr.TimerService;
  */
 
 public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 
-	private final boolean[] timeEvents = new boolean[0];
+	private final boolean[] timeEvents = new boolean[1];
 
 	private final class SCInterfaceImpl implements SCInterface {
 
@@ -197,6 +199,17 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 					+ " (external change)");
 		}
 
+		protected boolean inTerminal;
+		public boolean getInTerminal() {
+			return inTerminal;
+		}
+
+		public void setInTerminal(boolean value) {
+			this.inTerminal = value;
+			trace("inTerminal" + " = " + String.valueOf(value)
+					+ " (external change)");
+		}
+
 		public void clearEvents() {
 			initCar = false;
 			destinationSet = false;
@@ -285,6 +298,9 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 	}
 
 	public void init() {
+		if (timer == null) {
+			throw new IllegalStateException("timer not set.");
+		}
 		for (int i = 0; i < 1; i++) {
 			stateVector[i] = State.$NullState$;
 		}
@@ -302,6 +318,8 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 
 		sCInterface.destenation = 0;
 
+		sCInterface.inTerminal = false;
+
 		sCInterface.iD = (long) getPropertyValue(selfObjectName, selfClassName,
 				"iD", "long");
 		sCInterface.terminal = (long) getPropertyValue(selfObjectName,
@@ -312,10 +330,15 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 				selfClassName, "mode", "String");
 		sCInterface.destenation = (long) getPropertyValue(selfObjectName,
 				selfClassName, "destenation", "long");
+		sCInterface.inTerminal = (boolean) getPropertyValue(selfObjectName,
+				selfClassName, "inTerminal", "boolean");
 
 	}
 
 	public void enter() {
+		if (timer == null) {
+			throw new IllegalStateException("timer not set.");
+		}
 		entryAction();
 
 		nextStateIndex = 0;
@@ -342,6 +365,8 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 			case main_region_Operating_r1_departure :
 				nextStateIndex = 0;
 				stateVector[0] = State.$NullState$;
+
+				timer.unsetTimer(this, 0);
 				break;
 
 			case main_region_Operating_r1_Cruising :
@@ -390,6 +415,9 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 	protected void clearEvents() {
 		sCInterface.clearEvents();
 
+		for (int i = 0; i < timeEvents.length; i++) {
+			timeEvents[i] = false;
+		}
 	}
 
 	/**
@@ -494,6 +522,13 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 	public void setDestenation(long value) {
 		sCInterface.setDestenation(value);
 	}
+	public boolean getInTerminal() {
+		return sCInterface.getInTerminal();
+	}
+
+	public void setInTerminal(boolean value) {
+		sCInterface.setInTerminal(value);
+	}
 
 	/* Entry action for statechart 'Car'. */
 	private void entryAction() {
@@ -530,6 +565,8 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 		nextStateIndex = 0;
 		stateVector[0] = State.$NullState$;
 
+		timer.setTimer(this, 0, 5 * 1000, true);
+
 		sCInterface.raiseStartDepart();
 
 		nextStateIndex = 0;
@@ -542,8 +579,16 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 			nextStateIndex = 0;
 			stateVector[0] = State.$NullState$;
 
+			timer.unsetTimer(this, 0);
+
+			sCInterface.inTerminal = false;
+
 			nextStateIndex = 0;
 			stateVector[0] = State.main_region_Operating_r1_Cruising;
+		} else {
+			if (timeEvents[0]) {
+				sCInterface.raiseStartDepart();
+			}
 		}
 	}
 
@@ -566,6 +611,8 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 			nextStateIndex = 0;
 			stateVector[0] = State.$NullState$;
 
+			sCInterface.inTerminal = true;
+
 			if ((sCInterface.mode == null ? "pass" == null : sCInterface.mode
 					.equals("pass"))) {
 				nextStateIndex = 0;
@@ -578,6 +625,8 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 						case main_region_Operating_r1_departure :
 							nextStateIndex = 0;
 							stateVector[0] = State.$NullState$;
+
+							timer.unsetTimer(this, 0);
 							break;
 
 						case main_region_Operating_r1_Cruising :
@@ -706,7 +755,9 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 	}
 
 	public void initEE() {
-		/**/
+		/*
+		this.setTimer(new TimerService());
+		 */
 		this.setTimer(this.ebridge);
 
 		// enter the statemachine and activate the Idle state
