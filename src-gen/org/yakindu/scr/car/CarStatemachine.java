@@ -611,8 +611,6 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 			nextStateIndex = 0;
 			stateVector[0] = State.$NullState$;
 
-			sCInterface.inTerminal = true;
-
 			if ((sCInterface.mode == null ? "pass" == null : sCInterface.mode
 					.equals("pass"))) {
 				nextStateIndex = 0;
@@ -642,6 +640,8 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 						default :
 							break;
 					}
+
+					sCInterface.inTerminal = true;
 
 					nextStateIndex = 0;
 					stateVector[0] = State.main_region_idle;

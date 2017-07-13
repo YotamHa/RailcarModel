@@ -3196,6 +3196,12 @@
       <external>false</external>
       <objectCreationType>STATIC</objectCreationType>
     </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+    <il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
+      <name>exitsManager</name>
+      <represents>ExitsManager</represents>
+      <external>false</external>
+      <objectCreationType>STATIC</objectCreationType>
+    </il.ac.wis.cs.systemmodel.impl.SystemModelObjectImpl>
   </objects>
   <types/>
   <initialConfigurations/>

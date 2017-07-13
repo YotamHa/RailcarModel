@@ -44,15 +44,15 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "PlatformManager", "PlatformManager", "setPlatform1busy");
 		PlaygoCoordinator.getInstance().subscribe(
-				this, "SysManager", "Exit", "setID");
-		PlaygoCoordinator.getInstance().subscribe(
 				this, "SysManager", "Terminal", "setID");
 		PlaygoCoordinator.getInstance().subscribe(
-				this, "SysManager", "Cruiser", "setID");
+				this, "SysManager", "Exit", "setID");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "SysManager", "PlatformManager", "setID");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "SysManager", "ExitsManager", "setID");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "SysManager", "Cruiser", "setID");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "Terminal", "Exit", "moveTo");
 		PlaygoCoordinator.getInstance().subscribe(
@@ -114,9 +114,9 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "Car", "Car", "endArrival");
 		PlaygoCoordinator.getInstance().subscribe(
-				this, "SysManager", "Exit", "setDirection");
-		PlaygoCoordinator.getInstance().subscribe(
 				this, "SysManager", "Entrance", "setDirection");
+		PlaygoCoordinator.getInstance().subscribe(
+				this, "SysManager", "Exit", "setDirection");
 		PlaygoCoordinator.getInstance().subscribe(
 				this, "Car", "Car", "setDirection");
 		PlaygoCoordinator.getInstance().subscribe(
@@ -257,14 +257,14 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 		MSDAspectPlatformManager_LSC3.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		aspects.add(MSDAspectPlatformManager_LSC3.getInstance());
 
-		MSDAspectPlatformManager_LSC1.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		aspects.add(MSDAspectPlatformManager_LSC1.getInstance());
+		MSDAspectPlatformManager_MoveExit.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		aspects.add(MSDAspectPlatformManager_MoveExit.getInstance());
 
-		MSDAspectPlatformManager_LSC4.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		aspects.add(MSDAspectPlatformManager_LSC4.getInstance());
+		MSDAspectPlatformManager_MoveEntrance.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		aspects.add(MSDAspectPlatformManager_MoveEntrance.getInstance());
 
-		MSDAspectPlatformManager_LSC5.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		aspects.add(MSDAspectPlatformManager_LSC5.getInstance());
+		MSDAspectPlatformManager_FreePlatform.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		aspects.add(MSDAspectPlatformManager_FreePlatform.getInstance());
 
 		MSDAspectsysEvents_ChooseDestenation2.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		aspects.add(MSDAspectsysEvents_ChooseDestenation2.getInstance());
@@ -305,9 +305,9 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 		MSDAspectPlatformManager_AllocatePlatform.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectPlatformManager_LSC2.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectPlatformManager_LSC3.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		MSDAspectPlatformManager_LSC1.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		MSDAspectPlatformManager_LSC4.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		MSDAspectPlatformManager_LSC5.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectPlatformManager_MoveExit.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectPlatformManager_MoveEntrance.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectPlatformManager_FreePlatform.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectsysEvents_ChooseDestenation2.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectsysEvents_ChooseDestenation3.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectsysEvents_car2To2.getInstance().updateForbiddenEvents(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
@@ -356,9 +356,9 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 		MSDAspectPlatformManager_AllocatePlatform.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectPlatformManager_LSC2.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectPlatformManager_LSC3.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		MSDAspectPlatformManager_LSC1.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		MSDAspectPlatformManager_LSC4.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
-		MSDAspectPlatformManager_LSC5.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectPlatformManager_MoveExit.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectPlatformManager_MoveEntrance.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
+		MSDAspectPlatformManager_FreePlatform.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectsysEvents_ChooseDestenation2.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectsysEvents_ChooseDestenation3.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
 		MSDAspectsysEvents_car2To2.getInstance().getCutState(monitoringEnabled, executingEnabled, coldViolation, hotViolation);
@@ -465,8 +465,12 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 			 ((Car)MSDm.targetInstance).setMode(
 				(String)MSDm.args.get(0));
 			break;
-			case MSDMethods.SysManager_Cruiser_setID:
-			 ((Cruiser)MSDm.targetInstance).setID(
+			case MSDMethods.SysManager_Exit_setID:
+			 ((Exit)MSDm.targetInstance).setID(
+				(Integer)MSDm.args.get(0));
+			break;
+			case MSDMethods.SysManager_ExitsManager_setID:
+			 ((ExitsManager)MSDm.targetInstance).setID(
 				(Integer)MSDm.args.get(0));
 			break;
 			case MSDMethods.SysManager_Terminal_setID:
@@ -477,12 +481,8 @@ public class MSDCoordinatorAspect extends MSDCoordinator implements MSDSubscribe
 			 ((PlatformManager)MSDm.targetInstance).setID(
 				(Integer)MSDm.args.get(0));
 			break;
-			case MSDMethods.SysManager_Exit_setID:
-			 ((Exit)MSDm.targetInstance).setID(
-				(Integer)MSDm.args.get(0));
-			break;
-			case MSDMethods.SysManager_ExitsManager_setID:
-			 ((ExitsManager)MSDm.targetInstance).setID(
+			case MSDMethods.SysManager_Cruiser_setID:
+			 ((Cruiser)MSDm.targetInstance).setID(
 				(Integer)MSDm.args.get(0));
 			break;
 			case MSDMethods.Exit_Terminal_moveCompleted:

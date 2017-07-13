@@ -58,16 +58,16 @@ public class MSDAspectCar_Arrival extends MSDAspect implements MSDSubscribe
 		setHotCut(1,0,0,0);
 		setHotCut(4,1,3,1);
 		setHotCut(6,2,4,2);
-		addOperCut("else",6,2,4,2);
-		addOperCut("else",7,2,4,2);
 		addOperCut("car.Destination == terminal.ID",4,1,3,1);
 		addOperCut("car.Destination == terminal.ID",5,1,3,1);
+		addOperCut("else",6,2,4,2);
+		addOperCut("else",7,2,4,2);
 		setLastCut(8,3,5,3);
 		numberOfLifeLines = 4;
 		numberOfInstances = 4;
 		numberOfVariables = 3;
 		numberOfTimeTags = 0;
-		interactionId = "1499586852307";
+		interactionId = "1499940130048";
 		setCutsExpressions();
 	}
 

@@ -1,4 +1,4 @@
-//  The file MSDAspectPlatformManager_LSC5.aj was automatically generated using S2A 2.0.0.qualifier.
+//  The file MSDAspectPlatformManager_FreePlatform.aj was automatically generated using S2A 2.0.0.qualifier.
 //  For information see http://www.wisdom.weizmann.ac.il/~maozs/s2a/
 
 package aspects;
@@ -10,7 +10,7 @@ import il.ac.wis.cs.s2a.runtime.lib.*;
 import il.ac.wis.cs.playgo.playtoolkit.*;
 
 
-public class MSDAspectPlatformManager_LSC5 extends MSDAspect implements MSDSubscribe
+public class MSDAspectPlatformManager_FreePlatform extends MSDAspect implements MSDSubscribe
 {
 
 
@@ -25,18 +25,18 @@ public class MSDAspectPlatformManager_LSC5 extends MSDAspect implements MSDSubsc
 
 	static final int int_var_symbolic_minimalDistance = 4;
 
-	private final String niceName = "PlatformManager_LSC5";
+	private final String niceName = "PlatformManager_FreePlatform";
 
-	private static MSDAspectPlatformManager_LSC5 instance = null;
+	private static MSDAspectPlatformManager_FreePlatform instance = null;
 
-	public static MSDAspectPlatformManager_LSC5 getInstance(){
+	public static MSDAspectPlatformManager_FreePlatform getInstance(){
 		if(instance==null){
-			instance = new MSDAspectPlatformManager_LSC5();
+			instance = new MSDAspectPlatformManager_FreePlatform();
 		}
 		return instance;
 	}
 
-	private MSDAspectPlatformManager_LSC5()
+	private MSDAspectPlatformManager_FreePlatform()
 	{
 		addAspectEvent(MSDMethods.Car_PlatformManager_freePlatform);
 		PlaygoCoordinator.getInstance().subscribe(this, 
@@ -59,12 +59,12 @@ public class MSDAspectPlatformManager_LSC5 extends MSDAspect implements MSDSubsc
 		setHotCut(2,2);
 		setHotCut(4,6);
 		setHotCut(5,8);
-		addOperCut("car.platform == 2",3,4);
-		addOperCut("car.platform == 2",3,5);
-		addOperCut("car.platform == 1",2,2);
-		addOperCut("car.platform == 1",2,3);
 		addOperCut("car.platform == 3",4,6);
 		addOperCut("car.platform == 3",4,7);
+		addOperCut("car.platform == 1",2,2);
+		addOperCut("car.platform == 1",2,3);
+		addOperCut("car.platform == 2",3,4);
+		addOperCut("car.platform == 2",3,5);
 		addOperCut("car.platform == 4",5,8);
 		addOperCut("car.platform == 4",5,9);
 		setLastCut(6,10);
@@ -72,7 +72,7 @@ public class MSDAspectPlatformManager_LSC5 extends MSDAspect implements MSDSubsc
 		numberOfInstances = 2;
 		numberOfVariables = 5;
 		numberOfTimeTags = 0;
-		interactionId = "1499586852484";
+		interactionId = "1499940130222";
 		setCutsExpressions();
 	}
 
@@ -552,57 +552,57 @@ public class MSDAspectPlatformManager_LSC5 extends MSDAspect implements MSDSubsc
 			VAR_boolean_exact_boolean_arg02 = (Boolean) activeMSD.getPrivateVariable(boolean_arg_boolean_exact_boolean_arg02);
 		}
 
-		MSDMethod MSDm171 = new MSDMethod(car,platformManager,
+		MSDMethod MSDm174 = new MSDMethod(car,platformManager,
 			MSDMethods.Car_PlatformManager_freePlatform,null,"Car:PlatformManager:freePlatform",niceName,activeMSD.getGlobalId());// freePlatform() Monitored
-		ArrayList<Object>  args172 = getArgsList(VAR_boolean_exact_boolean_arg01);
-		MSDMethod MSDm172 = new MSDMethod(platformManager,platformManager,
-			MSDMethods.PlatformManager_PlatformManager_setPlatform2busy,args172,"PlatformManager:PlatformManager:setPlatform2busy",niceName,activeMSD.getGlobalId());// setPlatform2busy() Execute
-		ArrayList<Object>  args173 = getArgsList(VAR_boolean_exact_boolean_arg03);
-		MSDMethod MSDm173 = new MSDMethod(platformManager,platformManager,
-			MSDMethods.PlatformManager_PlatformManager_setPlatform4busy,args173,"PlatformManager:PlatformManager:setPlatform4busy",niceName,activeMSD.getGlobalId());// setPlatform4busy() Execute
-		ArrayList<Object>  args174 = getArgsList(VAR_boolean_exact_boolean_arg00);
-		MSDMethod MSDm174 = new MSDMethod(platformManager,platformManager,
-			MSDMethods.PlatformManager_PlatformManager_setPlatform1busy,args174,"PlatformManager:PlatformManager:setPlatform1busy",niceName,activeMSD.getGlobalId());// setPlatform1busy() Execute
-		ArrayList<Object>  args175 = getArgsList(VAR_boolean_exact_boolean_arg02);
+		ArrayList<Object>  args175 = getArgsList(VAR_boolean_exact_boolean_arg01);
 		MSDMethod MSDm175 = new MSDMethod(platformManager,platformManager,
-			MSDMethods.PlatformManager_PlatformManager_setPlatform3busy,args175,"PlatformManager:PlatformManager:setPlatform3busy",niceName,activeMSD.getGlobalId());// setPlatform3busy() Execute
+			MSDMethods.PlatformManager_PlatformManager_setPlatform2busy,args175,"PlatformManager:PlatformManager:setPlatform2busy",niceName,activeMSD.getGlobalId());// setPlatform2busy() Execute
+		ArrayList<Object>  args176 = getArgsList(VAR_boolean_exact_boolean_arg03);
+		MSDMethod MSDm176 = new MSDMethod(platformManager,platformManager,
+			MSDMethods.PlatformManager_PlatformManager_setPlatform4busy,args176,"PlatformManager:PlatformManager:setPlatform4busy",niceName,activeMSD.getGlobalId());// setPlatform4busy() Execute
+		ArrayList<Object>  args177 = getArgsList(VAR_boolean_exact_boolean_arg00);
+		MSDMethod MSDm177 = new MSDMethod(platformManager,platformManager,
+			MSDMethods.PlatformManager_PlatformManager_setPlatform1busy,args177,"PlatformManager:PlatformManager:setPlatform1busy",niceName,activeMSD.getGlobalId());// setPlatform1busy() Execute
+		ArrayList<Object>  args178 = getArgsList(VAR_boolean_exact_boolean_arg02);
+		MSDMethod MSDm178 = new MSDMethod(platformManager,platformManager,
+			MSDMethods.PlatformManager_PlatformManager_setPlatform3busy,args178,"PlatformManager:PlatformManager:setPlatform3busy",niceName,activeMSD.getGlobalId());// setPlatform3busy() Execute
 
 		 if(activeMSD.isInCut(0,0))
 		{
-				ME.add(MSDm171);
-				CV.add(MSDm175,MSDm174,MSDm172,MSDm173);
+				ME.add(MSDm174);
+				CV.add(MSDm178,MSDm177,MSDm175,MSDm176);
 				return;
 		}
 		 if(activeMSD.isInCut(2,2))
 		{
-				if(MSDm174.sourceInstance!=null && MSDm174.targetInstance!=null){
-					EE.add(MSDm174);
+				if(MSDm177.sourceInstance!=null && MSDm177.targetInstance!=null){
+					EE.add(MSDm177);
 				}
-				HV.add(MSDm171,MSDm175,MSDm172,MSDm173);
+				HV.add(MSDm174,MSDm178,MSDm175,MSDm176);
 				return;
 		}
 		 if(activeMSD.isInCut(3,4))
 		{
-				if(MSDm172.sourceInstance!=null && MSDm172.targetInstance!=null){
-					EE.add(MSDm172);
+				if(MSDm175.sourceInstance!=null && MSDm175.targetInstance!=null){
+					EE.add(MSDm175);
 				}
-				HV.add(MSDm171,MSDm175,MSDm174,MSDm173);
+				HV.add(MSDm174,MSDm178,MSDm177,MSDm176);
 				return;
 		}
 		 if(activeMSD.isInCut(4,6))
 		{
-				if(MSDm175.sourceInstance!=null && MSDm175.targetInstance!=null){
-					EE.add(MSDm175);
+				if(MSDm178.sourceInstance!=null && MSDm178.targetInstance!=null){
+					EE.add(MSDm178);
 				}
-				HV.add(MSDm171,MSDm174,MSDm172,MSDm173);
+				HV.add(MSDm174,MSDm177,MSDm175,MSDm176);
 				return;
 		}
 		 if(activeMSD.isInCut(5,8))
 		{
-				if(MSDm173.sourceInstance!=null && MSDm173.targetInstance!=null){
-					EE.add(MSDm173);
+				if(MSDm176.sourceInstance!=null && MSDm176.targetInstance!=null){
+					EE.add(MSDm176);
 				}
-				HV.add(MSDm171,MSDm175,MSDm174,MSDm172);
+				HV.add(MSDm174,MSDm178,MSDm177,MSDm175);
 				return;
 		}
 	}

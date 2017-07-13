@@ -68,7 +68,7 @@ public class MSDAspectcarHandler2_HandleArrival extends MSDAspect implements MSD
 		numberOfInstances = 4;
 		numberOfVariables = 5;
 		numberOfTimeTags = 0;
-		interactionId = "1499586852564";
+		interactionId = "1499940130297";
 		setCutsExpressions();
 	}
 
@@ -539,62 +539,62 @@ public class MSDAspectcarHandler2_HandleArrival extends MSDAspect implements MSD
 			VAR_int_exact_opaque_platform0 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0);
 		}
 
-		MSDMethod MSDm194 = new MSDMethod(terminal,car,
+		MSDMethod MSDm197 = new MSDMethod(terminal,car,
 			MSDMethods.Terminal_Car_arriveAck,null,"Terminal:Car:arriveAck",niceName,activeMSD.getGlobalId());// arriveAck() Execute
-		MSDMethod MSDm195 = new MSDMethod(entrance,terminal,
+		MSDMethod MSDm198 = new MSDMethod(entrance,terminal,
 			MSDMethods.Entrance_Terminal_moveCompleted,null,"Entrance:Terminal:moveCompleted",niceName,activeMSD.getGlobalId());// moveCompleted() Monitored
-		ArrayList<Object>  args196 = getArgsList(VAR_int_symbolic_var_number);
-		MSDMethod MSDm196 = new MSDMethod(platformManager,terminal,
-			MSDMethods.PlatformManager_Terminal_platformAllocated,args196,"PlatformManager:Terminal:platformAllocated",niceName,activeMSD.getGlobalId());// platformAllocated() Monitored
-		ArrayList<Object>  args197 = getArgsList(VAR_int_exact_opaque_platform0);
-		MSDMethod MSDm197 = new MSDMethod(terminal,entrance,
-			MSDMethods.Terminal_Entrance_moveTo,args197,"Terminal:Entrance:moveTo",niceName,activeMSD.getGlobalId());// moveTo() Execute
-		ArrayList<Object>  args198 = getArgsList(VAR_String_symbolic_var_direction);
-		MSDMethod MSDm198 = new MSDMethod(car,terminal,
-			MSDMethods.Car_Terminal_arriveReq,args198,"Car:Terminal:arriveReq",niceName,activeMSD.getGlobalId());// arriveReq() Monitored
-		MSDMethod MSDm199 = new MSDMethod(terminal,platformManager,
+		ArrayList<Object>  args199 = getArgsList(VAR_int_symbolic_var_number);
+		MSDMethod MSDm199 = new MSDMethod(platformManager,terminal,
+			MSDMethods.PlatformManager_Terminal_platformAllocated,args199,"PlatformManager:Terminal:platformAllocated",niceName,activeMSD.getGlobalId());// platformAllocated() Monitored
+		ArrayList<Object>  args200 = getArgsList(VAR_int_exact_opaque_platform0);
+		MSDMethod MSDm200 = new MSDMethod(terminal,entrance,
+			MSDMethods.Terminal_Entrance_moveTo,args200,"Terminal:Entrance:moveTo",niceName,activeMSD.getGlobalId());// moveTo() Execute
+		ArrayList<Object>  args201 = getArgsList(VAR_String_symbolic_var_direction);
+		MSDMethod MSDm201 = new MSDMethod(car,terminal,
+			MSDMethods.Car_Terminal_arriveReq,args201,"Car:Terminal:arriveReq",niceName,activeMSD.getGlobalId());// arriveReq() Monitored
+		MSDMethod MSDm202 = new MSDMethod(terminal,platformManager,
 			MSDMethods.Terminal_PlatformManager_allocatePlatform,null,"Terminal:PlatformManager:allocatePlatform",niceName,activeMSD.getGlobalId());// allocatePlatform() Execute
 
 		 if(activeMSD.isInCut(0,0,0,0))
 		{
-				ME.add(MSDm198);
-				CV.add(MSDm196,MSDm199,MSDm194,MSDm197,MSDm195);
+				ME.add(MSDm201);
+				CV.add(MSDm199,MSDm202,MSDm197,MSDm200,MSDm198);
 				return;
 		}
 		 if(activeMSD.isInCut(1,1,0,0))
 		{
-				if(MSDm199.sourceInstance!=null && MSDm199.targetInstance!=null){
-					EE.add(MSDm199);
+				if(MSDm202.sourceInstance!=null && MSDm202.targetInstance!=null){
+					EE.add(MSDm202);
 				}
-				HV.add(MSDm196,MSDm198,MSDm194,MSDm197,MSDm195);
+				HV.add(MSDm199,MSDm201,MSDm197,MSDm200,MSDm198);
 				return;
 		}
 		 if(activeMSD.isInCut(1,2,1,0))
 		{
-				ME.add(MSDm196);
-				CV.add(MSDm199,MSDm198,MSDm194,MSDm197,MSDm195);
+				ME.add(MSDm199);
+				CV.add(MSDm202,MSDm201,MSDm197,MSDm200,MSDm198);
 				return;
 		}
 		 if(activeMSD.isInCut(1,3,2,0))
 		{
-				if(MSDm197.sourceInstance!=null && MSDm197.targetInstance!=null){
-					EE.add(MSDm197);
+				if(MSDm200.sourceInstance!=null && MSDm200.targetInstance!=null){
+					EE.add(MSDm200);
 				}
-				HV.add(MSDm196,MSDm199,MSDm198,MSDm194,MSDm195);
+				HV.add(MSDm199,MSDm202,MSDm201,MSDm197,MSDm198);
 				return;
 		}
 		 if(activeMSD.isInCut(1,4,2,1))
 		{
-				ME.add(MSDm195);
-				CV.add(MSDm196,MSDm199,MSDm198,MSDm194,MSDm197);
+				ME.add(MSDm198);
+				CV.add(MSDm199,MSDm202,MSDm201,MSDm197,MSDm200);
 				return;
 		}
 		 if(activeMSD.isInCut(1,5,2,2))
 		{
-				if(MSDm194.sourceInstance!=null && MSDm194.targetInstance!=null){
-					EE.add(MSDm194);
+				if(MSDm197.sourceInstance!=null && MSDm197.targetInstance!=null){
+					EE.add(MSDm197);
 				}
-				HV.add(MSDm196,MSDm199,MSDm198,MSDm197,MSDm195);
+				HV.add(MSDm199,MSDm202,MSDm201,MSDm200,MSDm198);
 				return;
 		}
 	}

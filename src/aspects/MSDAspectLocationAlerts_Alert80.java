@@ -46,16 +46,16 @@ public class MSDAspectLocationAlerts_Alert80 extends MSDAspect implements MSDSub
 		addMinimalEvent(MSDMethods.Car_Car_moveCar);
 		setHotCut(5,3,4);
 		setHotCut(3,2,2);
-		addOperCut(" (minimalDistance >= terminal.location - car1.location) && (car1.direction == right) && (terminal.location >= car1.location) ",3,2,2);
-		addOperCut(" (minimalDistance >= terminal.location - car1.location) && (car1.direction == right) && (terminal.location >= car1.location) ",4,2,3);
 		addOperCut(" (car1.direction == left) && (car1.location >= terminal.location) && (minimalDistance >= car1.location - terminal.location) ",5,3,4);
 		addOperCut(" (car1.direction == left) && (car1.location >= terminal.location) && (minimalDistance >= car1.location - terminal.location) ",6,3,5);
+		addOperCut(" (minimalDistance >= terminal.location - car1.location) && (car1.direction == right) && (terminal.location >= car1.location) ",3,2,2);
+		addOperCut(" (minimalDistance >= terminal.location - car1.location) && (car1.direction == right) && (terminal.location >= car1.location) ",4,2,3);
 		setLastCut(7,4,6);
 		numberOfLifeLines = 3;
 		numberOfInstances = 3;
 		numberOfVariables = 2;
 		numberOfTimeTags = 0;
-		interactionId = "1499586852394";
+		interactionId = "1499940130138";
 		setCutsExpressions();
 	}
 
@@ -91,9 +91,9 @@ public class MSDAspectLocationAlerts_Alert80 extends MSDAspect implements MSDSub
 					&& activeMSD.instancesEquals(Car_INST_car1,targetObject))
 				{
 					unification=true;
-					if(activeMSD.isInCut(5,3,4))
+					if(activeMSD.isInCut(3,2,2))
 					{
-						cutChanged=true; activeMSD.setCut(6,3,5);
+						cutChanged=true; activeMSD.setCut(4,2,3);
 						if(evaluateCondition(5,activeMSD))
 						{
 							cutChanged=true; activeMSD.setCut(7,4,6);
@@ -108,9 +108,9 @@ public class MSDAspectLocationAlerts_Alert80 extends MSDAspect implements MSDSub
 					&& activeMSD.instancesEquals(Car_INST_car1,targetObject))
 				{
 					unification=true;
-					if(activeMSD.isInCut(3,2,2))
+					if(activeMSD.isInCut(5,3,4))
 					{
-						cutChanged=true; activeMSD.setCut(4,2,3);
+						cutChanged=true; activeMSD.setCut(6,3,5);
 						if(evaluateCondition(5,activeMSD))
 						{
 							cutChanged=true; activeMSD.setCut(7,4,6);
@@ -387,32 +387,32 @@ public class MSDAspectLocationAlerts_Alert80 extends MSDAspect implements MSDSub
 			VAR_int_symbolic_var_distance = (Integer) activeMSD.getPrivateVariable(int_arg_int_symbolic_var_distance);
 		}
 
-		MSDMethod MSDm148 = new MSDMethod(sysManager,car1,
+		MSDMethod MSDm151 = new MSDMethod(sysManager,car1,
 			MSDMethods.SysManager_Car_alert80,null,"SysManager:Car:alert80",niceName,activeMSD.getGlobalId());// alert80() Execute
-		ArrayList<Object>  args150 = getArgsList(VAR_int_symbolic_var_distance);
-		MSDMethod MSDm150 = new MSDMethod(car1,car1,
-			MSDMethods.Car_Car_moveCar,args150,"Car:Car:moveCar",niceName,activeMSD.getGlobalId());// moveCar() Monitored
+		ArrayList<Object>  args153 = getArgsList(VAR_int_symbolic_var_distance);
+		MSDMethod MSDm153 = new MSDMethod(car1,car1,
+			MSDMethods.Car_Car_moveCar,args153,"Car:Car:moveCar",niceName,activeMSD.getGlobalId());// moveCar() Monitored
 
 		 if(activeMSD.isInCut(0,0,0))
 		{
-				ME.add(MSDm150);
-				CV.add(MSDm148);
+				ME.add(MSDm153);
+				CV.add(MSDm151);
 				return;
 		}
 		 if(activeMSD.isInCut(3,2,2))
 		{
-				if(MSDm148.sourceInstance!=null && MSDm148.targetInstance!=null){
-					EE.add(MSDm148);
+				if(MSDm151.sourceInstance!=null && MSDm151.targetInstance!=null){
+					EE.add(MSDm151);
 				}
-				HV.add(MSDm150);
+				HV.add(MSDm153);
 				return;
 		}
 		 if(activeMSD.isInCut(5,3,4))
 		{
-				if(MSDm148.sourceInstance!=null && MSDm148.targetInstance!=null){
-					EE.add(MSDm148);
+				if(MSDm151.sourceInstance!=null && MSDm151.targetInstance!=null){
+					EE.add(MSDm151);
 				}
-				HV.add(MSDm150);
+				HV.add(MSDm153);
 				return;
 		}
 	}

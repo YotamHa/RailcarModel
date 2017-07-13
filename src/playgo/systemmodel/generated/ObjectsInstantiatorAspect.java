@@ -140,6 +140,8 @@ public class ObjectsInstantiatorAspect {
             AppObjects.addObject(object);
             object = new playgo.systemmodel.classes.PlatformManager("platformManager");
             AppObjects.addObject(object);
+            object = new playgo.systemmodel.classes.ExitsManager("exitsManager");
+            AppObjects.addObject(object);
             object = new Env("Env");
             AppObjects.addObject(object);
             object = new Env("User");

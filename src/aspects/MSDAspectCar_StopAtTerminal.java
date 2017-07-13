@@ -62,7 +62,7 @@ public class MSDAspectCar_StopAtTerminal extends MSDAspect implements MSDSubscri
 		numberOfInstances = 3;
 		numberOfVariables = 3;
 		numberOfTimeTags = 0;
-		interactionId = "1499586852341";
+		interactionId = "1499940130082";
 		setCutsExpressions();
 	}
 

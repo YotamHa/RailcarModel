@@ -31,9 +31,9 @@ public class AspectsCreator
 		MSDAspectPlatformManager_AllocatePlatform.getInstance();
 		MSDAspectPlatformManager_LSC2.getInstance();
 		MSDAspectPlatformManager_LSC3.getInstance();
-		MSDAspectPlatformManager_LSC1.getInstance();
-		MSDAspectPlatformManager_LSC4.getInstance();
-		MSDAspectPlatformManager_LSC5.getInstance();
+		MSDAspectPlatformManager_MoveExit.getInstance();
+		MSDAspectPlatformManager_MoveEntrance.getInstance();
+		MSDAspectPlatformManager_FreePlatform.getInstance();
 		MSDAspectsysEvents_ChooseDestenation2.getInstance();
 		MSDAspectsysEvents_ChooseDestenation3.getInstance();
 		MSDAspectsysEvents_car2To2.getInstance();

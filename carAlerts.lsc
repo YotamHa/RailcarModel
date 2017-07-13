@@ -101,7 +101,7 @@
   <LSC:LiteralString xmi:id="_vkr-01zIEeemnsz-PvFuDQ" base_LiteralString="_vkr-0lzIEeemnsz-PvFuDQ"/>
   <LSC:Property xmi:id="_HV0RsVzJEeemnsz-PvFuDQ" base_Property="_HV0RsFzJEeemnsz-PvFuDQ" PropertyType="String"/>
   <LSC:LiteralString xmi:id="_HV0Rs1zJEeemnsz-PvFuDQ" base_LiteralString="_HV0RslzJEeemnsz-PvFuDQ"/>
-  <visual:StateInvariant xmi:id="_PyXAMVzJEeemnsz-PvFuDQ" base_StateInvariant="_PyXAMFzJEeemnsz-PvFuDQ" X="51" Width="1414" Y="276" Height="20"/>
+  <visual:StateInvariant xmi:id="_PyXAMVzJEeemnsz-PvFuDQ" base_StateInvariant="_PyXAMFzJEeemnsz-PvFuDQ" X="51" Width="200" Y="276" Height="20"/>
   <LSC:StateInvariant xmi:id="_PyXnQFzJEeemnsz-PvFuDQ" base_StateInvariant="_PyXAMFzJEeemnsz-PvFuDQ" Label="" ConstrExpressionsStr="PropertyProperty,car,direction,==,otherCar,direction,&amp;&amp;;PropertyOpaque,car,location,>=,otherCar.getLocation() - 80,,&amp;&amp;;PropertyProperty,car,location,&lt;=,otherCar,location,&amp;&amp;;PropertyValue,car,direction,==,right,&amp;&amp;;PropertyValue,otherCar,inTerminal,==,false,&amp;&amp;;" LscId="1498740507572"/>
   <LSC:OpaqueExpression xmi:id="_PyXnQ1zJEeemnsz-PvFuDQ" base_OpaqueExpression="_PyXnQlzJEeemnsz-PvFuDQ"/>
   <LSC:Property xmi:id="_sh2HFVzNEeemnsz-PvFuDQ" base_Property="_sgpz0FzNEeemnsz-PvFuDQ"/>

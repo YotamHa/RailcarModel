@@ -703,6 +703,15 @@ public class SystemModelMainGenerated
             if ((retval!=null)) {
                 ((playgo.systemmodel.classes.PlatformManager) object).pgInitAllocating((Boolean.valueOf(retval)));
             }
+            object = AppObjects.getObject("exitsManager", "ExitsManager");
+            retval = SystemModelMain.getInstance().getPlayable().getPropertyValue("ExitsManager", "exitsManager", "ID");
+            if ((retval!=null)) {
+                ((playgo.systemmodel.classes.ExitsManager) object).pgInitID((Integer.valueOf(retval)));
+            }
+            retval = SystemModelMain.getInstance().getPlayable().getPropertyValue("ExitsManager", "exitsManager", "platformHandling");
+            if ((retval!=null)) {
+                ((playgo.systemmodel.classes.ExitsManager) object).pgInitPlatformHandling((Integer.valueOf(retval)));
+            }
             object = AppObjects.getObject("Env", "Env");
             object = AppObjects.getObject("User", "Env");
             
@@ -715,6 +724,7 @@ public class SystemModelMainGenerated
             playgo.systemmodel.SystemModelMain.getInstance().instantiateEngine("ExistsManager", "exitsManager4", "ExitsManager");
             playgo.systemmodel.SystemModelMain.getInstance().instantiateEngine("ExistsManager", "exitsManager6", "ExitsManager");
             playgo.systemmodel.SystemModelMain.getInstance().instantiateEngine("ExistsManager", "exitsManager5", "ExitsManager");
+            playgo.systemmodel.SystemModelMain.getInstance().instantiateEngine("ExistsManager", "exitsManager", "ExitsManager");
              
             runBThreads();
             Clock.getInstance().startTimer();

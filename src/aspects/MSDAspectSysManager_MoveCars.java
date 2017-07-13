@@ -57,7 +57,7 @@ public class MSDAspectSysManager_MoveCars extends MSDAspect implements MSDSubscr
 		numberOfInstances = 4;
 		numberOfVariables = 3;
 		numberOfTimeTags = 0;
-		interactionId = "1499586852129";
+		interactionId = "1499940129883";
 		setCutsExpressions();
 	}
 
@@ -118,12 +118,12 @@ public class MSDAspectSysManager_MoveCars extends MSDAspect implements MSDSubscr
 			case MSDMethods.Car_Car_moveCar:
 				if(activeMSD.instancesEquals(Car_INST_car,sourceObject)
 					&& activeMSD.instancesEquals(Car_INST_car,targetObject)
-					&& activeMSD.variableEquals(int_arg_int_exact_int_distance1,args.get(0)))
+					&& activeMSD.variableEquals(int_arg_int_exact_int_distance0,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(4,4,4,3))
+					if(activeMSD.isInCut(3,3,2,2))
 					{
-						cutChanged=true; activeMSD.setCut(4,4,5,3);
+						cutChanged=true; activeMSD.setCut(3,3,3,2);
 						if(evaluateCondition(3,activeMSD))
 						{
 							cutChanged=true; activeMSD.setCut(5,5,6,4);
@@ -136,12 +136,12 @@ public class MSDAspectSysManager_MoveCars extends MSDAspect implements MSDSubscr
 				}
 				if(activeMSD.instancesEquals(Car_INST_car,sourceObject)
 					&& activeMSD.instancesEquals(Car_INST_car,targetObject)
-					&& activeMSD.variableEquals(int_arg_int_exact_int_distance0,args.get(0)))
+					&& activeMSD.variableEquals(int_arg_int_exact_int_distance1,args.get(0)))
 				{
 					unification=true;
-					if(activeMSD.isInCut(3,3,2,2))
+					if(activeMSD.isInCut(4,4,4,3))
 					{
-						cutChanged=true; activeMSD.setCut(3,3,3,2);
+						cutChanged=true; activeMSD.setCut(4,4,5,3);
 						if(evaluateCondition(3,activeMSD))
 						{
 							cutChanged=true; activeMSD.setCut(5,5,6,4);
@@ -416,10 +416,10 @@ public class MSDAspectSysManager_MoveCars extends MSDAspect implements MSDSubscr
 
 		MSDMethod MSDm35 = new MSDMethod(User,sysManager,
 			MSDMethods.Env_SysManager_runCycle,null,"Env:SysManager:runCycle",niceName,activeMSD.getGlobalId());// runCycle() Monitored
-		ArrayList<Object>  args36 = getArgsList(VAR_int_exact_int_distance1);
+		ArrayList<Object>  args36 = getArgsList(VAR_int_exact_int_distance0);
 		MSDMethod MSDm36 = new MSDMethod(car,car,
 			MSDMethods.Car_Car_moveCar,args36,"Car:Car:moveCar",niceName,activeMSD.getGlobalId());// moveCar() Execute
-		ArrayList<Object>  args37 = getArgsList(VAR_int_exact_int_distance0);
+		ArrayList<Object>  args37 = getArgsList(VAR_int_exact_int_distance1);
 		MSDMethod MSDm37 = new MSDMethod(car,car,
 			MSDMethods.Car_Car_moveCar,args37,"Car:Car:moveCar",niceName,activeMSD.getGlobalId());// moveCar() Execute
 
@@ -431,16 +431,16 @@ public class MSDAspectSysManager_MoveCars extends MSDAspect implements MSDSubscr
 		}
 		 if(activeMSD.isInCut(3,3,2,2))
 		{
-				if(MSDm37.sourceInstance!=null && MSDm37.targetInstance!=null){
-					EE.add(MSDm37);
+				if(MSDm36.sourceInstance!=null && MSDm36.targetInstance!=null){
+					EE.add(MSDm36);
 				}
 				HV.add(MSDm35);
 				return;
 		}
 		 if(activeMSD.isInCut(4,4,4,3))
 		{
-				if(MSDm36.sourceInstance!=null && MSDm36.targetInstance!=null){
-					EE.add(MSDm36);
+				if(MSDm37.sourceInstance!=null && MSDm37.targetInstance!=null){
+					EE.add(MSDm37);
 				}
 				HV.add(MSDm35);
 				return;

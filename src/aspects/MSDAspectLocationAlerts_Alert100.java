@@ -55,18 +55,18 @@ public class MSDAspectLocationAlerts_Alert100 extends MSDAspect implements MSDSu
 		setHotCut(3,2,2);
 		setHotCut(7,5,4);
 		setHotCut(4,3,2);
-		addOperCut(" (car.direction == left) && (car.location >= terminal.location) && (minimalDistance >= car.location - terminal.location) ",6,4,4);
-		addOperCut(" (car.direction == left) && (car.location >= terminal.location) && (minimalDistance >= car.location - terminal.location) ",7,5,4);
-		addOperCut(" (car.direction == left) && (car.location >= terminal.location) && (minimalDistance >= car.location - terminal.location) ",8,5,5);
 		addOperCut(" (minimalDistance >= terminal.location - car.location) && (car.direction == right) && (terminal.location >= car.location) ",3,2,2);
 		addOperCut(" (minimalDistance >= terminal.location - car.location) && (car.direction == right) && (terminal.location >= car.location) ",4,3,2);
 		addOperCut(" (minimalDistance >= terminal.location - car.location) && (car.direction == right) && (terminal.location >= car.location) ",5,3,3);
+		addOperCut(" (car.direction == left) && (car.location >= terminal.location) && (minimalDistance >= car.location - terminal.location) ",6,4,4);
+		addOperCut(" (car.direction == left) && (car.location >= terminal.location) && (minimalDistance >= car.location - terminal.location) ",7,5,4);
+		addOperCut(" (car.direction == left) && (car.location >= terminal.location) && (minimalDistance >= car.location - terminal.location) ",8,5,5);
 		setLastCut(9,6,6);
 		numberOfLifeLines = 3;
 		numberOfInstances = 3;
 		numberOfVariables = 6;
 		numberOfTimeTags = 0;
-		interactionId = "1499586852373";
+		interactionId = "1499940130111";
 		setCutsExpressions();
 	}
 
@@ -527,54 +527,54 @@ public class MSDAspectLocationAlerts_Alert100 extends MSDAspect implements MSDSu
 			VAR_int_symbolic_var_distance = (Integer) activeMSD.getPrivateVariable(int_arg_int_symbolic_var_distance);
 		}
 
-		ArrayList<Object>  args141 = getArgsList(VAR_int_exact_opaque_arg00);
-		MSDMethod MSDm141 = new MSDMethod(terminal,car,
-			MSDMethods.Terminal_Car_setTerminal,args141,"Terminal:Car:setTerminal",niceName,activeMSD.getGlobalId());// setTerminal() Execute
-		ArrayList<Object>  args142 = getArgsList(VAR_int_exact_opaque_arg01);
-		MSDMethod MSDm142 = new MSDMethod(terminal,car,
-			MSDMethods.Terminal_Car_setTerminal,args142,"Terminal:Car:setTerminal",niceName,activeMSD.getGlobalId());// setTerminal() Execute
-		MSDMethod MSDm143 = new MSDMethod(sysManager,car,
+		ArrayList<Object>  args144 = getArgsList(VAR_int_exact_opaque_arg00);
+		MSDMethod MSDm144 = new MSDMethod(terminal,car,
+			MSDMethods.Terminal_Car_setTerminal,args144,"Terminal:Car:setTerminal",niceName,activeMSD.getGlobalId());// setTerminal() Execute
+		ArrayList<Object>  args145 = getArgsList(VAR_int_exact_opaque_arg01);
+		MSDMethod MSDm145 = new MSDMethod(terminal,car,
+			MSDMethods.Terminal_Car_setTerminal,args145,"Terminal:Car:setTerminal",niceName,activeMSD.getGlobalId());// setTerminal() Execute
+		MSDMethod MSDm146 = new MSDMethod(sysManager,car,
 			MSDMethods.SysManager_Car_alert100,null,"SysManager:Car:alert100",niceName,activeMSD.getGlobalId());// alert100() Execute
-		ArrayList<Object>  args145 = getArgsList(VAR_int_symbolic_var_distance);
-		MSDMethod MSDm145 = new MSDMethod(car,car,
-			MSDMethods.Car_Car_moveCar,args145,"Car:Car:moveCar",niceName,activeMSD.getGlobalId());// moveCar() Monitored
+		ArrayList<Object>  args148 = getArgsList(VAR_int_symbolic_var_distance);
+		MSDMethod MSDm148 = new MSDMethod(car,car,
+			MSDMethods.Car_Car_moveCar,args148,"Car:Car:moveCar",niceName,activeMSD.getGlobalId());// moveCar() Monitored
 
 		 if(activeMSD.isInCut(0,0,0))
 		{
-				ME.add(MSDm145);
-				CV.add(MSDm142,MSDm141,MSDm143);
+				ME.add(MSDm148);
+				CV.add(MSDm145,MSDm144,MSDm146);
 				return;
 		}
 		 if(activeMSD.isInCut(3,2,2))
 		{
-				if(MSDm141.sourceInstance!=null && MSDm141.targetInstance!=null){
-					EE.add(MSDm141);
+				if(MSDm144.sourceInstance!=null && MSDm144.targetInstance!=null){
+					EE.add(MSDm144);
 				}
-				HV.add(MSDm145,MSDm143);
+				HV.add(MSDm148,MSDm146);
 				return;
 		}
 		 if(activeMSD.isInCut(4,3,2))
 		{
-				if(MSDm143.sourceInstance!=null && MSDm143.targetInstance!=null){
-					EE.add(MSDm143);
+				if(MSDm146.sourceInstance!=null && MSDm146.targetInstance!=null){
+					EE.add(MSDm146);
 				}
-				HV.add(MSDm142,MSDm145,MSDm141);
+				HV.add(MSDm145,MSDm148,MSDm144);
 				return;
 		}
 		 if(activeMSD.isInCut(6,4,4))
 		{
-				if(MSDm142.sourceInstance!=null && MSDm142.targetInstance!=null){
-					EE.add(MSDm142);
+				if(MSDm145.sourceInstance!=null && MSDm145.targetInstance!=null){
+					EE.add(MSDm145);
 				}
-				HV.add(MSDm145,MSDm143);
+				HV.add(MSDm148,MSDm146);
 				return;
 		}
 		 if(activeMSD.isInCut(7,5,4))
 		{
-				if(MSDm143.sourceInstance!=null && MSDm143.targetInstance!=null){
-					EE.add(MSDm143);
+				if(MSDm146.sourceInstance!=null && MSDm146.targetInstance!=null){
+					EE.add(MSDm146);
 				}
-				HV.add(MSDm142,MSDm145,MSDm141);
+				HV.add(MSDm145,MSDm148,MSDm144);
 				return;
 		}
 	}

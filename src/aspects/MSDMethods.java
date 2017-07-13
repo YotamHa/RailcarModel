@@ -15,11 +15,11 @@ public class MSDMethods
 	final static public int SysManager_Car_setCarID = 7;
 	final static public int Terminal_PlatformManager_setPlatform1busy = 8;
 	final static public int PlatformManager_PlatformManager_setPlatform1busy = 9;
-	final static public int SysManager_Cruiser_setID = 10;
-	final static public int SysManager_Terminal_setID = 11;
-	final static public int SysManager_PlatformManager_setID = 12;
-	final static public int SysManager_Exit_setID = 13;
-	final static public int SysManager_ExitsManager_setID = 14;
+	final static public int SysManager_Exit_setID = 10;
+	final static public int SysManager_ExitsManager_setID = 11;
+	final static public int SysManager_Terminal_setID = 12;
+	final static public int SysManager_PlatformManager_setID = 13;
+	final static public int SysManager_Cruiser_setID = 14;
 	final static public int Terminal_Exit_moveTo = 15;
 	final static public int Terminal_Entrance_moveTo = 16;
 	final static public int SysManager_Car_initCar = 17;

@@ -49,7 +49,7 @@ public class MSDAspectPlatformManager_LSC2 extends MSDAspect implements MSDSubsc
 		numberOfInstances = 2;
 		numberOfVariables = 2;
 		numberOfTimeTags = 0;
-		interactionId = "1499586852461";
+		interactionId = "1499940130199";
 		setCutsExpressions();
 	}
 
@@ -315,24 +315,24 @@ public class MSDAspectPlatformManager_LSC2 extends MSDAspect implements MSDSubsc
 			VAR_boolean_exact_boolean_arg00 = (Boolean) activeMSD.getPrivateVariable(boolean_arg_boolean_exact_boolean_arg00);
 		}
 
-		MSDMethod MSDm160 = new MSDMethod(User,platformManager,
+		MSDMethod MSDm163 = new MSDMethod(User,platformManager,
 			MSDMethods.Env_PlatformManager_freePlatform,null,"Env:PlatformManager:freePlatform",niceName,activeMSD.getGlobalId());// freePlatform() Monitored
-		ArrayList<Object>  args161 = getArgsList(VAR_boolean_exact_boolean_arg00);
-		MSDMethod MSDm161 = new MSDMethod(platformManager,platformManager,
-			MSDMethods.PlatformManager_PlatformManager_setPlatform3busy,args161,"PlatformManager:PlatformManager:setPlatform3busy",niceName,activeMSD.getGlobalId());// setPlatform3busy() Execute
+		ArrayList<Object>  args164 = getArgsList(VAR_boolean_exact_boolean_arg00);
+		MSDMethod MSDm164 = new MSDMethod(platformManager,platformManager,
+			MSDMethods.PlatformManager_PlatformManager_setPlatform3busy,args164,"PlatformManager:PlatformManager:setPlatform3busy",niceName,activeMSD.getGlobalId());// setPlatform3busy() Execute
 
 		 if(activeMSD.isInCut(0,0))
 		{
-				ME.add(MSDm160);
-				CV.add(MSDm161);
+				ME.add(MSDm163);
+				CV.add(MSDm164);
 				return;
 		}
 		 if(activeMSD.isInCut(1,1))
 		{
-				if(MSDm161.sourceInstance!=null && MSDm161.targetInstance!=null){
-					EE.add(MSDm161);
+				if(MSDm164.sourceInstance!=null && MSDm164.targetInstance!=null){
+					EE.add(MSDm164);
 				}
-				HV.add(MSDm160);
+				HV.add(MSDm163);
 				return;
 		}
 	}

@@ -64,7 +64,7 @@ public class MSDAspectPlatformManager_LSC3 extends MSDAspect implements MSDSubsc
 		numberOfInstances = 2;
 		numberOfVariables = 5;
 		numberOfTimeTags = 0;
-		interactionId = "1499586852466";
+		interactionId = "1499940130204";
 		setCutsExpressions();
 	}
 
@@ -467,57 +467,57 @@ public class MSDAspectPlatformManager_LSC3 extends MSDAspect implements MSDSubsc
 			VAR_boolean_exact_boolean_arg02 = (Boolean) activeMSD.getPrivateVariable(boolean_arg_boolean_exact_boolean_arg02);
 		}
 
-		MSDMethod MSDm162 = new MSDMethod(User,platformManager2,
+		MSDMethod MSDm165 = new MSDMethod(User,platformManager2,
 			MSDMethods.Env_PlatformManager_lockPlatforms,null,"Env:PlatformManager:lockPlatforms",niceName,activeMSD.getGlobalId());// lockPlatforms() Monitored
-		ArrayList<Object>  args163 = getArgsList(VAR_boolean_exact_boolean_arg01);
-		MSDMethod MSDm163 = new MSDMethod(platformManager2,platformManager2,
-			MSDMethods.PlatformManager_PlatformManager_setPlatform2busy,args163,"PlatformManager:PlatformManager:setPlatform2busy",niceName,activeMSD.getGlobalId());// setPlatform2busy() Execute
-		ArrayList<Object>  args164 = getArgsList(VAR_boolean_exact_boolean_arg00);
-		MSDMethod MSDm164 = new MSDMethod(platformManager2,platformManager2,
-			MSDMethods.PlatformManager_PlatformManager_setPlatform1busy,args164,"PlatformManager:PlatformManager:setPlatform1busy",niceName,activeMSD.getGlobalId());// setPlatform1busy() Execute
-		ArrayList<Object>  args165 = getArgsList(VAR_boolean_exact_boolean_arg03);
-		MSDMethod MSDm165 = new MSDMethod(platformManager2,platformManager2,
-			MSDMethods.PlatformManager_PlatformManager_setPlatform4busy,args165,"PlatformManager:PlatformManager:setPlatform4busy",niceName,activeMSD.getGlobalId());// setPlatform4busy() Execute
-		ArrayList<Object>  args166 = getArgsList(VAR_boolean_exact_boolean_arg02);
+		ArrayList<Object>  args166 = getArgsList(VAR_boolean_exact_boolean_arg01);
 		MSDMethod MSDm166 = new MSDMethod(platformManager2,platformManager2,
-			MSDMethods.PlatformManager_PlatformManager_setPlatform3busy,args166,"PlatformManager:PlatformManager:setPlatform3busy",niceName,activeMSD.getGlobalId());// setPlatform3busy() Execute
+			MSDMethods.PlatformManager_PlatformManager_setPlatform2busy,args166,"PlatformManager:PlatformManager:setPlatform2busy",niceName,activeMSD.getGlobalId());// setPlatform2busy() Execute
+		ArrayList<Object>  args167 = getArgsList(VAR_boolean_exact_boolean_arg00);
+		MSDMethod MSDm167 = new MSDMethod(platformManager2,platformManager2,
+			MSDMethods.PlatformManager_PlatformManager_setPlatform1busy,args167,"PlatformManager:PlatformManager:setPlatform1busy",niceName,activeMSD.getGlobalId());// setPlatform1busy() Execute
+		ArrayList<Object>  args168 = getArgsList(VAR_boolean_exact_boolean_arg03);
+		MSDMethod MSDm168 = new MSDMethod(platformManager2,platformManager2,
+			MSDMethods.PlatformManager_PlatformManager_setPlatform4busy,args168,"PlatformManager:PlatformManager:setPlatform4busy",niceName,activeMSD.getGlobalId());// setPlatform4busy() Execute
+		ArrayList<Object>  args169 = getArgsList(VAR_boolean_exact_boolean_arg02);
+		MSDMethod MSDm169 = new MSDMethod(platformManager2,platformManager2,
+			MSDMethods.PlatformManager_PlatformManager_setPlatform3busy,args169,"PlatformManager:PlatformManager:setPlatform3busy",niceName,activeMSD.getGlobalId());// setPlatform3busy() Execute
 
 		 if(activeMSD.isInCut(0,0))
 		{
-				ME.add(MSDm162);
-				CV.add(MSDm163,MSDm164,MSDm165,MSDm166);
+				ME.add(MSDm165);
+				CV.add(MSDm166,MSDm167,MSDm168,MSDm169);
 				return;
 		}
 		 if(activeMSD.isInCut(1,1))
 		{
-				if(MSDm164.sourceInstance!=null && MSDm164.targetInstance!=null){
-					EE.add(MSDm164);
+				if(MSDm167.sourceInstance!=null && MSDm167.targetInstance!=null){
+					EE.add(MSDm167);
 				}
-				HV.add(MSDm163,MSDm165,MSDm166,MSDm162);
+				HV.add(MSDm166,MSDm168,MSDm169,MSDm165);
 				return;
 		}
 		 if(activeMSD.isInCut(2,1))
 		{
-				if(MSDm163.sourceInstance!=null && MSDm163.targetInstance!=null){
-					EE.add(MSDm163);
+				if(MSDm166.sourceInstance!=null && MSDm166.targetInstance!=null){
+					EE.add(MSDm166);
 				}
-				HV.add(MSDm164,MSDm165,MSDm166,MSDm162);
+				HV.add(MSDm167,MSDm168,MSDm169,MSDm165);
 				return;
 		}
 		 if(activeMSD.isInCut(3,1))
 		{
-				if(MSDm166.sourceInstance!=null && MSDm166.targetInstance!=null){
-					EE.add(MSDm166);
+				if(MSDm169.sourceInstance!=null && MSDm169.targetInstance!=null){
+					EE.add(MSDm169);
 				}
-				HV.add(MSDm163,MSDm164,MSDm165,MSDm162);
+				HV.add(MSDm166,MSDm167,MSDm168,MSDm165);
 				return;
 		}
 		 if(activeMSD.isInCut(4,1))
 		{
-				if(MSDm165.sourceInstance!=null && MSDm165.targetInstance!=null){
-					EE.add(MSDm165);
+				if(MSDm168.sourceInstance!=null && MSDm168.targetInstance!=null){
+					EE.add(MSDm168);
 				}
-				HV.add(MSDm163,MSDm164,MSDm166,MSDm162);
+				HV.add(MSDm166,MSDm167,MSDm169,MSDm165);
 				return;
 		}
 	}

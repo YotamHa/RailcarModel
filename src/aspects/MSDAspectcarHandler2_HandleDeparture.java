@@ -74,8 +74,6 @@ public class MSDAspectcarHandler2_HandleDeparture extends MSDAspect implements M
 		setHotCut(4,6,5,3);
 		setHotCut(5,8,7,4);
 		setHotCut(3,4,3,2);
-		addOperCut("car.platform == 3",4,6,5,3);
-		addOperCut("car.platform == 3",4,7,6,3);
 		addOperCut("existsManager.platformHandling == car.platform",7,11,10,7);
 		addOperCut("existsManager.platformHandling == car.platform",7,12,10,8);
 		addOperCut("existsManager.platformHandling == car.platform",7,13,10,9);
@@ -92,18 +90,20 @@ public class MSDAspectcarHandler2_HandleDeparture extends MSDAspect implements M
 		addOperCut("existsManager.platformHandling == car.platform",7,12,10,8);
 		addOperCut("existsManager.platformHandling == car.platform",7,13,10,9);
 		addOperCut("existsManager.platformHandling == car.platform",8,14,10,9);
-		addOperCut("car.platform == 1",2,2,1,1);
-		addOperCut("car.platform == 1",2,3,2,1);
-		addOperCut("car.platform == 2",3,4,3,2);
-		addOperCut("car.platform == 2",3,5,4,2);
 		addOperCut("car.platform == 4",5,8,7,4);
 		addOperCut("car.platform == 4",5,9,8,4);
+		addOperCut("car.platform == 2",3,4,3,2);
+		addOperCut("car.platform == 2",3,5,4,2);
+		addOperCut("car.platform == 1",2,2,1,1);
+		addOperCut("car.platform == 1",2,3,2,1);
+		addOperCut("car.platform == 3",4,6,5,3);
+		addOperCut("car.platform == 3",4,7,6,3);
 		setLastCut(9,15,11,10);
 		numberOfLifeLines = 4;
 		numberOfInstances = 4;
 		numberOfVariables = 3;
 		numberOfTimeTags = 0;
-		interactionId = "1499586852542";
+		interactionId = "1499940130276";
 		setCutsExpressions();
 	}
 
@@ -665,92 +665,92 @@ public class MSDAspectcarHandler2_HandleDeparture extends MSDAspect implements M
 			VAR_int_exact_opaque_platform0 = (Integer) activeMSD.getPrivateVariable(int_arg_int_exact_opaque_platform0);
 		}
 
-		MSDMethod MSDm185 = new MSDMethod(terminal,existsManager,
-			MSDMethods.Terminal_ExitsManager_allocateExit3,null,"Terminal:ExitsManager:allocateExit3",niceName,activeMSD.getGlobalId());// allocateExit3() Execute
-		ArrayList<Object>  args186 = getArgsList(VAR_int_exact_opaque_platform0);
-		MSDMethod MSDm186 = new MSDMethod(terminal,exit,
-			MSDMethods.Terminal_Exit_moveTo,args186,"Terminal:Exit:moveTo",niceName,activeMSD.getGlobalId());// moveTo() Execute
-		MSDMethod MSDm187 = new MSDMethod(terminal,existsManager,
-			MSDMethods.Terminal_ExitsManager_allocateExit4,null,"Terminal:ExitsManager:allocateExit4",niceName,activeMSD.getGlobalId());// allocateExit4() Execute
 		MSDMethod MSDm188 = new MSDMethod(terminal,existsManager,
+			MSDMethods.Terminal_ExitsManager_allocateExit3,null,"Terminal:ExitsManager:allocateExit3",niceName,activeMSD.getGlobalId());// allocateExit3() Execute
+		ArrayList<Object>  args189 = getArgsList(VAR_int_exact_opaque_platform0);
+		MSDMethod MSDm189 = new MSDMethod(terminal,exit,
+			MSDMethods.Terminal_Exit_moveTo,args189,"Terminal:Exit:moveTo",niceName,activeMSD.getGlobalId());// moveTo() Execute
+		MSDMethod MSDm190 = new MSDMethod(terminal,existsManager,
+			MSDMethods.Terminal_ExitsManager_allocateExit4,null,"Terminal:ExitsManager:allocateExit4",niceName,activeMSD.getGlobalId());// allocateExit4() Execute
+		MSDMethod MSDm191 = new MSDMethod(terminal,existsManager,
 			MSDMethods.Terminal_ExitsManager_allocateExit1,null,"Terminal:ExitsManager:allocateExit1",niceName,activeMSD.getGlobalId());// allocateExit1() Execute
-		MSDMethod MSDm189 = new MSDMethod(terminal,existsManager,
+		MSDMethod MSDm192 = new MSDMethod(terminal,existsManager,
 			MSDMethods.Terminal_ExitsManager_allocateExit2,null,"Terminal:ExitsManager:allocateExit2",niceName,activeMSD.getGlobalId());// allocateExit2() Execute
-		MSDMethod MSDm190 = new MSDMethod(car,terminal,
+		MSDMethod MSDm193 = new MSDMethod(car,terminal,
 			MSDMethods.Car_Terminal_departReq,null,"Car:Terminal:departReq",niceName,activeMSD.getGlobalId());// departReq() Monitored
-		MSDMethod MSDm191 = new MSDMethod(exit,exit,
+		MSDMethod MSDm194 = new MSDMethod(exit,exit,
 			MSDMethods.Exit_Exit_blank,null,"Exit:Exit:blank",niceName,activeMSD.getGlobalId());// blank() Execute
-		MSDMethod MSDm192 = new MSDMethod(exit,terminal,
+		MSDMethod MSDm195 = new MSDMethod(exit,terminal,
 			MSDMethods.Exit_Terminal_moveCompleted,null,"Exit:Terminal:moveCompleted",niceName,activeMSD.getGlobalId());// moveCompleted() Monitored
-		MSDMethod MSDm193 = new MSDMethod(terminal,car,
+		MSDMethod MSDm196 = new MSDMethod(terminal,car,
 			MSDMethods.Terminal_Car_departAck,null,"Terminal:Car:departAck",niceName,activeMSD.getGlobalId());// departAck() Execute
 
 		 if(activeMSD.isInCut(0,0,0,0))
 		{
-				ME.add(MSDm190);
-				CV.add(MSDm186,MSDm185,MSDm187,MSDm188,MSDm189,MSDm193,MSDm191,MSDm192);
+				ME.add(MSDm193);
+				CV.add(MSDm189,MSDm188,MSDm190,MSDm191,MSDm192,MSDm196,MSDm194,MSDm195);
 				return;
 		}
 		 if(activeMSD.isInCut(2,2,1,1))
 		{
-				if(MSDm188.sourceInstance!=null && MSDm188.targetInstance!=null){
-					EE.add(MSDm188);
+				if(MSDm191.sourceInstance!=null && MSDm191.targetInstance!=null){
+					EE.add(MSDm191);
 				}
-				HV.add(MSDm186,MSDm185,MSDm187,MSDm189,MSDm193,MSDm191,MSDm192,MSDm190);
+				HV.add(MSDm189,MSDm188,MSDm190,MSDm192,MSDm196,MSDm194,MSDm195,MSDm193);
 				return;
 		}
 		 if(activeMSD.isInCut(3,4,3,2))
 		{
-				if(MSDm189.sourceInstance!=null && MSDm189.targetInstance!=null){
-					EE.add(MSDm189);
+				if(MSDm192.sourceInstance!=null && MSDm192.targetInstance!=null){
+					EE.add(MSDm192);
 				}
-				HV.add(MSDm186,MSDm185,MSDm187,MSDm188,MSDm193,MSDm191,MSDm192,MSDm190);
+				HV.add(MSDm189,MSDm188,MSDm190,MSDm191,MSDm196,MSDm194,MSDm195,MSDm193);
 				return;
 		}
 		 if(activeMSD.isInCut(4,6,5,3))
 		{
-				if(MSDm185.sourceInstance!=null && MSDm185.targetInstance!=null){
-					EE.add(MSDm185);
+				if(MSDm188.sourceInstance!=null && MSDm188.targetInstance!=null){
+					EE.add(MSDm188);
 				}
-				HV.add(MSDm186,MSDm187,MSDm188,MSDm189,MSDm193,MSDm191,MSDm192,MSDm190);
+				HV.add(MSDm189,MSDm190,MSDm191,MSDm192,MSDm196,MSDm194,MSDm195,MSDm193);
 				return;
 		}
 		 if(activeMSD.isInCut(5,8,7,4))
 		{
-				if(MSDm187.sourceInstance!=null && MSDm187.targetInstance!=null){
-					EE.add(MSDm187);
+				if(MSDm190.sourceInstance!=null && MSDm190.targetInstance!=null){
+					EE.add(MSDm190);
 				}
-				HV.add(MSDm186,MSDm185,MSDm188,MSDm189,MSDm193,MSDm191,MSDm192,MSDm190);
+				HV.add(MSDm189,MSDm188,MSDm191,MSDm192,MSDm196,MSDm194,MSDm195,MSDm193);
 				return;
 		}
 		 if(activeMSD.isInCut(6,10,9,5))
 		{
-				if(MSDm191.sourceInstance!=null && MSDm191.targetInstance!=null){
-					EE.add(MSDm191);
+				if(MSDm194.sourceInstance!=null && MSDm194.targetInstance!=null){
+					EE.add(MSDm194);
 				}
-				HV.add(MSDm186,MSDm185,MSDm187,MSDm188,MSDm189,MSDm193,MSDm192,MSDm190);
+				HV.add(MSDm189,MSDm188,MSDm190,MSDm191,MSDm192,MSDm196,MSDm195,MSDm193);
 				return;
 		}
 		 if(activeMSD.isInCut(7,11,10,7))
 		{
-				if(MSDm186.sourceInstance!=null && MSDm186.targetInstance!=null){
-					EE.add(MSDm186);
+				if(MSDm189.sourceInstance!=null && MSDm189.targetInstance!=null){
+					EE.add(MSDm189);
 				}
-				HV.add(MSDm185,MSDm187,MSDm188,MSDm189,MSDm193,MSDm191,MSDm192,MSDm190);
+				HV.add(MSDm188,MSDm190,MSDm191,MSDm192,MSDm196,MSDm194,MSDm195,MSDm193);
 				return;
 		}
 		 if(activeMSD.isInCut(7,12,10,8))
 		{
-				ME.add(MSDm192);
-				CV.add(MSDm186,MSDm185,MSDm187,MSDm188,MSDm189,MSDm193,MSDm191,MSDm190);
+				ME.add(MSDm195);
+				CV.add(MSDm189,MSDm188,MSDm190,MSDm191,MSDm192,MSDm196,MSDm194,MSDm193);
 				return;
 		}
 		 if(activeMSD.isInCut(7,13,10,9))
 		{
-				if(MSDm193.sourceInstance!=null && MSDm193.targetInstance!=null){
-					EE.add(MSDm193);
+				if(MSDm196.sourceInstance!=null && MSDm196.targetInstance!=null){
+					EE.add(MSDm196);
 				}
-				HV.add(MSDm186,MSDm185,MSDm187,MSDm188,MSDm189,MSDm191,MSDm192,MSDm190);
+				HV.add(MSDm189,MSDm188,MSDm190,MSDm191,MSDm192,MSDm194,MSDm195,MSDm193);
 				return;
 		}
 	}

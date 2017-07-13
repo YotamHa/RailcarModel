@@ -53,6 +53,16 @@ public class MSDSPOStaticInfo {
 		interactionsLifelines.put("SysManager_MoveCars", lifelines);
 
 		lifelines = new HashMap<Integer,String>();
+		lifelines.put(0,"terminal");
+		lifelines.put(1,"exit");
+		interactionsLifelines.put("PlatformManager_MoveExit", lifelines);
+
+		lifelines = new HashMap<Integer,String>();
+		lifelines.put(0,"car");
+		lifelines.put(1,"platformManager");
+		interactionsLifelines.put("PlatformManager_FreePlatform", lifelines);
+
+		lifelines = new HashMap<Integer,String>();
 		lifelines.put(0,"sysManager");
 		lifelines.put(1,"User");
 		lifelines.put(2,"car");
@@ -133,19 +143,12 @@ public class MSDSPOStaticInfo {
 		interactionsLifelines.put("Car_Car_choose_direction", lifelines);
 
 		lifelines = new HashMap<Integer,String>();
-		lifelines.put(0,"terminal");
-		lifelines.put(1,"exit");
-		interactionsLifelines.put("PlatformManager_LSC1", lifelines);
-
-		lifelines = new HashMap<Integer,String>();
 		lifelines.put(0,"car");
 		lifelines.put(1,"terminal");
+		lifelines.put(2,"sysManager");
+		lifelines.put(3,"exitsManager");
+		lifelines.put(4,"platformManager");
 		interactionsLifelines.put("Car_PassTerminal", lifelines);
-
-		lifelines = new HashMap<Integer,String>();
-		lifelines.put(0,"car");
-		lifelines.put(1,"platformManager");
-		interactionsLifelines.put("PlatformManager_LSC5", lifelines);
 
 		lifelines = new HashMap<Integer,String>();
 		lifelines.put(0,"sysManager");
@@ -157,11 +160,6 @@ public class MSDSPOStaticInfo {
 		lifelines.put(6,"exit2r");
 		lifelines.put(7,"exit2l");
 		interactionsLifelines.put("SysManager_InitTerminal2", lifelines);
-
-		lifelines = new HashMap<Integer,String>();
-		lifelines.put(0,"terminal");
-		lifelines.put(1,"entrance");
-		interactionsLifelines.put("PlatformManager_LSC4", lifelines);
 
 		lifelines = new HashMap<Integer,String>();
 		lifelines.put(0,"sysManager");
@@ -249,6 +247,11 @@ public class MSDSPOStaticInfo {
 		lifelines.put(3,"existsManager");
 		lifelines.put(4,"platformManager");
 		interactionsLifelines.put("Car_Departure", lifelines);
+
+		lifelines = new HashMap<Integer,String>();
+		lifelines.put(0,"terminal");
+		lifelines.put(1,"entrance");
+		interactionsLifelines.put("PlatformManager_MoveEntrance", lifelines);
 	}
 
 
@@ -265,6 +268,10 @@ public class MSDSPOStaticInfo {
 	{
 		interactionsVariables=new HashMap<String,HashMap<Integer,String>>();
 		HashMap<Integer,String> variables = null;
+
+		variables = new HashMap<Integer,String>();
+		variables.put(0,"platform");
+		interactionsVariables.put("MSDAspectPlatformManager_MoveEntrance", variables);
 
 		variables = new HashMap<Integer,String>();
 		variables.put(2,"ID");
@@ -297,11 +304,7 @@ public class MSDSPOStaticInfo {
 
 		variables = new HashMap<Integer,String>();
 		variables.put(0,"platform");
-		interactionsVariables.put("MSDAspectPlatformManager_LSC4", variables);
-
-		variables = new HashMap<Integer,String>();
-		variables.put(0,"platform");
-		interactionsVariables.put("MSDAspectPlatformManager_LSC1", variables);
+		interactionsVariables.put("MSDAspectPlatformManager_MoveExit", variables);
 
 		variables = new HashMap<Integer,String>();
 		variables.put(2,"ID");
