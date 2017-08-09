@@ -4,7 +4,7 @@
     <packagedElement xmi:type="uml:Collaboration" xmi:id="_7PYFUFy9Eeemnsz-PvFuDQ" name="carAlerts">
       <ownedAttribute xmi:id="_oyNlcVzIEeemnsz-PvFuDQ" name="Car" type="_oyNlcFzIEeemnsz-PvFuDQ"/>
       <ownedAttribute xmi:id="_u76VUVzNEeemnsz-PvFuDQ" name="Cruiser" type="_u76VUFzNEeemnsz-PvFuDQ"/>
-      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_mMKJMFzIEeemnsz-PvFuDQ" name="LSC1">
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_mMKJMFzIEeemnsz-PvFuDQ" name="CarProximityAlert">
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8xC5I1zNEeemnsz-PvFuDQ" name="moveCar-InvocationStart" covered="_oyFpoFzIEeemnsz-PvFuDQ" message="_8xC5IFzNEeemnsz-PvFuDQ"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8xC5JVzNEeemnsz-PvFuDQ" name="moveCar-ExecutionStart" covered="_oyFpoFzIEeemnsz-PvFuDQ" message="_8xC5IFzNEeemnsz-PvFuDQ"/>
         <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_8xC5J1zNEeemnsz-PvFuDQ" name="moveCar-invocationBody" covered="_oyFpoFzIEeemnsz-PvFuDQ" finish="_8xC5K1zNEeemnsz-PvFuDQ" start="_8xC5I1zNEeemnsz-PvFuDQ"/>

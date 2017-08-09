@@ -16,13 +16,6 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 
 	private final class SCInterfaceImpl implements SCInterface {
 
-		private SCInterfaceOperationCallback operationCallback;
-
-		public void setSCInterfaceOperationCallback(
-				SCInterfaceOperationCallback operationCallback) {
-			this.operationCallback = operationCallback;
-		}
-
 		public boolean initCar;
 
 		public void raiseInitCar() {
@@ -47,32 +40,6 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 
 		public void destinationSet() {
 			destinationSet = true;
-		}
-
-		public boolean exitSynced;
-
-		public void raiseExitSynced() {
-			exitSynced = true;
-			systemEvent(selfClassName, selfObjectName, "exitSynced");
-			waitingRegions.remove(activeRegion);
-
-		}
-
-		public void exitSynced() {
-			exitSynced = true;
-		}
-
-		public boolean arrived;
-
-		public void raiseArrived() {
-			arrived = true;
-			systemEvent(selfClassName, selfObjectName, "arrived");
-			waitingRegions.remove(activeRegion);
-
-		}
-
-		public void arrived() {
-			arrived = true;
 		}
 
 		public boolean endDepart;
@@ -146,38 +113,6 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 			startDepart = true;
 		}
 
-		protected long iD;
-		public long getID() {
-			return iD;
-		}
-
-		public void setID(long value) {
-			this.iD = value;
-			trace("ID" + " = " + String.valueOf(value) + " (external change)");
-		}
-
-		protected long terminal;
-		public long getTerminal() {
-			return terminal;
-		}
-
-		public void setTerminal(long value) {
-			this.terminal = value;
-			trace("terminal" + " = " + String.valueOf(value)
-					+ " (external change)");
-		}
-
-		protected long stopsAt;
-		public long getStopsAt() {
-			return stopsAt;
-		}
-
-		public void setStopsAt(long value) {
-			this.stopsAt = value;
-			trace("stopsAt" + " = " + String.valueOf(value)
-					+ " (external change)");
-		}
-
 		protected String mode;
 		public String getMode() {
 			return mode;
@@ -186,17 +121,6 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 		public void setMode(String value) {
 			this.mode = value;
 			trace("mode" + " = " + String.valueOf(value) + " (external change)");
-		}
-
-		protected long destenation;
-		public long getDestenation() {
-			return destenation;
-		}
-
-		public void setDestenation(long value) {
-			this.destenation = value;
-			trace("destenation" + " = " + String.valueOf(value)
-					+ " (external change)");
 		}
 
 		protected boolean inTerminal;
@@ -213,8 +137,6 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 		public void clearEvents() {
 			initCar = false;
 			destinationSet = false;
-			exitSynced = false;
-			arrived = false;
 			endDepart = false;
 			endArrival = false;
 			alert100 = false;
@@ -229,7 +151,7 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 	private SCInterfaceImpl sCInterface;
 
 	public enum State {
-		main_region_init, main_region_idle, main_region_standby, main_region_Operating, main_region_Operating_r1_departure, main_region_Operating_r1_Cruising, main_region_Operating_r1_arrival, $NullState$
+		carStatechart_init, carStatechart_idle, carStatechart_standby, carStatechart_Operating, carStatechart_Operating_r1_departure, carStatechart_Operating_r1_Cruising, carStatechart_Operating_r1_arrival, $NullState$
 	};
 
 	private final State[] stateVector = new State[1];
@@ -282,18 +204,18 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 		this.selfObjectName = selfObjName;
 		this.selfClassName = selfClassName;
 
-		statesAbsoluteName.put("main_region_init", "Car.main_region.init");
-		statesAbsoluteName.put("main_region_idle", "Car.main_region.idle");
-		statesAbsoluteName
-				.put("main_region_standby", "Car.main_region.standby");
-		statesAbsoluteName.put("main_region_Operating",
-				"Car.main_region.Operating");
-		statesAbsoluteName.put("main_region_Operating_r1_departure",
-				"Car.main_region.Operating.r1.departure");
-		statesAbsoluteName.put("main_region_Operating_r1_Cruising",
-				"Car.main_region.Operating.r1.Cruising");
-		statesAbsoluteName.put("main_region_Operating_r1_arrival",
-				"Car.main_region.Operating.r1.arrival");
+		statesAbsoluteName.put("carStatechart_init", "Car.CarStatechart.init");
+		statesAbsoluteName.put("carStatechart_idle", "Car.CarStatechart.idle");
+		statesAbsoluteName.put("carStatechart_standby",
+				"Car.CarStatechart.standby");
+		statesAbsoluteName.put("carStatechart_Operating",
+				"Car.CarStatechart.Operating");
+		statesAbsoluteName.put("carStatechart_Operating_r1_departure",
+				"Car.CarStatechart.Operating.r1.departure");
+		statesAbsoluteName.put("carStatechart_Operating_r1_Cruising",
+				"Car.CarStatechart.Operating.r1.Cruising");
+		statesAbsoluteName.put("carStatechart_Operating_r1_arrival",
+				"Car.CarStatechart.Operating.r1.arrival");
 		statesAbsoluteName.put("$NullState$", "$NullState$");
 	}
 
@@ -308,28 +230,12 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 		clearEvents();
 		clearOutEvents();
 
-		sCInterface.iD = 0;
-
-		sCInterface.terminal = 0;
-
-		sCInterface.stopsAt = 0;
-
 		sCInterface.mode = "";
-
-		sCInterface.destenation = 0;
 
 		sCInterface.inTerminal = false;
 
-		sCInterface.iD = (long) getPropertyValue(selfObjectName, selfClassName,
-				"iD", "long");
-		sCInterface.terminal = (long) getPropertyValue(selfObjectName,
-				selfClassName, "terminal", "long");
-		sCInterface.stopsAt = (long) getPropertyValue(selfObjectName,
-				selfClassName, "stopsAt", "long");
 		sCInterface.mode = (String) getPropertyValue(selfObjectName,
 				selfClassName, "mode", "String");
-		sCInterface.destenation = (long) getPropertyValue(selfObjectName,
-				selfClassName, "destenation", "long");
 		sCInterface.inTerminal = (boolean) getPropertyValue(selfObjectName,
 				selfClassName, "inTerminal", "boolean");
 
@@ -342,39 +248,39 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 		entryAction();
 
 		nextStateIndex = 0;
-		stateVector[0] = State.main_region_init;
+		stateVector[0] = State.carStatechart_init;
 	}
 
 	public void exit() {
 		switch (stateVector[0]) {
-			case main_region_init :
+			case carStatechart_init :
 				nextStateIndex = 0;
 				stateVector[0] = State.$NullState$;
 				break;
 
-			case main_region_idle :
+			case carStatechart_idle :
 				nextStateIndex = 0;
 				stateVector[0] = State.$NullState$;
 				break;
 
-			case main_region_standby :
+			case carStatechart_standby :
 				nextStateIndex = 0;
 				stateVector[0] = State.$NullState$;
 				break;
 
-			case main_region_Operating_r1_departure :
+			case carStatechart_Operating_r1_departure :
 				nextStateIndex = 0;
 				stateVector[0] = State.$NullState$;
 
 				timer.unsetTimer(this, 0);
 				break;
 
-			case main_region_Operating_r1_Cruising :
+			case carStatechart_Operating_r1_Cruising :
 				nextStateIndex = 0;
 				stateVector[0] = State.$NullState$;
 				break;
 
-			case main_region_Operating_r1_arrival :
+			case carStatechart_Operating_r1_arrival :
 				nextStateIndex = 0;
 				stateVector[0] = State.$NullState$;
 				break;
@@ -465,12 +371,6 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 	public void raiseDestinationSet() {
 		sCInterface.raiseDestinationSet();
 	}
-	public void raiseExitSynced() {
-		sCInterface.raiseExitSynced();
-	}
-	public void raiseArrived() {
-		sCInterface.raiseArrived();
-	}
 	public void raiseEndDepart() {
 		sCInterface.raiseEndDepart();
 	}
@@ -487,40 +387,12 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 		return sCInterface.isRaisedStartDepart();
 	}
 
-	public long getID() {
-		return sCInterface.getID();
-	}
-
-	public void setID(long value) {
-		sCInterface.setID(value);
-	}
-	public long getTerminal() {
-		return sCInterface.getTerminal();
-	}
-
-	public void setTerminal(long value) {
-		sCInterface.setTerminal(value);
-	}
-	public long getStopsAt() {
-		return sCInterface.getStopsAt();
-	}
-
-	public void setStopsAt(long value) {
-		sCInterface.setStopsAt(value);
-	}
 	public String getMode() {
 		return sCInterface.getMode();
 	}
 
 	public void setMode(String value) {
 		sCInterface.setMode(value);
-	}
-	public long getDestenation() {
-		return sCInterface.getDestenation();
-	}
-
-	public void setDestenation(long value) {
-		sCInterface.setDestenation(value);
 	}
 	public boolean getInTerminal() {
 		return sCInterface.getInTerminal();
@@ -539,29 +411,29 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 	}
 
 	/* The reactions of state init. */
-	private void react_main_region_init() {
+	private void react_CarStatechart_init() {
 		if (sCInterface.initCar) {
 			nextStateIndex = 0;
 			stateVector[0] = State.$NullState$;
 
 			nextStateIndex = 0;
-			stateVector[0] = State.main_region_idle;
+			stateVector[0] = State.carStatechart_idle;
 		}
 	}
 
 	/* The reactions of state idle. */
-	private void react_main_region_idle() {
+	private void react_CarStatechart_idle() {
 		if (sCInterface.destinationSet) {
 			nextStateIndex = 0;
 			stateVector[0] = State.$NullState$;
 
 			nextStateIndex = 0;
-			stateVector[0] = State.main_region_standby;
+			stateVector[0] = State.carStatechart_standby;
 		}
 	}
 
 	/* The reactions of state standby. */
-	private void react_main_region_standby() {
+	private void react_CarStatechart_standby() {
 		nextStateIndex = 0;
 		stateVector[0] = State.$NullState$;
 
@@ -570,11 +442,11 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 		sCInterface.raiseStartDepart();
 
 		nextStateIndex = 0;
-		stateVector[0] = State.main_region_Operating_r1_departure;
+		stateVector[0] = State.carStatechart_Operating_r1_departure;
 	}
 
 	/* The reactions of state departure. */
-	private void react_main_region_Operating_r1_departure() {
+	private void react_CarStatechart_Operating_r1_departure() {
 		if (sCInterface.endDepart) {
 			nextStateIndex = 0;
 			stateVector[0] = State.$NullState$;
@@ -584,7 +456,7 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 			sCInterface.inTerminal = false;
 
 			nextStateIndex = 0;
-			stateVector[0] = State.main_region_Operating_r1_Cruising;
+			stateVector[0] = State.carStatechart_Operating_r1_Cruising;
 		} else {
 			if (timeEvents[0]) {
 				sCInterface.raiseStartDepart();
@@ -593,7 +465,7 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 	}
 
 	/* The reactions of state Cruising. */
-	private void react_main_region_Operating_r1_Cruising() {
+	private void react_CarStatechart_Operating_r1_Cruising() {
 		if (sCInterface.alert100) {
 			nextStateIndex = 0;
 			stateVector[0] = State.$NullState$;
@@ -601,12 +473,12 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 			sCInterface.raiseStartArrival();
 
 			nextStateIndex = 0;
-			stateVector[0] = State.main_region_Operating_r1_arrival;
+			stateVector[0] = State.carStatechart_Operating_r1_arrival;
 		}
 	}
 
 	/* The reactions of state arrival. */
-	private void react_main_region_Operating_r1_arrival() {
+	private void react_CarStatechart_Operating_r1_arrival() {
 		if (sCInterface.endArrival) {
 			nextStateIndex = 0;
 			stateVector[0] = State.$NullState$;
@@ -614,25 +486,25 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 			if ((sCInterface.mode == null ? "pass" == null : sCInterface.mode
 					.equals("pass"))) {
 				nextStateIndex = 0;
-				stateVector[0] = State.main_region_Operating_r1_Cruising;
+				stateVector[0] = State.carStatechart_Operating_r1_Cruising;
 			} else {
 				if ((sCInterface.mode == null
 						? "stop" == null
 						: sCInterface.mode.equals("stop"))) {
 					switch (stateVector[0]) {
-						case main_region_Operating_r1_departure :
+						case carStatechart_Operating_r1_departure :
 							nextStateIndex = 0;
 							stateVector[0] = State.$NullState$;
 
 							timer.unsetTimer(this, 0);
 							break;
 
-						case main_region_Operating_r1_Cruising :
+						case carStatechart_Operating_r1_Cruising :
 							nextStateIndex = 0;
 							stateVector[0] = State.$NullState$;
 							break;
 
-						case main_region_Operating_r1_arrival :
+						case carStatechart_Operating_r1_arrival :
 							nextStateIndex = 0;
 							stateVector[0] = State.$NullState$;
 							break;
@@ -644,7 +516,7 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 					sCInterface.inTerminal = true;
 
 					nextStateIndex = 0;
-					stateVector[0] = State.main_region_idle;
+					stateVector[0] = State.carStatechart_idle;
 				}
 			}
 		}
@@ -663,46 +535,49 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 			State[] tempStateVector = stateVector.clone();
 
 			switch (stateVector[nextStateIndex]) {
-				case main_region_init :
+				case carStatechart_init :
 					// trigger transitions (i.e., call the corresponding react method) only for regions that are waiting regions
-					if (waitingRegions.contains("Car.main_region")) {
-						activeRegion = "Car.main_region";
-						react_main_region_init();
+					if (waitingRegions.contains("Car.CarStatechart")) {
+						activeRegion = "Car.CarStatechart";
+						react_CarStatechart_init();
 					}
 					break;
-				case main_region_idle :
+				case carStatechart_idle :
 					// trigger transitions (i.e., call the corresponding react method) only for regions that are waiting regions
-					if (waitingRegions.contains("Car.main_region")) {
-						activeRegion = "Car.main_region";
-						react_main_region_idle();
+					if (waitingRegions.contains("Car.CarStatechart")) {
+						activeRegion = "Car.CarStatechart";
+						react_CarStatechart_idle();
 					}
 					break;
-				case main_region_standby :
+				case carStatechart_standby :
 					// trigger transitions (i.e., call the corresponding react method) only for regions that are waiting regions
-					if (waitingRegions.contains("Car.main_region")) {
-						activeRegion = "Car.main_region";
-						react_main_region_standby();
+					if (waitingRegions.contains("Car.CarStatechart")) {
+						activeRegion = "Car.CarStatechart";
+						react_CarStatechart_standby();
 					}
 					break;
-				case main_region_Operating_r1_departure :
+				case carStatechart_Operating_r1_departure :
 					// trigger transitions (i.e., call the corresponding react method) only for regions that are waiting regions
-					if (waitingRegions.contains("Car.main_region.Operating.r1")) {
-						activeRegion = "Car.main_region.Operating.r1";
-						react_main_region_Operating_r1_departure();
+					if (waitingRegions
+							.contains("Car.CarStatechart.Operating.r1")) {
+						activeRegion = "Car.CarStatechart.Operating.r1";
+						react_CarStatechart_Operating_r1_departure();
 					}
 					break;
-				case main_region_Operating_r1_Cruising :
+				case carStatechart_Operating_r1_Cruising :
 					// trigger transitions (i.e., call the corresponding react method) only for regions that are waiting regions
-					if (waitingRegions.contains("Car.main_region.Operating.r1")) {
-						activeRegion = "Car.main_region.Operating.r1";
-						react_main_region_Operating_r1_Cruising();
+					if (waitingRegions
+							.contains("Car.CarStatechart.Operating.r1")) {
+						activeRegion = "Car.CarStatechart.Operating.r1";
+						react_CarStatechart_Operating_r1_Cruising();
 					}
 					break;
-				case main_region_Operating_r1_arrival :
+				case carStatechart_Operating_r1_arrival :
 					// trigger transitions (i.e., call the corresponding react method) only for regions that are waiting regions
-					if (waitingRegions.contains("Car.main_region.Operating.r1")) {
-						activeRegion = "Car.main_region.Operating.r1";
-						react_main_region_Operating_r1_arrival();
+					if (waitingRegions
+							.contains("Car.CarStatechart.Operating.r1")) {
+						activeRegion = "Car.CarStatechart.Operating.r1";
+						react_CarStatechart_Operating_r1_arrival();
 					}
 					break;
 				default :
@@ -736,8 +611,8 @@ public class CarStatemachine implements ICarStatemachine, IExecutionEngineSCT {
 	public void initSuperCycle() {
 		// clearEvents(); // this removes also external/user events... must not clear all events...
 		waitingRegions.clear();
-		waitingRegions.add("Car.main_region");
-		waitingRegions.add("Car.main_region.Operating.r1");
+		waitingRegions.add("Car.CarStatechart");
+		waitingRegions.add("Car.CarStatechart.Operating.r1");
 		waitingRegions.add("Car._region1");
 	}
 

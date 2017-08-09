@@ -116,7 +116,7 @@
           <argument xmi:type="uml:LiteralBoolean" xmi:id="_-cuuUFW7EeeApOF0hg9UEA" name="arg0" type="_Btt3nVW0EeeApOF0hg9UEA" value="true"/>
         </message>
         <message xmi:id="_8_IH4FW7EeeApOF0hg9UEA" name="platformAllocated" receiveEvent="_8_IH5VW7EeeApOF0hg9UEA" sendEvent="_8_IH41W7EeeApOF0hg9UEA" signature="_DeAJgFW0EeeApOF0hg9UEA">
-          <argument xmi:type="uml:InstanceValue" xmi:id="_8_IH7VW7EeeApOF0hg9UEA" name="number" type="_DeAJfVW0EeeApOF0hg9UEA"/>
+          <argument xmi:type="uml:LiteralInteger" xmi:id="_vEzHAHxHEeeiqeTWByR1UA" name="number" type="_DeAJfVW0EeeApOF0hg9UEA" value="4"/>
         </message>
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:Interaction" xmi:id="_X1azkFcqEeeHDKF5BZcdMA" name="LSC2">
@@ -396,7 +396,7 @@
   </uml:Model>
   <LSC:Collaboration xmi:id="_pWVo1FWpEeeApOF0hg9UEA" base_Collaboration="_pUq0uFWpEeeApOF0hg9UEA" LscId="1497957277081"/>
   <LSC:Interaction xmi:id="_vI1ckVWyEeeApOF0hg9UEA" base_Interaction="_vI1ckFWyEeeApOF0hg9UEA" Mode="Universal" LscId="1497961181401" LSCCollaboration="_pUq0uFWpEeeApOF0hg9UEA"/>
-  <visual:Interaction xmi:id="_vI1cklWyEeeApOF0hg9UEA" base_Interaction="_vI1ckFWyEeeApOF0hg9UEA" X="20" Width="1343" Y="30" Height="961"/>
+  <visual:Interaction xmi:id="_vI1cklWyEeeApOF0hg9UEA" base_Interaction="_vI1ckFWyEeeApOF0hg9UEA" X="20" Width="261" Y="30" Height="961"/>
   <visual:Lifeline xmi:id="_YKmJwVWzEeeApOF0hg9UEA" base_Lifeline="_YKmJwFWzEeeApOF0hg9UEA" X="140" Width="100" Y="69" Height="852"/>
   <LSC:Lifeline xmi:id="_YKmJwlWzEeeApOF0hg9UEA" base_Lifeline="_YKmJwFWzEeeApOF0hg9UEA" LscId="1497961456732" PolymorphicScope="Deep" Binding="Dynamic (One)"/>
   <LSC:Property xmi:id="_YKv6wlWzEeeApOF0hg9UEA" base_Property="_YKv6wVWzEeeApOF0hg9UEA"/>
@@ -413,9 +413,9 @@
   <LSC:Property xmi:id="_hBKh0VWzEeeApOF0hg9UEA" base_Property="_hBKh0FWzEeeApOF0hg9UEA"/>
   <LSC:LiteralInteger xmi:id="_hBKh01WzEeeApOF0hg9UEA" base_LiteralInteger="_hBKh0lWzEeeApOF0hg9UEA"/>
   <LSC:LiteralString xmi:id="_hBKh1lWzEeeApOF0hg9UEA" base_LiteralString="_hBKh1VWzEeeApOF0hg9UEA"/>
-  <visual:CombinedFragment xmi:id="_hccIkVWzEeeApOF0hg9UEA" base_CombinedFragment="_hccIkFWzEeeApOF0hg9UEA" X="43" Width="216" Y="281" Height="620"/>
+  <visual:CombinedFragment xmi:id="_hccIkVWzEeeApOF0hg9UEA" base_CombinedFragment="_hccIkFWzEeeApOF0hg9UEA" X="51" Width="200" Y="281" Height="620"/>
   <LSC:CombinedFragment xmi:id="_hccIklWzEeeApOF0hg9UEA" base_CombinedFragment="_hccIkFWzEeeApOF0hg9UEA" Type="Subchart" LscId="1497961519017"/>
-  <visual:InteractionOperand xmi:id="_hccIlFWzEeeApOF0hg9UEA" base_InteractionOperand="_hccIk1WzEeeApOF0hg9UEA" X="43" Width="216" Y="301" Height="150"/>
+  <visual:InteractionOperand xmi:id="_hccIlFWzEeeApOF0hg9UEA" base_InteractionOperand="_hccIk1WzEeeApOF0hg9UEA" X="51" Width="200" Y="301" Height="150"/>
   <LSC:InteractionOperand xmi:id="_hccIlVWzEeeApOF0hg9UEA" base_InteractionOperand="_hccIk1WzEeeApOF0hg9UEA" ConstrExpressionsStr="PropertyValue,platformManager,platform1busy,==,false,&amp;&amp;;" LscId="1497961519001"/>
   <LSC:OpaqueExpression xmi:id="_hccImFWzEeeApOF0hg9UEA" base_OpaqueExpression="_hccIl1WzEeeApOF0hg9UEA"/>
   <LSC:Message xmi:id="_Btt3kVW0EeeApOF0hg9UEA" base_Message="_Btt3kFW0EeeApOF0hg9UEA" Operation="_Btt3oFW0EeeApOF0hg9UEA" LscId="1497961735561" Execution="Execute" Temperature="Hot"/>
@@ -437,7 +437,7 @@
   <LSC:Property xmi:id="_GK_UIVW0EeeApOF0hg9UEA" base_Property="_GK_UIFW0EeeApOF0hg9UEA"/>
   <LSC:LiteralInteger xmi:id="_GK_UI1W0EeeApOF0hg9UEA" base_LiteralInteger="_GK_UIlW0EeeApOF0hg9UEA"/>
   <LSC:LiteralString xmi:id="_GK_UJlW0EeeApOF0hg9UEA" base_LiteralString="_GK_UJVW0EeeApOF0hg9UEA"/>
-  <visual:InteractionOperand xmi:id="_HLEREVW0EeeApOF0hg9UEA" base_InteractionOperand="_HLEREFW0EeeApOF0hg9UEA" X="43" Width="216" Y="451" Height="150"/>
+  <visual:InteractionOperand xmi:id="_HLEREVW0EeeApOF0hg9UEA" base_InteractionOperand="_HLEREFW0EeeApOF0hg9UEA" X="51" Width="200" Y="451" Height="150"/>
   <LSC:InteractionOperand xmi:id="_HLERElW0EeeApOF0hg9UEA" base_InteractionOperand="_HLEREFW0EeeApOF0hg9UEA" ConstrExpressionsStr="PropertyValue,platformManager,platform2busy,==,false,&amp;&amp;;" LscId="1497961772193"/>
   <LSC:OpaqueExpression xmi:id="_HLERFVW0EeeApOF0hg9UEA" base_OpaqueExpression="_HLERFFW0EeeApOF0hg9UEA"/>
   <LSC:Message xmi:id="_JVDcYVW0EeeApOF0hg9UEA" base_Message="_JVDcYFW0EeeApOF0hg9UEA" Operation="_JVNNaVW0EeeApOF0hg9UEA" LscId="1497961786662" Execution="Execute" Temperature="Hot"/>
@@ -458,7 +458,7 @@
   <LSC:Property xmi:id="_m9230VW1EeeApOF0hg9UEA" base_Property="_m9230FW1EeeApOF0hg9UEA"/>
   <LSC:LiteralInteger xmi:id="_m92301W1EeeApOF0hg9UEA" base_LiteralInteger="_m9230lW1EeeApOF0hg9UEA"/>
   <LSC:LiteralString xmi:id="_m9231lW1EeeApOF0hg9UEA" base_LiteralString="_m9231VW1EeeApOF0hg9UEA"/>
-  <visual:InteractionOperand xmi:id="_nOO2IVW1EeeApOF0hg9UEA" base_InteractionOperand="_nOO2IFW1EeeApOF0hg9UEA" X="43" Width="216" Y="601" Height="150"/>
+  <visual:InteractionOperand xmi:id="_nOO2IVW1EeeApOF0hg9UEA" base_InteractionOperand="_nOO2IFW1EeeApOF0hg9UEA" X="51" Width="200" Y="601" Height="150"/>
   <LSC:InteractionOperand xmi:id="_nOO2IlW1EeeApOF0hg9UEA" base_InteractionOperand="_nOO2IFW1EeeApOF0hg9UEA" ConstrExpressionsStr="PropertyValue,platformManager,platform3busy,==,false,&amp;&amp;;" LscId="1497962416770"/>
   <LSC:OpaqueExpression xmi:id="_nOO2JVW1EeeApOF0hg9UEA" base_OpaqueExpression="_nOO2JFW1EeeApOF0hg9UEA"/>
   <LSC:Message xmi:id="_QdEZMVW6EeeApOF0hg9UEA" base_Message="_QdEZMFW6EeeApOF0hg9UEA" Operation="_QdEZP1W6EeeApOF0hg9UEA" LscId="1497964411459" Execution="Execute" Temperature="Hot"/>
@@ -479,7 +479,7 @@
   <LSC:Property xmi:id="_6oJpcVW7EeeApOF0hg9UEA" base_Property="_6oJpcFW7EeeApOF0hg9UEA"/>
   <LSC:LiteralInteger xmi:id="_6oJpc1W7EeeApOF0hg9UEA" base_LiteralInteger="_6oJpclW7EeeApOF0hg9UEA"/>
   <LSC:LiteralString xmi:id="_6oJpdlW7EeeApOF0hg9UEA" base_LiteralString="_6oJpdVW7EeeApOF0hg9UEA"/>
-  <visual:InteractionOperand xmi:id="_65WHIVW7EeeApOF0hg9UEA" base_InteractionOperand="_65WHIFW7EeeApOF0hg9UEA" X="43" Width="216" Y="751" Height="150"/>
+  <visual:InteractionOperand xmi:id="_65WHIVW7EeeApOF0hg9UEA" base_InteractionOperand="_65WHIFW7EeeApOF0hg9UEA" X="51" Width="200" Y="751" Height="150"/>
   <LSC:InteractionOperand xmi:id="_65WHIlW7EeeApOF0hg9UEA" base_InteractionOperand="_65WHIFW7EeeApOF0hg9UEA" ConstrExpressionsStr="PropertyValue,platformManager,platform4busy,==,false,&amp;&amp;;" LscId="1497965125778"/>
   <LSC:OpaqueExpression xmi:id="_65WHJVW7EeeApOF0hg9UEA" base_OpaqueExpression="_65WHJFW7EeeApOF0hg9UEA"/>
   <LSC:Message xmi:id="_776-cVW7EeeApOF0hg9UEA" base_Message="_776-cFW7EeeApOF0hg9UEA" Operation="_78Eve1W7EeeApOF0hg9UEA" LscId="1497965132759" TimeTagName="" Execution="Execute" Temperature="Hot"/>
@@ -489,18 +489,17 @@
   <LSC:MessageOccurrenceSpecification xmi:id="_78EvdlW7EeeApOF0hg9UEA" base_MessageOccurrenceSpecification="_78EvdVW7EeeApOF0hg9UEA"/>
   <LSC:MessageOccurrenceSpecification xmi:id="_78EveFW7EeeApOF0hg9UEA" base_MessageOccurrenceSpecification="_78Evd1W7EeeApOF0hg9UEA"/>
   <LSC:Operation xmi:id="_78EvfFW7EeeApOF0hg9UEA" base_Operation="_78Eve1W7EeeApOF0hg9UEA" ActionOnProperty="None"/>
-  <LSC:Message xmi:id="_8_IH4VW7EeeApOF0hg9UEA" base_Message="_8_IH4FW7EeeApOF0hg9UEA" Operation="_DeAJgFW0EeeApOF0hg9UEA" LscId="1497965139806" Execution="Execute" Temperature="Hot"/>
+  <LSC:Message xmi:id="_8_IH4VW7EeeApOF0hg9UEA" base_Message="_8_IH4FW7EeeApOF0hg9UEA" Operation="_DeAJgFW0EeeApOF0hg9UEA" LscId="1497965139806" TimeTagName="" Execution="Execute" Temperature="Hot"/>
   <visual:Message xmi:id="_8_IH4lW7EeeApOF0hg9UEA" base_Message="_8_IH4FW7EeeApOF0hg9UEA"/>
   <LSC:MessageOccurrenceSpecification xmi:id="_8_IH5FW7EeeApOF0hg9UEA" base_MessageOccurrenceSpecification="_8_IH41W7EeeApOF0hg9UEA" Temperature="Hot"/>
   <LSC:MessageOccurrenceSpecification xmi:id="_8_IH5lW7EeeApOF0hg9UEA" base_MessageOccurrenceSpecification="_8_IH5VW7EeeApOF0hg9UEA" Temperature="Hot"/>
   <LSC:MessageOccurrenceSpecification xmi:id="_8_IH6lW7EeeApOF0hg9UEA" base_MessageOccurrenceSpecification="_8_IH6VW7EeeApOF0hg9UEA"/>
   <LSC:MessageOccurrenceSpecification xmi:id="_8_IH7FW7EeeApOF0hg9UEA" base_MessageOccurrenceSpecification="_8_IH61W7EeeApOF0hg9UEA"/>
-  <LSC:InstanceValue xmi:id="_8_IH7lW7EeeApOF0hg9UEA" base_InstanceValue="_8_IH7VW7EeeApOF0hg9UEA"/>
   <LSC:LiteralBoolean xmi:id="_-cuuUVW7EeeApOF0hg9UEA" base_LiteralBoolean="_-cuuUFW7EeeApOF0hg9UEA" Constraint=""/>
   <LSC:Property xmi:id="_iN5ZtVW-EeeApOF0hg9UEA" base_Property="_iN5ZtFW-EeeApOF0hg9UEA"/>
   <LSC:Operation xmi:id="_kBZXrlW-EeeApOF0hg9UEA" base_Operation="_kBZXrVW-EeeApOF0hg9UEA" ActionOnProperty="None"/>
   <LSC:Operation xmi:id="_RNsRolcqEeeHDKF5BZcdMA" base_Operation="_RNsRoVcqEeeHDKF5BZcdMA" ActionOnProperty="None"/>
-  <visual:Interaction xmi:id="_X1azkVcqEeeHDKF5BZcdMA" base_Interaction="_X1azkFcqEeeHDKF5BZcdMA" X="1383" Width="282" Y="30" Height="561"/>
+  <visual:Interaction xmi:id="_X1azkVcqEeeHDKF5BZcdMA" base_Interaction="_X1azkFcqEeeHDKF5BZcdMA" X="301" Width="282" Y="30" Height="561"/>
   <LSC:Interaction xmi:id="_X1azklcqEeeHDKF5BZcdMA" base_Interaction="_X1azkFcqEeeHDKF5BZcdMA" Mode="Universal" LscId="1498122515800" LSCCollaboration="_pUq0uFWpEeeApOF0hg9UEA"/>
   <LSC:Lifeline xmi:id="_ZZM6gVcqEeeHDKF5BZcdMA" base_Lifeline="_ZZM6gFcqEeeHDKF5BZcdMA" LscId="1498122526248" PolymorphicScope="Deep" Binding="Dynamic (One)"/>
   <visual:Lifeline xmi:id="_ZZM6glcqEeeHDKF5BZcdMA" base_Lifeline="_ZZM6gFcqEeeHDKF5BZcdMA" X="20" Width="100" Y="69" Height="400"/>
@@ -520,7 +519,7 @@
   <LSC:MessageOccurrenceSpecification xmi:id="_dBlWdlcqEeeHDKF5BZcdMA" base_MessageOccurrenceSpecification="_dBlWdVcqEeeHDKF5BZcdMA"/>
   <LSC:MessageOccurrenceSpecification xmi:id="_dBlWeFcqEeeHDKF5BZcdMA" base_MessageOccurrenceSpecification="_dBlWd1cqEeeHDKF5BZcdMA"/>
   <LSC:LiteralBoolean xmi:id="_dBlWelcqEeeHDKF5BZcdMA" base_LiteralBoolean="_dBlWeVcqEeeHDKF5BZcdMA" Constraint=""/>
-  <visual:Interaction xmi:id="_g4y4kVcqEeeHDKF5BZcdMA" base_Interaction="_g4y4kFcqEeeHDKF5BZcdMA" X="1685" Width="281" Y="30" Height="561"/>
+  <visual:Interaction xmi:id="_g4y4kVcqEeeHDKF5BZcdMA" base_Interaction="_g4y4kFcqEeeHDKF5BZcdMA" X="603" Width="281" Y="30" Height="561"/>
   <LSC:Interaction xmi:id="_g4y4klcqEeeHDKF5BZcdMA" base_Interaction="_g4y4kFcqEeeHDKF5BZcdMA" Mode="Universal" LscId="1498122576537" LSCCollaboration="_pUq0uFWpEeeApOF0hg9UEA"/>
   <LSC:Lifeline xmi:id="_h5jyAVcqEeeHDKF5BZcdMA" base_Lifeline="_h5jyAFcqEeeHDKF5BZcdMA" LscId="1498122583328" PolymorphicScope="Deep"/>
   <visual:Lifeline xmi:id="_h5jyAlcqEeeHDKF5BZcdMA" base_Lifeline="_h5jyAFcqEeeHDKF5BZcdMA" X="20" Width="100" Y="69" Height="452"/>
@@ -578,7 +577,7 @@
   <LSC:LiteralString xmi:id="_oWnio1soEeeoX9fYhVNXSg" base_LiteralString="_oWniolsoEeeoX9fYhVNXSg"/>
   <LSC:Operation xmi:id="_pqBEPlsoEeeoX9fYhVNXSg" base_Operation="_pqBEPVsoEeeoX9fYhVNXSg" ActionOnProperty="None"/>
   <LSC:Interaction xmi:id="_mrkvhGGNEee9vtmKfZ3p8w" base_Interaction="_mqPSgGGNEee9vtmKfZ3p8w" Mode="Universal" LscId="1499264647220" LSCCollaboration="_pUq0uFWpEeeApOF0hg9UEA"/>
-  <visual:Interaction xmi:id="_mrkvhWGNEee9vtmKfZ3p8w" base_Interaction="_mqPSgGGNEee9vtmKfZ3p8w" X="1986" Width="261" Y="30" Height="561"/>
+  <visual:Interaction xmi:id="_mrkvhWGNEee9vtmKfZ3p8w" base_Interaction="_mqPSgGGNEee9vtmKfZ3p8w" X="904" Width="261" Y="30" Height="561"/>
   <visual:Lifeline xmi:id="_s6Ya4WGNEee9vtmKfZ3p8w" base_Lifeline="_s6Ya4GGNEee9vtmKfZ3p8w" X="20" Width="100" Y="69" Height="400"/>
   <LSC:Lifeline xmi:id="_s6Ya4mGNEee9vtmKfZ3p8w" base_Lifeline="_s6Ya4GGNEee9vtmKfZ3p8w" LscId="1499264689038" PolymorphicScope="Deep" Binding="Dynamic (One)"/>
   <visual:Lifeline xmi:id="_uIkFQWGNEee9vtmKfZ3p8w" base_Lifeline="_uIkFQGGNEee9vtmKfZ3p8w" X="140" Width="100" Y="69" Height="400"/>
@@ -599,7 +598,7 @@
   <LSC:MessageOccurrenceSpecification xmi:id="_wazNqmGNEee9vtmKfZ3p8w" base_MessageOccurrenceSpecification="_wazNqWGNEee9vtmKfZ3p8w"/>
   <LSC:MessageOccurrenceSpecification xmi:id="_wazNrGGNEee9vtmKfZ3p8w" base_MessageOccurrenceSpecification="_wazNq2GNEee9vtmKfZ3p8w"/>
   <LSC:Operation xmi:id="_wazNrmGNEee9vtmKfZ3p8w" base_Operation="_wazNrWGNEee9vtmKfZ3p8w" ActionOnProperty="None"/>
-  <visual:Interaction xmi:id="_0oLqtGJFEeeL0_7NizprwA" base_Interaction="_0mav4GJFEeeL0_7NizprwA" X="2267" Width="261" Y="30" Height="561"/>
+  <visual:Interaction xmi:id="_0oLqtGJFEeeL0_7NizprwA" base_Interaction="_0mav4GJFEeeL0_7NizprwA" X="1185" Width="261" Y="30" Height="561"/>
   <LSC:Interaction xmi:id="_0oLqtWJFEeeL0_7NizprwA" base_Interaction="_0mav4GJFEeeL0_7NizprwA" Mode="Universal" LscId="1499343768215" LSCCollaboration="_pUq0uFWpEeeApOF0hg9UEA"/>
   <visual:Lifeline xmi:id="_3SCBkWJFEeeL0_7NizprwA" base_Lifeline="_3SCBkGJFEeeL0_7NizprwA" X="20" Width="100" Y="69" Height="400"/>
   <LSC:Lifeline xmi:id="_3SCBkmJFEeeL0_7NizprwA" base_Lifeline="_3SCBkGJFEeeL0_7NizprwA" LscId="1499343786025" PolymorphicScope="Deep" Binding="Dynamic (One)"/>
@@ -620,7 +619,7 @@
   <LSC:MessageOccurrenceSpecification xmi:id="_7dEepmJFEeeL0_7NizprwA" base_MessageOccurrenceSpecification="_7dEepWJFEeeL0_7NizprwA" Temperature="Hot"/>
   <LSC:MessageOccurrenceSpecification xmi:id="_7dEeqmJFEeeL0_7NizprwA" base_MessageOccurrenceSpecification="_7dEeqWJFEeeL0_7NizprwA"/>
   <LSC:MessageOccurrenceSpecification xmi:id="_7dEerGJFEeeL0_7NizprwA" base_MessageOccurrenceSpecification="_7dEeq2JFEeeL0_7NizprwA"/>
-  <visual:Interaction xmi:id="_lydjoGJWEeeOtr00okh-Cw" base_Interaction="_lw6EcGJWEeeOtr00okh-Cw" X="2548" Width="376" Y="30" Height="811"/>
+  <visual:Interaction xmi:id="_lydjoGJWEeeOtr00okh-Cw" base_Interaction="_lw6EcGJWEeeOtr00okh-Cw" X="1466" Width="376" Y="30" Height="811"/>
   <LSC:Interaction xmi:id="_lydjoWJWEeeOtr00okh-Cw" base_Interaction="_lw6EcGJWEeeOtr00okh-Cw" Mode="Universal" LscId="1499350970074" LSCCollaboration="_pUq0uFWpEeeApOF0hg9UEA"/>
   <LSC:Lifeline xmi:id="_nQOiIWJWEeeOtr00okh-Cw" base_Lifeline="_nQOiIGJWEeeOtr00okh-Cw" LscId="1499350979906" PolymorphicScope="Deep" Binding="Dynamic (One)"/>
   <visual:Lifeline xmi:id="_nQOiImJWEeeOtr00okh-Cw" base_Lifeline="_nQOiIGJWEeeOtr00okh-Cw" X="20" Width="100" Y="69" Height="702"/>
@@ -635,9 +634,9 @@
   <LSC:MessageOccurrenceSpecification xmi:id="_qIVXsGJWEeeOtr00okh-Cw" base_MessageOccurrenceSpecification="_qIUwqmJWEeeOtr00okh-Cw"/>
   <LSC:Property xmi:id="_s92zUGJWEeeOtr00okh-Cw" base_Property="_s92MQGJWEeeOtr00okh-Cw" PropertyType="int"/>
   <LSC:LiteralString xmi:id="_s92zUmJWEeeOtr00okh-Cw" base_LiteralString="_s92zUWJWEeeOtr00okh-Cw"/>
-  <visual:CombinedFragment xmi:id="_tIsxYGJWEeeOtr00okh-Cw" base_CombinedFragment="_tIsKUGJWEeeOtr00okh-Cw" X="2511" Width="336" Y="231" Height="520"/>
+  <visual:CombinedFragment xmi:id="_tIsxYGJWEeeOtr00okh-Cw" base_CombinedFragment="_tIsKUGJWEeeOtr00okh-Cw" X="1429" Width="336" Y="231" Height="520"/>
   <LSC:CombinedFragment xmi:id="_tIsxYWJWEeeOtr00okh-Cw" base_CombinedFragment="_tIsKUGJWEeeOtr00okh-Cw" Type="Subchart" LscId="1499351019384"/>
-  <visual:InteractionOperand xmi:id="_tIsxY2JWEeeOtr00okh-Cw" base_InteractionOperand="_tIsxYmJWEeeOtr00okh-Cw" X="2511" Width="336" Y="251" Height="125"/>
+  <visual:InteractionOperand xmi:id="_tIsxY2JWEeeOtr00okh-Cw" base_InteractionOperand="_tIsxYmJWEeeOtr00okh-Cw" X="1429" Width="336" Y="251" Height="125"/>
   <LSC:InteractionOperand xmi:id="_tIsxZGJWEeeOtr00okh-Cw" base_InteractionOperand="_tIsxYmJWEeeOtr00okh-Cw" ConstrExpressionsStr="PropertyValue,car,platform,==,1,&amp;&amp;;" LscId="1499351019382"/>
   <LSC:OpaqueExpression xmi:id="_tIsxZ2JWEeeOtr00okh-Cw" base_OpaqueExpression="_tIsxZmJWEeeOtr00okh-Cw"/>
   <visual:Message xmi:id="_ucZ08WJWEeeOtr00okh-Cw" base_Message="_ucZ08GJWEeeOtr00okh-Cw"/>
@@ -647,7 +646,7 @@
   <LSC:MessageOccurrenceSpecification xmi:id="_ucacB2JWEeeOtr00okh-Cw" base_MessageOccurrenceSpecification="_ucacBmJWEeeOtr00okh-Cw"/>
   <LSC:MessageOccurrenceSpecification xmi:id="_ucacCWJWEeeOtr00okh-Cw" base_MessageOccurrenceSpecification="_ucacCGJWEeeOtr00okh-Cw"/>
   <LSC:LiteralBoolean xmi:id="_ucacC2JWEeeOtr00okh-Cw" base_LiteralBoolean="_ucacCmJWEeeOtr00okh-Cw" Constraint=""/>
-  <visual:InteractionOperand xmi:id="_w1cv8GJWEeeOtr00okh-Cw" base_InteractionOperand="_w1cI4GJWEeeOtr00okh-Cw" X="2511" Width="336" Y="376" Height="125"/>
+  <visual:InteractionOperand xmi:id="_w1cv8GJWEeeOtr00okh-Cw" base_InteractionOperand="_w1cI4GJWEeeOtr00okh-Cw" X="1429" Width="336" Y="376" Height="125"/>
   <LSC:InteractionOperand xmi:id="_w1cv8WJWEeeOtr00okh-Cw" base_InteractionOperand="_w1cI4GJWEeeOtr00okh-Cw" ConstrExpressionsStr="PropertyValue,car,platform,==,2,&amp;&amp;;" LscId="1499351044207"/>
   <LSC:OpaqueExpression xmi:id="_w1cv9GJWEeeOtr00okh-Cw" base_OpaqueExpression="_w1cv82JWEeeOtr00okh-Cw"/>
   <visual:Message xmi:id="_yDxkQWJWEeeOtr00okh-Cw" base_Message="_yDxkQGJWEeeOtr00okh-Cw"/>
@@ -657,7 +656,7 @@
   <LSC:MessageOccurrenceSpecification xmi:id="_yDyLVGJWEeeOtr00okh-Cw" base_MessageOccurrenceSpecification="_yDyLU2JWEeeOtr00okh-Cw"/>
   <LSC:MessageOccurrenceSpecification xmi:id="_yDyLVmJWEeeOtr00okh-Cw" base_MessageOccurrenceSpecification="_yDyLVWJWEeeOtr00okh-Cw"/>
   <LSC:LiteralBoolean xmi:id="_yDyLWGJWEeeOtr00okh-Cw" base_LiteralBoolean="_yDyLV2JWEeeOtr00okh-Cw" Constraint=""/>
-  <visual:InteractionOperand xmi:id="_z8CGYWJWEeeOtr00okh-Cw" base_InteractionOperand="_z8CGYGJWEeeOtr00okh-Cw" X="2511" Width="336" Y="501" Height="125"/>
+  <visual:InteractionOperand xmi:id="_z8CGYWJWEeeOtr00okh-Cw" base_InteractionOperand="_z8CGYGJWEeeOtr00okh-Cw" X="1429" Width="336" Y="501" Height="125"/>
   <LSC:InteractionOperand xmi:id="_z8CGYmJWEeeOtr00okh-Cw" base_InteractionOperand="_z8CGYGJWEeeOtr00okh-Cw" ConstrExpressionsStr="PropertyValue,car,platform,==,3,&amp;&amp;;" LscId="1499351065030"/>
   <LSC:OpaqueExpression xmi:id="_z8CGZWJWEeeOtr00okh-Cw" base_OpaqueExpression="_z8CGZGJWEeeOtr00okh-Cw"/>
   <visual:Message xmi:id="_1VoWkWJWEeeOtr00okh-Cw" base_Message="_1VoWkGJWEeeOtr00okh-Cw"/>
@@ -667,7 +666,7 @@
   <LSC:MessageOccurrenceSpecification xmi:id="_1Vo9pGJWEeeOtr00okh-Cw" base_MessageOccurrenceSpecification="_1Vo9o2JWEeeOtr00okh-Cw"/>
   <LSC:MessageOccurrenceSpecification xmi:id="_1Vo9pmJWEeeOtr00okh-Cw" base_MessageOccurrenceSpecification="_1Vo9pWJWEeeOtr00okh-Cw"/>
   <LSC:LiteralBoolean xmi:id="_1Vo9qGJWEeeOtr00okh-Cw" base_LiteralBoolean="_1Vo9p2JWEeeOtr00okh-Cw" Constraint=""/>
-  <visual:InteractionOperand xmi:id="_4M43kWJWEeeOtr00okh-Cw" base_InteractionOperand="_4M43kGJWEeeOtr00okh-Cw" X="2511" Width="336" Y="626" Height="125"/>
+  <visual:InteractionOperand xmi:id="_4M43kWJWEeeOtr00okh-Cw" base_InteractionOperand="_4M43kGJWEeeOtr00okh-Cw" X="1429" Width="336" Y="626" Height="125"/>
   <LSC:InteractionOperand xmi:id="_4M5eoGJWEeeOtr00okh-Cw" base_InteractionOperand="_4M43kGJWEeeOtr00okh-Cw" ConstrExpressionsStr="PropertyValue,car,platform,==,4,&amp;&amp;;" LscId="1499351093642"/>
   <LSC:OpaqueExpression xmi:id="_4M5eo2JWEeeOtr00okh-Cw" base_OpaqueExpression="_4M5eomJWEeeOtr00okh-Cw"/>
   <visual:Message xmi:id="_5cSp8WJWEeeOtr00okh-Cw" base_Message="_5cSp8GJWEeeOtr00okh-Cw"/>
@@ -677,4 +676,5 @@
   <LSC:MessageOccurrenceSpecification xmi:id="_5cTRB2JWEeeOtr00okh-Cw" base_MessageOccurrenceSpecification="_5cTRBmJWEeeOtr00okh-Cw"/>
   <LSC:MessageOccurrenceSpecification xmi:id="_5cTRCWJWEeeOtr00okh-Cw" base_MessageOccurrenceSpecification="_5cTRCGJWEeeOtr00okh-Cw"/>
   <LSC:LiteralBoolean xmi:id="_5cTRC2JWEeeOtr00okh-Cw" base_LiteralBoolean="_5cTRCmJWEeeOtr00okh-Cw" Constraint=""/>
+  <LSC:LiteralInteger xmi:id="_vEzHAXxHEeeiqeTWByR1UA" base_LiteralInteger="_vEzHAHxHEeeiqeTWByR1UA" Constraint=""/>
 </xmi:XMI>

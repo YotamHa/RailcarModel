@@ -638,4 +638,22 @@ public class CarGenerated
         	.setPropertyValue("Car", name, "inTerminal", String.valueOf(arg0));
     }
 
+    @SystemModelGen
+    public void chooseTerminal() {
+        if(java.lang.System.getProperty("SYSTEM_MODEL_DEBUG")!=null){
+        	java.lang.System.out.println(">>> method call: >>> chooseTerminal() : void .Object name: " + name);
+        }
+        
+		//ExecutionBridge handling
+        SystemModelMain.getInstance().activateMethod(("Car"), (name), ("chooseTerminal"));
+        java.util.ArrayList<String> argTypes = new java.util.ArrayList<String>();
+        java.util.ArrayList<Object> argValues = new java.util.ArrayList<Object>();
+        Object source = il.ac.wis.cs.playgo.playtoolkit.SyncMessageHandler.srcObj!=null ? il.ac.wis.cs.playgo.playtoolkit.SyncMessageHandler.srcObj : this;
+        il.ac.wis.cs.s2a.runtime.lib.PlaygoCoordinator.getInstance().publish((source), (source.getClass().getSimpleName()), (this), (this.getClass().getSimpleName()), ("chooseTerminal"), (argTypes), (argValues));
+        il.ac.wis.cs.playgo.playtoolkit.SyncMessageHandler.srcObj=null;
+        //GUI handling
+        playgo.systemmodel.SystemModelMain.getInstance().getPlayable().
+        		activateMethod("Car", name, "chooseTerminal");
+    }
+
 }

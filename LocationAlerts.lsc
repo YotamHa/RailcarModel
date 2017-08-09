@@ -5,7 +5,7 @@
       <ownedAttribute xmi:id="_kKgZoVP4EeexxPjp-u37KQ" name="Car" type="_kKgZoFP4EeexxPjp-u37KQ"/>
       <ownedAttribute xmi:id="_kKpjk1P4EeexxPjp-u37KQ" name="Terminal" type="_kKpjklP4EeexxPjp-u37KQ"/>
       <ownedAttribute xmi:id="_kKzUqFP4EeexxPjp-u37KQ" name="SysManager" type="_kKzUp1P4EeexxPjp-u37KQ"/>
-      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_kKM3oFP4EeexxPjp-u37KQ" name="Alert100">
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_kKM3oFP4EeexxPjp-u37KQ" name="Alert100OfTerminal">
         <ownedAttribute xmi:id="_kLkJlVP4EeexxPjp-u37KQ" name="minimalDistance" type="_kKzUt1P4EeexxPjp-u37KQ"/>
         <formalGate xmi:id="_kbA60FP4EeexxPjp-u37KQ" name="dummy"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kKzUrVP4EeexxPjp-u37KQ" name="moveCar-InvocationStart" covered="_kKWooFP4EeexxPjp-u37KQ" message="_kKzUqlP4EeexxPjp-u37KQ"/>
@@ -76,7 +76,7 @@
           </argument>
         </message>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_C3C_cFP5EeexxPjp-u37KQ" name="AlertStop">
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_C3C_cFP5EeexxPjp-u37KQ" name="AlertArrivalToTerminal">
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EUsP41P-EeexxPjp-u37KQ" name="moveCar-InvocationStart" covered="_EfsYQFP5EeexxPjp-u37KQ" message="_EUsP4FP-EeexxPjp-u37KQ"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EUsP5VP-EeexxPjp-u37KQ" name="moveCar-ExecutionStart" covered="_EfsYQFP5EeexxPjp-u37KQ" message="_EUsP4FP-EeexxPjp-u37KQ"/>
         <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_EUsP51P-EeexxPjp-u37KQ" name="moveCar-invocationBody" covered="_EfsYQFP5EeexxPjp-u37KQ" finish="_EUsP61P-EeexxPjp-u37KQ" start="_EUsP41P-EeexxPjp-u37KQ"/>
@@ -102,7 +102,7 @@
         </message>
         <message xmi:id="_VScxgFP-EeexxPjp-u37KQ" name="alertStop" receiveEvent="_VScxhVP-EeexxPjp-u37KQ" sendEvent="_VScxg1P-EeexxPjp-u37KQ" signature="_VScxjVP-EeexxPjp-u37KQ"/>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_kkIa0FXKEeecRoliUGAZ7A" name="Alert80">
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_kkIa0FXKEeecRoliUGAZ7A" name="Alert80OfTerminal">
         <ownedAttribute xmi:id="_koAON1XKEeecRoliUGAZ7A" name="minimalDistance" type="_kKzUt1P4EeexxPjp-u37KQ"/>
         <formalGate xmi:id="_lGHGgFXKEeecRoliUGAZ7A" name="dummy"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_knHdY1XKEeecRoliUGAZ7A" name="moveCar-InvocationStart" covered="_kmqxcFXKEeecRoliUGAZ7A" message="_knHdYFXKEeecRoliUGAZ7A"/>

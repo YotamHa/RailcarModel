@@ -8,7 +8,7 @@
       <ownedAttribute xmi:id="_OeddYWAAEee9vtmKfZ3p8w" name="Exit" type="_OeddYGAAEee9vtmKfZ3p8w"/>
       <ownedAttribute xmi:id="_wMlQoGF7Eee9vtmKfZ3p8w" name="PlatformManager" type="_wMkpkGF7Eee9vtmKfZ3p8w"/>
       <ownedAttribute xmi:id="_8ah0MWF7Eee9vtmKfZ3p8w" name="Entrance" type="_8ah0MGF7Eee9vtmKfZ3p8w"/>
-      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_BZcu8GAAEee9vtmKfZ3p8w" name="HandleDeparture">
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_BZcu8GAAEee9vtmKfZ3p8w" name="OnCarDeparture">
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ip8fQ2AAEee9vtmKfZ3p8w" name="departReq-InvocationStart" covered="_DD7TwGAAEee9vtmKfZ3p8w" message="_ip8fQGAAEee9vtmKfZ3p8w"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ip8fRWAAEee9vtmKfZ3p8w" name="departReq-ExecutionStart" covered="_EcuSsGAAEee9vtmKfZ3p8w" message="_ip8fQGAAEee9vtmKfZ3p8w"/>
         <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_ip8fR2AAEee9vtmKfZ3p8w" name="departReq-invocationBody" covered="_DD7TwGAAEee9vtmKfZ3p8w" finish="_ip8fS2AAEee9vtmKfZ3p8w" start="_ip8fQ2AAEee9vtmKfZ3p8w"/>
@@ -68,8 +68,8 @@
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8IGUqWAAEee9vtmKfZ3p8w" name="blank-ExecutionFinish" covered="_OeUTcGAAEee9vtmKfZ3p8w"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8IGUq2AAEee9vtmKfZ3p8w" name="blank-InvocationFinish" covered="_OeUTcGAAEee9vtmKfZ3p8w"/>
         <fragment xmi:type="uml:CombinedFragment" xmi:id="_A7OFYGABEee9vtmKfZ3p8w" name="Alternatives1" covered="_DD7TwGAAEee9vtmKfZ3p8w _EcuSsGAAEee9vtmKfZ3p8w _G45aMGAAEee9vtmKfZ3p8w _OeUTcGAAEee9vtmKfZ3p8w" interactionOperator="alt">
-          <operand xmi:id="_A7OFY2ABEee9vtmKfZ3p8w" name="existsManager.platformHandling == car.platform" covered="_DD7TwGAAEee9vtmKfZ3p8w _EcuSsGAAEee9vtmKfZ3p8w _G45aMGAAEee9vtmKfZ3p8w _OeUTcGAAEee9vtmKfZ3p8w">
-            <guard xmi:id="_A7OscmABEee9vtmKfZ3p8w" name="existsManager.platformHandling == car.platformGuard">
+          <operand xmi:id="_A7OFY2ABEee9vtmKfZ3p8w" name="exitsManager.platformHandling == car.platform" covered="_DD7TwGAAEee9vtmKfZ3p8w _EcuSsGAAEee9vtmKfZ3p8w _G45aMGAAEee9vtmKfZ3p8w _OeUTcGAAEee9vtmKfZ3p8w">
+            <guard xmi:id="_A7OscmABEee9vtmKfZ3p8w" name="exitsManager.platformHandling == car.platformGuard">
               <specification xmi:type="uml:OpaqueExpression" xmi:id="_A7Osc2ABEee9vtmKfZ3p8w" body=""/>
             </guard>
             <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_EemFg2ABEee9vtmKfZ3p8w" name="moveTo-InvocationStart" covered="_EcuSsGAAEee9vtmKfZ3p8w" message="_EemFgGABEee9vtmKfZ3p8w"/>
@@ -94,7 +94,7 @@
         </fragment>
         <lifeline xmi:id="_DD7TwGAAEee9vtmKfZ3p8w" name="car" represents="_DD7TxGAAEee9vtmKfZ3p8w" coveredBy="_ip8fQ2AAEee9vtmKfZ3p8w _ip8fS2AAEee9vtmKfZ3p8w _ip8fR2AAEee9vtmKfZ3p8w _lHSrcGAAEee9vtmKfZ3p8w _lHSrc2AAEee9vtmKfZ3p8w _oTXl4GAAEee9vtmKfZ3p8w _yQAOIGAAEee9vtmKfZ3p8w _2OhSIGAAEee9vtmKfZ3p8w _A7OFYGABEee9vtmKfZ3p8w _A7OFY2ABEee9vtmKfZ3p8w _IaXXgmABEee9vtmKfZ3p8w _IaXXhmABEee9vtmKfZ3p8w _IaXXhWABEee9vtmKfZ3p8w"/>
         <lifeline xmi:id="_EcuSsGAAEee9vtmKfZ3p8w" name="terminal" represents="_Ec0ZUGAAEee9vtmKfZ3p8w" coveredBy="_ip8fRWAAEee9vtmKfZ3p8w _ip8fSWAAEee9vtmKfZ3p8w _ip8fSGAAEee9vtmKfZ3p8w _lHSrcGAAEee9vtmKfZ3p8w _lHSrc2AAEee9vtmKfZ3p8w _mJd6I2AAEee9vtmKfZ3p8w _mJehMmAAEee9vtmKfZ3p8w _mJd6J2AAEee9vtmKfZ3p8w _oTXl4GAAEee9vtmKfZ3p8w _pNiIE2AAEee9vtmKfZ3p8w _pNiIG2AAEee9vtmKfZ3p8w _pNiIF2AAEee9vtmKfZ3p8w _yQAOIGAAEee9vtmKfZ3p8w _zeIOI2AAEee9vtmKfZ3p8w _zeI1NWAAEee9vtmKfZ3p8w _zeI1MWAAEee9vtmKfZ3p8w _2OhSIGAAEee9vtmKfZ3p8w _5F3SsmAAEee9vtmKfZ3p8w _5F3SumAAEee9vtmKfZ3p8w _5F3StmAAEee9vtmKfZ3p8w _A7OFYGABEee9vtmKfZ3p8w _A7OFY2ABEee9vtmKfZ3p8w _EemFg2ABEee9vtmKfZ3p8w _EemslWABEee9vtmKfZ3p8w _EemskWABEee9vtmKfZ3p8w _FvxZhGABEee9vtmKfZ3p8w _FvyAkGABEee9vtmKfZ3p8w _FvxZh2ABEee9vtmKfZ3p8w _IaXXgGABEee9vtmKfZ3p8w _IaXXiGABEee9vtmKfZ3p8w _IaXXhGABEee9vtmKfZ3p8w"/>
-        <lifeline xmi:id="_G45aMGAAEee9vtmKfZ3p8w" name="existsManager" represents="_G4_g0GAAEee9vtmKfZ3p8w" coveredBy="_lHSrcGAAEee9vtmKfZ3p8w _lHSrc2AAEee9vtmKfZ3p8w _mJd6JWAAEee9vtmKfZ3p8w _mJehMGAAEee9vtmKfZ3p8w _mJd6KGAAEee9vtmKfZ3p8w _oTXl4GAAEee9vtmKfZ3p8w _pNiIFWAAEee9vtmKfZ3p8w _pNiIGWAAEee9vtmKfZ3p8w _pNiIGGAAEee9vtmKfZ3p8w _yQAOIGAAEee9vtmKfZ3p8w _zeIOJWAAEee9vtmKfZ3p8w _zeI1M2AAEee9vtmKfZ3p8w _zeI1MmAAEee9vtmKfZ3p8w _2OhSIGAAEee9vtmKfZ3p8w _5F3StGAAEee9vtmKfZ3p8w _5F3SuGAAEee9vtmKfZ3p8w _5F3St2AAEee9vtmKfZ3p8w _A7OFYGABEee9vtmKfZ3p8w _A7OFY2ABEee9vtmKfZ3p8w"/>
+        <lifeline xmi:id="_G45aMGAAEee9vtmKfZ3p8w" name="exitsManager" represents="_G4_g0GAAEee9vtmKfZ3p8w" coveredBy="_lHSrcGAAEee9vtmKfZ3p8w _lHSrc2AAEee9vtmKfZ3p8w _mJd6JWAAEee9vtmKfZ3p8w _mJehMGAAEee9vtmKfZ3p8w _mJd6KGAAEee9vtmKfZ3p8w _oTXl4GAAEee9vtmKfZ3p8w _pNiIFWAAEee9vtmKfZ3p8w _pNiIGWAAEee9vtmKfZ3p8w _pNiIGGAAEee9vtmKfZ3p8w _yQAOIGAAEee9vtmKfZ3p8w _zeIOJWAAEee9vtmKfZ3p8w _zeI1M2AAEee9vtmKfZ3p8w _zeI1MmAAEee9vtmKfZ3p8w _2OhSIGAAEee9vtmKfZ3p8w _5F3StGAAEee9vtmKfZ3p8w _5F3SuGAAEee9vtmKfZ3p8w _5F3St2AAEee9vtmKfZ3p8w _A7OFYGABEee9vtmKfZ3p8w _A7OFY2ABEee9vtmKfZ3p8w"/>
         <lifeline xmi:id="_OeUTcGAAEee9vtmKfZ3p8w" name="exit" represents="_OeddYWAAEee9vtmKfZ3p8w" coveredBy="_lHSrcGAAEee9vtmKfZ3p8w _lHSrc2AAEee9vtmKfZ3p8w _oTXl4GAAEee9vtmKfZ3p8w _yQAOIGAAEee9vtmKfZ3p8w _2OhSIGAAEee9vtmKfZ3p8w _8IGUo2AAEee9vtmKfZ3p8w _8IGUq2AAEee9vtmKfZ3p8w _8IGUp2AAEee9vtmKfZ3p8w _8IGUpWAAEee9vtmKfZ3p8w _8IGUqWAAEee9vtmKfZ3p8w _8IGUqGAAEee9vtmKfZ3p8w _A7OFYGABEee9vtmKfZ3p8w _A7OFY2ABEee9vtmKfZ3p8w _EemFhWABEee9vtmKfZ3p8w _Eemsk2ABEee9vtmKfZ3p8w _EemskmABEee9vtmKfZ3p8w _FvxZgmABEee9vtmKfZ3p8w _FvyAkmABEee9vtmKfZ3p8w _FvxZhmABEee9vtmKfZ3p8w"/>
         <message xmi:id="_ip8fQGAAEee9vtmKfZ3p8w" name="departReq" receiveEvent="_ip8fRWAAEee9vtmKfZ3p8w" sendEvent="_ip8fQ2AAEee9vtmKfZ3p8w" signature="_ip8fTWAAEee9vtmKfZ3p8w"/>
         <message xmi:id="_mJd6IGAAEee9vtmKfZ3p8w" name="allocateExit1" receiveEvent="_mJd6JWAAEee9vtmKfZ3p8w" sendEvent="_mJd6I2AAEee9vtmKfZ3p8w" signature="_mJehNGAAEee9vtmKfZ3p8w"/>
@@ -110,7 +110,7 @@
         <message xmi:id="_FvwycGABEee9vtmKfZ3p8w" name="moveCompleted" receiveEvent="_FvxZhGABEee9vtmKfZ3p8w" sendEvent="_FvxZgmABEee9vtmKfZ3p8w" signature="_FvyAlGABEee9vtmKfZ3p8w"/>
         <message xmi:id="_IaWwcGABEee9vtmKfZ3p8w" name="departAck" receiveEvent="_IaXXgmABEee9vtmKfZ3p8w" sendEvent="_IaXXgGABEee9vtmKfZ3p8w" signature="_IaXXimABEee9vtmKfZ3p8w"/>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_GlTd4GACEee9vtmKfZ3p8w" name="HandleArrival">
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_GlTd4GACEee9vtmKfZ3p8w" name="OnCarArrival">
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_YqorkGACEee9vtmKfZ3p8w" name="arriveReq-InvocationStart" covered="_V8seoGACEee9vtmKfZ3p8w" message="_YqoEgGACEee9vtmKfZ3p8w"/>
         <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_YqorkmACEee9vtmKfZ3p8w" name="arriveReq-ExecutionStart" covered="_XXoLkGACEee9vtmKfZ3p8w" message="_YqoEgGACEee9vtmKfZ3p8w"/>
         <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_YqorlGACEee9vtmKfZ3p8w" name="arriveReq-invocationBody" covered="_V8seoGACEee9vtmKfZ3p8w" finish="_YqormGACEee9vtmKfZ3p8w" start="_YqorkGACEee9vtmKfZ3p8w"/>
@@ -332,7 +332,7 @@
   <LSC:LiteralString xmi:id="_AtLpY2ABEee9vtmKfZ3p8w" base_LiteralString="_AtLpYmABEee9vtmKfZ3p8w"/>
   <LSC:CombinedFragment xmi:id="_A7OFYWABEee9vtmKfZ3p8w" base_CombinedFragment="_A7OFYGABEee9vtmKfZ3p8w" Type="Subchart" LscId="1499094313148"/>
   <visual:CombinedFragment xmi:id="_A7OFYmABEee9vtmKfZ3p8w" base_CombinedFragment="_A7OFYGABEee9vtmKfZ3p8w" X="51" Width="471" Y="756" Height="220"/>
-  <LSC:InteractionOperand xmi:id="_A7OscGABEee9vtmKfZ3p8w" base_InteractionOperand="_A7OFY2ABEee9vtmKfZ3p8w" ConstrExpressionsStr="PropertyProperty,existsManager,platformHandling,==,car,platform,&amp;&amp;;" LscId="1499094313143"/>
+  <LSC:InteractionOperand xmi:id="_A7OscGABEee9vtmKfZ3p8w" base_InteractionOperand="_A7OFY2ABEee9vtmKfZ3p8w" ConstrExpressionsStr="PropertyProperty,exitsManager,platformHandling,==,car,platform,&amp;&amp;;" LscId="1499094313143"/>
   <visual:InteractionOperand xmi:id="_A7OscWABEee9vtmKfZ3p8w" base_InteractionOperand="_A7OFY2ABEee9vtmKfZ3p8w" X="51" Width="471" Y="776" Height="200"/>
   <LSC:OpaqueExpression xmi:id="_A7OsdGABEee9vtmKfZ3p8w" base_OpaqueExpression="_A7Osc2ABEee9vtmKfZ3p8w"/>
   <visual:Message xmi:id="_EemFgWABEee9vtmKfZ3p8w" base_Message="_EemFgGABEee9vtmKfZ3p8w"/>
